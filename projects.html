@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Projects - Rifqi Ardian</title>
+    <link rel="stylesheet" href="css/projects.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="bg-dark text-slate-200 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 glass-effect transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold flex items-center">
+                    <span class="gradient-text">Rifqi</span>
+                    <span class="text-white">Ardian</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html#home"
+                        class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-home mr-2"></i>Home
+                    </a>
+                    <a href="index.html#about"
+                        class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-user mr-2"></i>About
+                    </a>
+                    <a href="index.html#skills"
+                        class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-code mr-2"></i>Skills
+                    </a>
+                    <a href="index.html#projects"
+                        class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-project-diagram mr-2"></i>Projects
+                    </a>
+                    <a href="index.html#contact"
+                        class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-envelope mr-2"></i>Contact
+                    </a>
+                </div>
+                <button id="mobile-menu" class="md:hidden text-accent text-2xl hover:scale-110 transition-transform">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-nav" class="md:hidden hidden glass-effect">
+            <div class="px-6 py-4 space-y-4">
+                <a href="index.html#home"
+                    class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                    <i class="fas fa-home mr-3 w-5 text-center"></i>Home
+                </a>
+                <a href="index.html#about"
+                    class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                    <i class="fas fa-user mr-3 w-5 text-center"></i>About
+                </a>
+                <a href="index.html#skills"
+                    class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                    <i class="fas fa-code mr-3 w-5 text-center"></i>Skills
+                </a>
+                <a href="index.html#projects"
+                    class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                    <i class="fas fa-project-diagram mr-3 w-5 text-center"></i>Projects
+                </a>
+                <a href="index.html#contact"
+                    class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                    <i class="fas fa-envelope mr-3 w-5 text-center"></i>Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-dark to-primary relative">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6" data-aos="fade-up">
+                <span class="text-white">All</span>
+                <span class="gradient-text">Projects</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Here's a complete collection of my work, showcasing my journey and growth as a developer.
+            </p>
+        </div>
+    </section>
+
+    <!-- All Projects Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: News Portal -->
+                <div class="project-item glass-effect rounded-3xl overflow-hidden card-hover group"
+                    data-category="web,laravel,fullstack" data-aos="fade-up">
+                    <div class="relative overflow-hidden h-48 md:h-48">
+                        <img src="public/projects/Newsportal.png" alt="News Portal Screenshot"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">News Portal</h3>
+                                <p class="text-gray-300 text-sm">
+                                    A simple and responsive news app with category-based articles and admin management
+                                    via Filament.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Laravel</span>
+                            <span class="px-3 py-1 bg-accent2/20 text-accent2 rounded-full text-sm">MySQL</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">PHP</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Tailwind
+                                CSS</span>
+                            <span
+                                class="px-3 py-1 bg-fuchsia-500/20 text-fuchsia-400 rounded-full text-sm">Filament</span>
+                        </div>
+                        <div class="flex gap-3 flex-col md:flex-row">
+                            <a href="https://github.com/RifqiArdian09/News-Portal"
+                                class="flex-1 px-4 py-2 bg-gradient-to-r from-accent to-accent2 text-white rounded-full text-center text-sm font-medium hover:from-accent/90 hover:to-accent2/90 transition-all duration-300 flex items-center justify-center">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: E-Voting -->
+                <div class="project-item glass-effect rounded-3xl overflow-hidden card-hover group"
+                    data-category="web,laravel,fullstack" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden h-48 md:h-48">
+                        <img src="public/projects/E-Voting.png" alt="E-Voting Screenshot"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">E-Voting</h3>
+                                <p class="text-gray-300 text-sm">
+                                    E-Voting is a web-based student council election app with secure token voting and
+                                    real-time results.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm">Laravel</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Tailwind
+                                CSS</span>
+                            <span
+                                class="px-3 py-1 bg-fuchsia-500/20 text-fuchsia-400 rounded-full text-sm">Filament</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm">MySQL</span>
+                        </div>
+                        <div class="flex gap-3 flex-col md:flex-row">
+                            <a href="https://github.com/RifqiArdian09/E-voting.git"
+                                class="flex-1 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-center text-sm font-medium hover:from-purple-500/90 hover:to-pink-500/90 transition-all duration-300 flex items-center justify-center">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: BKK -->
+                <div class="project-item glass-effect rounded-3xl overflow-hidden card-hover group"
+                    data-category="web,laravel,fullstack" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden h-48 md:h-48">
+                        <img src="public/projects/Bkk.png" alt="BKK Screenshot"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">BKK</h3>
+                                <p class="text-gray-300 text-sm">
+                                    BKK is a web-based job placement platform built with Laravel, Filament, and Tailwind
+                                    CSS.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm">Laravel</span>
+                            <span
+                                class="px-3 py-1 bg-fuchsia-500/20 text-fuchsia-400 rounded-full text-sm">Filament</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Tailwind
+                                CSS</span>
+                            <span
+                                class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">MySQL</span>
+                            <span class="px-3 py-1 bg-indigo-500/20 text-indigo-400 rounded-full text-sm">PHP</span>
+                        </div>
+                        <div class="flex gap-3 flex-col md:flex-row">
+                            <a href="https://github.com/RifqiArdian09/Project-BKK.git"
+                                class="flex-1 px-4 py-2 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-full text-center text-sm font-medium hover:from-blue-700 hover:to-teal-600 transition-all duration-300 flex items-center justify-center">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-item glass-effect rounded-3xl overflow-hidden card-hover group" data-category="web"
+                    data-aos="fade-up">
+                    <div class="relative overflow-hidden h-48 md:h-48">
+                        <img src="public/projects/Celenganku.jpg" alt="celenganku"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">Celenganku</h3>
+                                <p class="text-gray-300 text-sm">
+                                    Celenganku is an Android application to help you manage your personal savings with
+                                    transaction recording features, savings targets, and financial development
+                                    visualization.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-500/20 text-brown-400 rounded-full text-sm">Java</span>
+
+                        </div>
+                        <div class="flex gap-3 flex-col md:flex-row">
+                            <a href="https://github.com/RifqiArdian09/Celenganku.git"
+                                class="flex-1 px-4 py-2 bg-gradient-to-r from-accent to-accent2 text-white rounded-full text-center text-sm font-medium hover:from-orange-500/90 hover:to-pink-500/90 transition-all duration-300 flex items-center justify-center">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5:  -->
+                <div class="project-item glass-effect rounded-3xl overflow-hidden card-hover group" data-category="web"
+                    data-aos="fade-up">
+                    <div class="relative overflow-hidden h-48 md:h-48">
+                        <img src="public/projects/food.jpg" alt="Food Recipe App Screenshot"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">Food Recipe App 🍽️</h3>
+                                <p class="text-gray-300 text-sm">
+                                    Android application to display various food recipes using data from TheMealDB.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-orange-500/20 text-brown-400 rounded-full text-sm">Java</span>
+
+                        </div>
+                        <div class="flex gap-3 flex-col md:flex-row">
+                            <a href="https://github.com/RifqiArdian09/FoodRecipeApp.git"
+                                class="flex-1 px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-center text-sm font-medium hover:from-orange-500/90 hover:to-pink-500/90 transition-all duration-300 flex items-center justify-center">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- Project 6:  -->
+                  <div class="project-item glass-effect rounded-3xl overflow-hidden card-hover group" data-category="web"
+                  data-aos="fade-up">
+                  <div class="relative overflow-hidden h-48 md:h-48">
+                      <img src="public/projects/translator.jpg" alt="Translator App Screenshot"
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <div
+                          class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                          <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                              <h3 class="text-xl font-bold text-white mb-2">Text & Image Translator App</h3>
+                              <p class="text-gray-300 text-sm">
+                                Text & Image Translator app is a Java-based Android app that allows users to translate live text or text from images into multiple languages ​​with the help of Google's Gemini AI.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="p-4 md:p-6">
+                      <div class="flex flex-wrap gap-2 mb-4">
+                          <span class="px-3 py-1 bg-orange-500/20 text-brown-400 rounded-full text-sm">Java</span>
+
+                      </div>
+                      <div class="flex gap-3 flex-col md:flex-row">
+                          <a href="https://github.com/RifqiArdian09/Text-Image-Translator.git"
+                              class="flex-1 px-4 py-2 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-full text-center text-sm font-medium hover:from-orange-500/90 hover:to-pink-500/90 transition-all duration-300 flex items-center justify-center">
+                              <i class="fab fa-github mr-2"></i> View Code
+                          </a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="index.html#contact"
+                    class="inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-accent to-accent2 text-white rounded-full text-base md:text-lg font-semibold hover:from-accent/90 hover:to-accent2/90 transform hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/25">
+                    <i class="fas fa-paper-plane mr-2"></i> Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white py-4 border-t border-gray-700">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2025 Rifqi Ardian. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-accent to-accent2 text-white rounded-full shadow-lg hover:scale-110 transition-all duration-300 opacity-0 invisible z-40 flex items-center justify-center">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+
+</html>

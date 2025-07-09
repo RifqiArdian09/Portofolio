@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rifqi Ardian </title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="bg-dark text-slate-200 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 glass-effect transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl sm:text-2xl font-bold flex items-center">
+                    <span class="gradient-text">Rifqi</span>
+                    <span class="text-white">Ardian</span>
+                </div>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#home" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-home mr-2"></i>Home
+                    </a>
+                    <a href="#about" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-user mr-2"></i>About
+                    </a>
+                    <a href="#skills" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-code mr-2"></i>Skills
+                    </a>
+                    <a href="#projects" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-project-diagram mr-2"></i>Projects
+                    </a>
+                    <a href="#contact" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-envelope mr-2"></i>Contact
+                    </a>
+                </div>
+                <button id="mobile-menu" class="md:hidden text-accent text-2xl hover:scale-110 transition-transform">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-nav" class="md:hidden hidden glass-effect">
+                <div class="px-4 sm:px-6 py-4 space-y-4">
+                    <a href="#home"
+                        class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                        <i class="fas fa-home mr-3 w-5 text-center"></i>Home
+                    </a>
+                    <a href="#about"
+                        class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                        <i class="fas fa-user mr-3 w-5 text-center"></i>About
+                    </a>
+                    <a href="#skills"
+                        class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                        <i class="fas fa-code mr-3 w-5 text-center"></i>Skills
+                    </a>
+                    <a href="#projects"
+                        class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                        <i class="fas fa-project-diagram mr-3 w-5 text-center"></i>Projects
+                    </a>
+                    <a href="#contact"
+                        class="block text-slate-300 hover:text-accent transition-colors duration-300 flex items-center">
+                        <i class="fas fa-envelope mr-3 w-5 text-center"></i>Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 sm:pt-20">
+        <div class="absolute inset-0 gradient-bg"></div>
+        <div class="absolute inset-0 opacity-30">
+            <div
+                class="absolute top-20 left-10 sm:left-20 w-48 sm:w-72 h-48 sm:h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow">
+            </div>
+            <div
+                class="absolute top-40 right-10 sm:right-20 w-48 sm:w-72 h-48 sm:h-72 bg-accent2 rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow animation-delay-2000">
+            </div>
+            <div
+                class="absolute bottom-20 left-1/2 w-48 sm:w-72 h-48 sm:h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow animation-delay-4000">
+            </div>
+        </div>
+        <div class="particles">
+            <div
+                class="absolute top-1/4 left-1/4 w-3 sm:w-4 h-3 sm:h-4 bg-accent rounded-full animate-float animation-delay-0">
+            </div>
+            <div
+                class="absolute top-1/3 right-1/4 w-2 sm:w-3 h-2 sm:h-3 bg-accent2 rounded-full animate-float animation-delay-1000">
+            </div>
+            <div
+                class="absolute bottom-1/4 left-1/3 w-4 sm:w-5 h-4 sm:h-5 bg-white rounded-full animate-float animation-delay-2000">
+            </div>
+            <div
+                class="absolute bottom-1/3 right-1/3 w-2 sm:w-2 h-2 bg-accent rounded-full animate-float animation-delay-3000">
+            </div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <div class="space-y-6 sm:space-y-8" data-aos="fade-right">
+                    <div class="space-y-4">
+                        <p class="text-accent text-base sm:text-lg font-medium flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center mr-3">
+                                <i class="fas fa-hand-paper text-sm"></i>
+                            </span>
+                            Hello, I'm
+                        </p>
+                        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+                            <span class="text-white">Rifqi</span>
+                            <span class="gradient-text">Ardian</span>
+                        </h1>
+                        <div class="text-lg sm:text-xl lg:text-2xl text-slate-300">
+                            <span id="typed"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                        <p class="text-sm sm:text-base text-slate-400 max-w-md sm:max-w-lg">
+                            Crafting digital experiences with clean code and creative solutions.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects"
+                            class="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-accent to-accent2 text-white rounded-full font-semibold hover:from-accent/90 hover:to-accent2/90 transform hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/25 flex items-center">
+                            <i class="fas fa-eye mr-2"></i> View My Work
+                        </a>
+                        <a href="#contact"
+                            class="px-6 sm:px-8 py-3 sm:py-4 border-2 border-accent text-accent rounded-full font-semibold hover:bg-accent hover:text-white transition-all duration-300 flex items-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Contact Me
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-6 pt-4">
+                        <a href="https://github.com/RifqiArdian09"
+                            class="text-slate-400 hover:text-accent transition-colors duration-300 text-xl">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/RIFQIARDIA74184"
+                            class="text-slate-400 hover:text-blue-400 transition-colors duration-300 text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/rifqiard._"
+                            class="text-slate-400 hover:text-pink-500 transition-colors duration-300 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center lg:justify-end" data-aos="fade-left">
+                    <div class="relative">
+                        <div
+                            class="w-64 sm:w-80 h-64 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-accent via-accent2 to-purple-600 p-1 animate-float">
+                            <div
+                                class="w-full h-full rounded-full bg-dark flex items-center justify-center relative overflow-hidden">
+                                <div class="w-56 sm:w-72 h-56 sm:h-72 lg:w-88 lg:h-88 rounded-full overflow-hidden">
+                                    <img src="public/profile.jpg" alt="Profile" class="w-full h-full object-cover" />
+                                </div>
+                                <div
+                                    class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
+                                    <i class="fas fa-code mr-1"></i> Web Developer
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -top-4 -right-4 w-6 sm:w-8 h-6 sm:h-8 bg-accent rounded-full animate-bounce-slow flex items-center justify-center">
+                            <i class="fas fa-star text-xs text-white"></i>
+                        </div>
+                        <div
+                            class="absolute -bottom-4 -left-4 w-5 sm:w-6 h-5 sm:h-6 bg-accent2 rounded-full animate-bounce-slow animation-delay-1000 flex items-center justify-center">
+                        </div>
+                        <div
+                            class="absolute top-10 -right-10 w-10 sm:w-12 h-10 sm:h-12 bg-white/10 rounded-full animate-spin-slow flex items-center justify-center border border-white/20">
+                            <i class="fab fa-html5 text-accent"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-primary relative">
+        <div class="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-dark to-transparent z-10"></div>
+        <div class="container mx-auto px-6 relative z-20">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="section-title">About Me</span>
+                </h2>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-12">
+                    Get to know me better and what drives my passion for technology
+                </p>
+
+                <div class="glass-effect p-8 lg:p-12 rounded-3xl card-hover">
+                    <div class="flex flex-col lg:flex-row items-center gap-8">
+                        <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-accent/30 flex-shrink-0">
+                            <img src="public/profile2.jpg" alt="Profile" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="text-left">
+                            <p class="text-lg lg:text-xl text-slate-300 leading-relaxed mb-6">
+                                I'm an IT learner and web development enthusiast with a focus on building practical
+                                digital solutions.
+                                I started with basic HTML pages and gradually expanded my skills to develop full-stack
+                                applications.
+                            </p>
+                            <p class="text-lg lg:text-xl text-slate-300 leading-relaxed mb-8">
+                                Outside of coding, I enjoy exploring emerging technologies, contributing to open-source
+                                projects, and continuously learning to improve my craft.
+                            </p>
+                            <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                                <div
+                                    class="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i> Bengkulu, Indonesia
+                                </div>
+                                <div
+                                    class="px-4 py-2 bg-accent2/10 text-accent2 rounded-full text-sm font-medium flex items-center">
+                                    <i class="fas fa-graduation-cap mr-2"></i> IT Student
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 sm:py-20 bg-secondary relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="section-title">My Skills</span>
+                </h2>
+                <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+                    Here are the technologies and tools I work with to create amazing digital experiences
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+                <div class="glass-effect p-6 sm:p-8 rounded-3xl card-hover" data-aos="zoom-in-up">
+                    <div
+                        class="flex items-center justify-center w-12 sm:w-16 h-12 sm:h-16 bg-accent/10 rounded-full mb-6 mx-auto">
+                        <i class="fas fa-laptop-code text-xl sm:text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-center mb-6 text-white">Frontend Development</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center group">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 bg-orange-100/10 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-html5 text-orange-500 text-2xl sm:text-3xl"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">HTML5</p>
+                        </div>
+                        <div class="text-center group">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 bg-blue-100/10 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-css3-alt text-blue-500 text-2xl sm:text-3xl"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">CSS3</p>
+                        </div>
+                        <div class="text-center group">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 bg-yellow-100/10 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-js-square text-yellow-400 text-2xl sm:text-3xl"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">JavaScript</p>
+                        </div>
+                        <div class="text-center group">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 bg-cyan-100/10 rounded-lg flex items-center justify-center">
+                                <img src="public/icons/tailwind.svg" class="w-8 sm:w-10 h-10 sm:h-14"
+                                    alt="Tailwind CSS" />
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">Tailwind</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-effect p-6 sm:p-8 rounded-3xl card-hover" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div
+                        class="flex items-center justify-center w-12 sm:w-16 h-12 sm:h-16 bg-accent/10 rounded-full mb-6 mx-auto">
+                        <i class="fas fa-server text-xl sm:text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-center mb-6 text-white">Backend & Database</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center group">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 bg-blue-100/10 rounded-lg flex items-center justify-center">
+                                <img src="./public/icons/php.svg" class="w-8 sm:w-10 h-8 sm:h-10" alt="PHP" />
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">PHP</p>
+                        </div>
+                        <div class="text-center group">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 bg-blue-100/10 rounded-lg flex items-center justify-center">
+                                <img src="public/icons/mysql.svg" class="w-8 sm:w-10 h-8 sm:h-10" alt="MySQL" />
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">MySQL</p>
+                        </div>
+                        <div class="text-center group col-span-2">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 bg-red-100/10 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-laravel text-red-500 text-2xl sm:text-3xl"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">Laravel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-effect p-6 sm:p-8 rounded-3xl card-hover" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div
+                        class="flex items-center justify-center w-12 sm:w-16 h-12 sm:h-16 bg-accent/10 rounded-full mb-6 mx-auto">
+                        <i class="fas fa-tools text-xl sm:text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-center mb-6 text-white">Development Tools</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center group">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 bg-gray-200/10 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-github text-gray-200 text-2xl sm:text-3xl"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">GitHub</p>
+                        </div>
+                        <div class="text-center group">
+                            <div
+                                class="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2 bg-blue-100/10 rounded-lg flex items-center justify-center">
+                                <img src="public/icons/vscode.svg" class="w-8 sm:w-10 h-10 sm:h-14" alt="VSCODE" />
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400">VS Code</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 sm:py-20 bg-primary">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">
+                    <span class="section-title">My Projects</span>
+                </h2>
+                <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+                    Here are some of my recent projects that showcase my skills and creativity
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+                <div class="glass-effect rounded-3xl overflow-hidden card-hover group" data-aos="fade-up">
+                    <div class="relative overflow-hidden h-40 sm:h-48">
+                        <img src="public/projects/Newsportal.png" alt="News Portal Screenshot"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
+                            <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-lg sm:text-xl font-bold text-white mb-2">News Portal</h3>
+                                <p class="text-gray-300 text-xs sm:text-sm">
+                                    A simple and responsive news app with category-based articles and admin management
+                                    via Filament.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-accent/20 text-accent rounded-full text-xs sm:text-sm">Laravel</span>
+                            <span
+                                class="px-3 py-1 bg-accent2/20 text-accent2 rounded-full text-xs sm:text-sm">MySQL</span>
+                            <span
+                                class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs sm:text-sm">PHP</span>
+                            <span
+                                class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs sm:text-sm">Tailwind
+                                CSS</span>
+                            <span
+                                class="px-3 py-1 bg-fuchsia-500/20 text-fuchsia-400 rounded-full text-xs sm:text-sm">Filament</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/RifqiArdian09/News-Portal"
+                                class="flex-1 px-4 py-2 bg-gradient-to-r from-accent to-accent2 text-white rounded-full text-center text-xs sm:text-sm font-medium hover:from-accent/90 hover:to-accent2/90 transition-all duration-300 flex items-center justify-center">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: E-Voting -->
+            <div class="glass-effect rounded-3xl overflow-hidden card-hover group" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative overflow-hidden h-48">
+                    <img src="public/projects/E-Voting.png" alt="E-Voting Screenshot"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">E-Voting</h3>
+                            <p class="text-gray-300 text-sm">
+                                E-Voting is a web-based student council election app with secure token voting and real-time results.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm">Laravel</span>
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-teal-500/20 text-teal-400 rounded-full text-sm">Alpine.js</span>
+                        <span class="px-3 py-1 bg-fuchsia-500/20 text-fuchsia-400 rounded-full text-sm">Filament</span>
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm">MySQL</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/RifqiArdian09/E-voting.git"
+                            class="flex-1 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-center text-sm font-medium hover:from-purple-500/90 hover:to-pink-500/90 transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-github mr-2"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: BKK -->
+            <div class="glass-effect rounded-3xl overflow-hidden card-hover group" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative overflow-hidden h-48">
+                    <img src="public/projects/Bkk.png" alt="BKK Screenshot"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div class="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">BKK</h3>
+                            <p class="text-gray-300 text-sm">
+                                BKK is a web-based job placement platform built with Laravel, Filament, and Tailwind CSS.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm">Laravel</span>
+                        <span class="px-3 py-1 bg-fuchsia-500/20 text-fuchsia-400 rounded-full text-sm">Filament</span>
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">MySQL</span>
+                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-400 rounded-full text-sm">PHP</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/RifqiArdian09/Project-BKK.git"
+                            class="flex-1 px-4 py-2 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-full text-center text-sm font-medium hover:from-blue-700 hover:to-teal-600 transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-github mr-2"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            
+            <div class="text-center mt-12 sm:mt-16" data-aos="fade-up">
+                <a href="projects.html"
+                    class="inline-flex items-center px-6 py-3 border border-accent text-accent rounded-full text-base sm:text-lg font-medium hover:bg-accent hover:text-white transition-all duration-300">
+                    <i class="fas fa-archive mr-2"></i> View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20 bg-secondary relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+                    <span class="section-title">Contact Me</span>
+                </h2>
+                <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+                    Ready to work together? Let's create something amazing!
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 max-w-6xl mx-auto">
+                <div class="space-y-6 sm:space-y-8" data-aos="fade-right">
+                    <div class="glass-effect p-6 sm:p-8 rounded-3xl">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-6 text-white">Let's Connect</h3>
+                        <div class="space-y-6">
+                            <div
+                                class="flex items-center gap-4 p-4 bg-dark/50 rounded-xl hover:bg-dark transition-colors duration-300">
+                                <div
+                                    class="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-r from-accent to-accent2 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-xs sm:text-sm">Email</p>
+                                    <p class="text-white text-sm sm:text-base">ardianrifqi77@gmail.com</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 p-4 bg-dark/50 rounded-xl hover:bg-dark transition-colors duration-300">
+                                <div
+                                    class="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-r from-accent to-accent2 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-xs sm:text-sm">Phone</p>
+                                    <p class="text-white text-sm sm:text-base">+62 895-4126-30703</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 p-4 bg-dark/50 rounded-xl hover:bg-dark transition-colors duration-300">
+                                <div
+                                    class="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-r from-accent to-accent2 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-xs sm:text-sm">Location</p>
+                                    <p class="text-white text-sm sm:text-base">Bengkulu City, Bengkulu, Indonesia</p>
+                                </div>
+                            </div>
+                            <div class="pt-4">
+                                <h4 class="text-base sm:text-lg font-semibold text-white mb-4">Follow Me</h4>
+                                <div class="flex gap-4">
+                                    <a href="https://github.com/RifqiArdian09"
+                                        class="social-icon w-10 sm:w-12 h-10 sm:h-12 bg-dark rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors duration-300">
+                                        <i class="fab fa-github text-xl"></i>
+                                    </a>
+                                    <a href="https://x.com/RIFQIARDIA74184"
+                                        class="social-icon w-10 sm:w-12 h-10 sm:h-12 bg-dark rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors duration-300">
+                                        <i class="fab fa-twitter text-xl"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/rifqiard._"
+                                        class="social-icon w-10 sm:w-12 h-10 sm:h-12 bg-dark rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors duration-300">
+                                        <i class="fab fa-instagram text-xl"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-effect p-6 sm:p-8 rounded-3xl" data-aos="fade-left">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-6 text-white">Send Me a Message</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-slate-300 mb-2 text-sm sm:text-base">Your Name</label>
+                            <div class="relative">
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-3 pl-12 bg-dark border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                                    placeholder="Enter your name">
+                                <div class="absolute left-3 top-3 text-slate-400">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-slate-300 mb-2 text-sm sm:text-base">Your Email</label>
+                            <div class="relative">
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-3 pl-12 bg-dark border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                                    placeholder="Enter your email">
+                                <div class="absolute left-3 top-3 text-slate-400">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-slate-300 mb-2 text-sm sm:text-base">Subject</label>
+                            <div class="relative">
+                                <input type="text" id="subject"
+                                    class="w-full px-4 py-3 pl-12 bg-dark border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                                    placeholder="What's this about?">
+                                <div class="absolute left-3 top-3 text-slate-400">
+                                    <i class="fas fa-tag"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-slate-300 mb-2 text-sm sm:text-base">Your
+                                Message</label>
+                            <div class="relative">
+                                <textarea id="message" rows="5"
+                                    class="w-full px-4 py-3 pl-12 bg-dark border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                                    placeholder="Hi Rifqi, I'd like to talk about..."></textarea>
+                                <div class="absolute left-3 top-3 text-slate-400">
+                                    <i class="fas fa-comment-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit"
+                            class="w-full px-6 py-4 bg-gradient-to-r from-accent to-accent2 text-white font-semibold rounded-lg hover:from-accent/90 hover:to-accent2/90 transform hover:scale-[1.02] transition-all duration-300 shadow-lg shadow-accent/25 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white py-4 border-t border-gray-700">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <p class="text-gray-400 text-sm sm:text-base">© 2025 Rifqi Ardian. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-4 sm:right-8 w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-r from-accent to-accent2 text-white rounded-full shadow-lg hover:scale-110 transition-all duration-300 opacity-0 invisible z-40 flex items-center justify-center">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
