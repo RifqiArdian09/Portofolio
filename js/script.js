@@ -43,9 +43,11 @@ if (navbar) {
 // Typed.js initialization
 if (document.getElementById('typed')) {
     const typed = new Typed('#typed', {
-        strings: ["I am an IT learner and website enthusiast",
-        "I love building web apps",
-        "Let's create something great!"],
+        strings: [
+            "Coding is an art, not just syntax",
+            "Coding with coffee hits different!",
+            "Let’s build an awesome website together!"
+        ],
         typeSpeed: 50,
         backSpeed: 30,
         loop: true,
@@ -101,28 +103,94 @@ if (backToTopButton) {
 }
 
 // WhatsApp Contact Form Submission 
+// Contact Form Validation and Submission
 if (document.getElementById('contactForm')) {
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
+    const contactForm = document.getElementById('contactForm');
+    
+    // Form validation
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-
+        
+        // Reset error states
+        resetErrors();
+        
+        // Get form values
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const subject = document.getElementById('subject').value.trim();
         const message = document.getElementById('message').value.trim();
-
+        
+        // Validate form
+        let isValid = true;
+        
+        if (!name) {
+            showError('name', 'Please enter your name');
+            isValid = false;
+        }
+        
+        if (!email) {
+            showError('email', 'Please enter your email');
+            isValid = false;
+        } else if (!isValidEmail(email)) {
+            showError('email', 'Please enter a valid email');
+            isValid = false;
+        }
+        
+        if (!subject) {
+            showError('subject', 'Please enter a subject');
+            isValid = false;
+        }
+        
+        if (!message) {
+            showError('message', 'Please enter your message');
+            isValid = false;
+        }
+        
+        // If form is valid, submit it
+        if (isValid) {
+            submitForm(name, email, subject, message);
+        }
+    });
+    
+    // Helper function to validate email
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    // Helper function to show error messages
+    function showError(fieldId, message) {
+        const field = document.getElementById(fieldId);
+        const errorElement = document.getElementById(`${fieldId}-error`);
+        
+        field.classList.add('input-error');
+        errorElement.textContent = message;
+        errorElement.classList.remove('hidden');
+    }
+    
+    // Helper function to reset all error states
+    function resetErrors() {
+        const errorElements = document.querySelectorAll('.error-message');
+        const inputElements = document.querySelectorAll('input, textarea');
+        
+        errorElements.forEach(el => el.classList.add('hidden'));
+        inputElements.forEach(el => el.classList.remove('input-error'));
+    }
+    
+    // Function to handle form submission
+    function submitForm(name, email, subject, message) {
         const whatsappNumber = '62895412630703';
         const fullMessage = `*${subject}*\n\nHalo Rifqi,\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`;
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
         window.open(whatsappURL, '_blank');
 
         // Reset form
-        this.reset();
+        contactForm.reset();
 
-        // Show custom alert
+        // Show success message
         showCustomAlert('Message sent successfully! I will get back to you soon.');
-    });
+    }
 }
-
 // Custom Alert Function
 function showCustomAlert(message) {
     // Create alert element if not exists
