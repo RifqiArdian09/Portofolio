@@ -98,7 +98,7 @@ const FeaturedProjects = () => {
                                         // {project.description}
                                     </p>
 
-                                    <div className="mt-auto pt-4 flex flex-col gap-4">
+                                    <div className="t-auto pt-4 flex flex-col gap-4">
                                         {project.teamMembers && (
                                             <div className="flex flex-col gap-2">
                                                 <div className="text-[10px] text-primary/40 uppercase tracking-widest font-bold flex items-center gap-2">
