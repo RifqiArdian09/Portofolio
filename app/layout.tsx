@@ -42,6 +42,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { BinaryBackground } from "@/components/binary-background";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,6 +57,7 @@ export default function RootLayout({
             <TooltipProvider>
               <div className="crt min-h-screen relative overflow-x-hidden">
                 <div className="noise" />
+                <BinaryBackground />
                 {children}
               </div>
               <ScrollToTop />
