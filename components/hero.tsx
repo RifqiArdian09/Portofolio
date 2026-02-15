@@ -159,6 +159,7 @@ ${t("hero.ready")}`;
                 src={personalInfo.profileImage}
                 alt="Profile"
                 fill
+                unoptimized
                 className="object-cover transition-all duration-700 scale-110 group-hover:scale-100"
               />
 

@@ -61,6 +61,7 @@ const Certificates = () => {
                                         src={cert.image}
                                         alt={cert.title}
                                         fill
+                                        unoptimized
                                         className="object-cover transition-all duration-500"
                                     />
                                 </div>
@@ -133,6 +134,7 @@ const Certificates = () => {
                                         src={selectedCert.image}
                                         alt={selectedCert.title}
                                         fill
+                                        unoptimized
                                         className="object-contain"
                                     />
                                 </div>
