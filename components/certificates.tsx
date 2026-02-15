@@ -28,11 +28,11 @@ const Certificates = () => {
                         {t("certificates.verified")} <span className="text-primary">{t("certificates.title")}{t("certificates.titleHighlight")}</span>
                     </motion.h2>
                     <p className="text-muted-foreground max-w-2xl text-sm">
-                        {">"} Scanning database for verified credentials... [FOUND {certificates.length}]
+                        {t("certificates.scanning").replace("{count}", certificates.length.toString())}
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="flex flex-wrap justify-center gap-6">
                     {certificates.map((cert, index) => (
                         <motion.div
                             key={index}
@@ -41,43 +41,52 @@ const Certificates = () => {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ y: -5 }}
                             onClick={() => setSelectedCert(cert)}
-                            className="group relative bg-black border border-primary/30 hover:border-primary transition-all duration-300 cursor-pointer"
+                            className="group terminal-window cursor-pointer w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] flex flex-col"
                         >
-                            {/* Top decorative line */}
-                            <div className="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                            {/* Terminal Header */}
+                            <div className="terminal-header">
+                                <div className="flex gap-1.5">
+                                    <div className="w-1.5 h-1.5 bg-primary/40 rounded-full"></div>
+                                    <div className="w-1.5 h-1.5 bg-primary/20 rounded-full"></div>
+                                </div>
+                                <div className="text-[8px] font-bold text-primary/60 uppercase tracking-[0.3em]">
+                                    CERT_ID_{index.toString().padStart(3, '0')}
+                                </div>
+                                <Maximize2 className="w-2.5 h-2.5 text-primary/40" />
+                            </div>
 
-                            <div className="p-1 border-b border-primary/20">
-                                <div className="relative aspect-[1.5/1] overflow-hidden bg-primary/5">
+                            <div className="p-2 border-b border-primary/10">
+                                <div className="relative aspect-[1.6/1] overflow-hidden bg-primary/5">
                                     <Image
                                         src={cert.image}
                                         alt={cert.title}
                                         fill
                                         className="object-cover transition-all duration-500"
                                     />
-
-                                    {/* Grid Overlay */}
-                                    <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,0,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,0,0.1)_1px,transparent_1px)] bg-[size:10px_10px] pointer-events-none opacity-50"></div>
-
-                                    <div className="absolute top-2 right-2 bg-black border border-primary p-1">
-                                        <Maximize2 className="w-4 h-4 text-primary" />
-                                    </div>
                                 </div>
                             </div>
 
-                            <div className="p-5">
-                                <div className="flex items-center gap-2 mb-3 text-[10px] text-primary/60 font-bold uppercase tracking-wider">
-                                    <CheckCircle className="w-3 h-3 text-primary" />
+                            <div className="p-5 relative">
+                                {/* Side Indicator */}
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-8 bg-primary/30 group-hover:bg-primary transition-colors"></div>
+
+                                <div className="flex items-center gap-2 mb-3 text-[9px] text-primary/40 font-bold uppercase tracking-widest">
+                                    <CheckCircle className="w-3 h-3 text-primary/60" />
                                     {t("certificates.verified")}
-                                    <span className="w-full h-[1px] bg-primary/20 ml-2"></span>
                                 </div>
-                                <h3 className="font-bold text-white text-lg leading-tight mb-2 group-hover:text-primary transition-colors">
+
+                                <h3 className="font-bold text-zinc-300 text-base leading-tight mb-4 group-hover:text-primary transition-colors uppercase">
                                     {cert.title}
                                 </h3>
-                                <div className="flex justify-between items-center mt-4 pt-4 border-t border-primary/10">
-                                    <span className="text-xs text-muted-foreground uppercase font-bold">
-                                        {t("certificates.issuer")}: {cert.issuer}
-                                    </span>
-                                    <FileText className="w-4 h-4 text-primary/50 group-hover:text-primary transition-colors" />
+
+                                <div className="flex justify-between items-center pt-3 border-t border-primary/5">
+                                    <div className="flex flex-col">
+                                        <span className="text-[8px] text-primary/40 uppercase font-black tracking-tighter">{t("certificates.issuerUnit")}</span>
+                                        <span className="text-[10px] text-zinc-500 font-bold uppercase">{cert.issuer}</span>
+                                    </div>
+                                    <div className="w-8 h-8 flex items-center justify-center border border-primary/10 group-hover:border-primary/40 transition-colors">
+                                        <FileText className="w-4 h-4 text-primary/30 group-hover:text-primary transition-colors" />
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -107,7 +116,7 @@ const Certificates = () => {
                                 <div className="flex items-center gap-2">
                                     <Award className="w-4 h-4 text-primary" />
                                     <span className="text-xs font-bold text-primary uppercase tracking-widest truncate max-w-[200px] md:max-w-none">
-                                        VIEW_CREDENTIAL: {selectedCert.title}.doc
+                                        {t("certificates.viewCredential")}: {selectedCert.title.toUpperCase()}.DOC
                                     </span>
                                 </div>
                                 <button
@@ -131,17 +140,17 @@ const Certificates = () => {
                                 <div className="w-full md:w-64 flex flex-col justify-between py-2">
                                     <div className="space-y-6">
                                         <div>
-                                            <div className="text-[10px] text-primary/60 uppercase font-bold mb-1">Title</div>
+                                            <div className="text-[10px] text-primary/60 uppercase font-bold mb-1">{t("certificates.title")}</div>
                                             <div className="text-white font-bold">{selectedCert.title}</div>
                                         </div>
                                         <div>
-                                            <div className="text-[10px] text-primary/60 uppercase font-bold mb-1">Issuer</div>
+                                            <div className="text-[10px] text-primary/60 uppercase font-bold mb-1">{t("certificates.issuer")}</div>
                                             <div className="text-white font-bold">{selectedCert.issuer}</div>
                                         </div>
                                         <div>
-                                            <div className="text-[10px] text-primary/60 uppercase font-bold mb-1">Status</div>
+                                            <div className="text-[10px] text-primary/60 uppercase font-bold mb-1">{t("certificates.status")}</div>
                                             <div className="flex items-center gap-2 text-green-500 text-xs font-bold">
-                                                <CheckCircle className="w-3 h-3" /> VERIFIED_ON_MAINFRAME
+                                                <CheckCircle className="w-3 h-3" /> {t("certificates.verifiedMainframe")}
                                             </div>
                                         </div>
                                     </div>
@@ -153,13 +162,13 @@ const Certificates = () => {
                                             target="_blank"
                                             className="w-full flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest bg-primary text-black py-3 hover:bg-white transition-colors"
                                         >
-                                            <Download className="w-4 h-4" /> Download Certificate
+                                            <Download className="w-4 h-4" /> {t("certificates.download")}
                                         </a>
                                         <button
                                             onClick={() => setSelectedCert(null)}
                                             className="w-full text-xs font-bold uppercase tracking-widest text-primary/60 hover:text-primary transition-colors py-2"
                                         >
-                                            :: Close_Preview
+                                            {t("certificates.closePreview")}
                                         </button>
                                     </div>
                                 </div>

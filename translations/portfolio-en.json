@@ -2,8 +2,17 @@
     "nav": {
         "home": "HOME",
         "projects": "PROJECTS",
+        "github": "ACTIVITY",
         "certificates": "CERTIFICATES",
-        "contact": "CONTACT"
+        "contact": "CONTACT",
+        "directoryListing": "Directory Listing",
+        "systemCommands": "System Commands",
+        "terminalActive": "Terminal Session Active",
+        "sendMail": "[SEND_MAIL]",
+        "systemNav": "SYSTEM_NAV",
+        "systemOnline": "System_Online",
+        "loc": "LOC",
+        "net": "NET: ENCRYPTED"
     },
     "hero": {
         "secureConnection": "[SECURE CONNECTION ESTABLISHED]",
@@ -15,10 +24,13 @@
         "status": "> Status: ONLINE",
         "ready": "> Ready for mission...",
         "greeting": "HELLO, I'M ",
-        "initializeProtocol": "Initialize Protocol",
+        "initializeProtocol": "CONTACT ME",
         "viewCv": "View CV",
         "targetLocked": "TARGET_LOCKED",
-        "bio": "A Software and Game Development student with a strong passion for web development and information technology."
+        "bio": "A Software and Game Development student with a strong passion for web development and information technology.",
+        "sessionInit": "USER_SESSION_INIT.LOG",
+        "biometricScan": "Biometric_Scan: OK",
+        "uplinkNode": "Uplink_Node: ACTIVE"
     },
     "projects": {
         "directory": "./projects",
@@ -37,14 +49,43 @@
         "date": "Date",
         "contributors": "Team Contributors",
         "notFound": "PROJECT_NOT_FOUND",
-        "returnRoot": "Return to Root"
+        "returnRoot": "Return to Root",
+        "analysisDocket": "PROJECT_ANALYSIS_DOCKET",
+        "missionOverview": "MISSION_OVERVIEW",
+        "executionDetails": "EXECUTION_DETAILS",
+        "systemSnapshots": "SYSTEM_SNAPSHOTS",
+        "metadataProbe": "METADATA_PROBE.SH",
+        "secureFile": "SECURE_FILE: #{id}",
+        "authorizedContributor": "AUTHORIZED_CONTRIBUTOR",
+        "status": "STATUS",
+        "successful": "SUCCESSFUL",
+        "deployDate": "DEPLOY_DATE",
+        "locked": "LOCKED",
+        "initializingAccess": "INITIALIZING_ACCESS..."
     },
     "certificates": {
         "directory": "./certificates",
         "title": "CERTIFICATES",
         "titleHighlight": "_",
         "verified": "VERIFIED",
-        "issuer": "Issuer"
+        "issuer": "Issuer",
+        "verifiedMainframe": "VERIFIED_ON_MAINFRAME",
+        "download": "Download Certificate",
+        "closePreview": ":: Close_Preview",
+        "scanning": "> Scanning database for verified credentials... [FOUND {count}]",
+        "issuerUnit": "ISSUER_UNIT",
+        "viewCredential": "VIEW_CREDENTIAL",
+        "status": "Status"
+    },
+    "github": {
+        "title": "GITHUB ACTIVITY",
+        "titleHighlight": "_",
+        "contributions": "Contributions in the last year",
+        "viewProfile": "View Full Profile",
+        "activityProbe": ":: EXECUTING_ACTIVITY_PROBE",
+        "analysisMode": "ANALYSIS_MODE: CONTRIBUTION_STREAM",
+        "uplinkStable": "UPLINK_STABLE",
+        "secureDataNode": "SECURE_DATA_NODE"
     },
     "footer": {
         "systemShutdown": "System Shutdown",
@@ -57,6 +98,11 @@
         "email": "EMAIL",
         "copyright": "[SYSTEM] © {year} RIFQI ARDIAN. ALL RIGHTS RESERVED.",
         "terminateSession": "TERMINATE_SESSION",
-        "terminalActive": "Terminal Session Active"
+        "terminalActive": "Terminal Session Active",
+        "finalLogs": "FINAL_LOGS // SESSION_SUMMARY",
+        "uplinkLive": "UPLINK_LIVE",
+        "socialUplinks": "SOCIAL_UPLINKS",
+        "statusStable": "STATUS: STABLE",
+        "activeProtocol": "ACTIVE_PROTOCOL"
     }
 }

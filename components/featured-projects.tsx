@@ -1,18 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { projects } from "@/lib/data";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Github, Terminal, Folder, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowUpRight, Github, Terminal, Folder, ChevronDown, ChevronUp, Loader2 } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 
 const FeaturedProjects = () => {
     const { t } = useLanguage();
+    const router = useRouter();
     const [showAll, setShowAll] = useState(false);
+    const [loadingProjectId, setLoadingProjectId] = useState<string | null>(null);
+
+    const handleProjectClick = (projectId: string, e: React.MouseEvent) => {
+        e.preventDefault();
+        setLoadingProjectId(projectId);
+
+        // Navigation delay to show the "hacker" loading animation
+        setTimeout(() => {
+            router.push(`/projects/${projectId}`);
+        }, 1200);
+    };
 
     const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
@@ -56,96 +67,129 @@ const FeaturedProjects = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                                className="group relative border border-primary/30 bg-black/50 hover:bg-black/80 hover:border-primary transition-all duration-300 flex flex-col h-full"
+                                className="group terminal-window flex flex-col h-full hover:border-primary transition-all duration-300"
                             >
-                                {/* Terminal Header for Card */}
-                                <div className="h-8 bg-primary/10 border-b border-primary/30 flex items-center px-4 justify-between">
+                                {/* Terminal Header */}
+                                <div className="terminal-header">
                                     <div className="flex gap-1.5">
                                         <div className="w-2 h-2 rounded-full bg-red-500/50"></div>
                                         <div className="w-2 h-2 rounded-full bg-yellow-500/50"></div>
                                         <div className="w-2 h-2 rounded-full bg-green-500/50"></div>
                                     </div>
-                                    <div className="text-[10px] text-primary/60 uppercase tracking-wider">{project.title.replace(/\s+/g, '_').toLowerCase()}.exe</div>
-                                </div>
-
-                                <div className="relative aspect-video overflow-hidden border-b border-primary/20 group-hover:border-primary/50 transition-colors">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover transition-all duration-500"
-                                    />
-                                    {/* Scanline Effect */}
-                                    <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] pointer-events-none opacity-20"></div>
-
-                                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay"></div>
-
-                                    <div className="absolute bottom-4 right-4 flex gap-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                        <Link href={`/projects/${project.id}`} className="bg-black border border-primary text-primary hover:bg-primary hover:text-black p-2 transition-colors">
-                                            <ArrowUpRight className="w-4 h-4" />
-                                        </Link>
-                                        {project.github && (
-                                            <Link href={project.github} target="_blank" className="bg-black border border-primary text-primary hover:bg-primary hover:text-black p-2 transition-colors">
-                                                <Github className="w-4 h-4" />
-                                            </Link>
-                                        )}
+                                    <div className="text-[9px] text-primary/70 font-bold uppercase tracking-widest truncate max-w-[150px]">
+                                        {project.title.replace(/\s+/g, '_').toLowerCase()}.sys
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <div className="w-2 h-2 border border-primary/30"></div>
+                                        <div className="w-2 h-2 bg-primary/20"></div>
                                     </div>
                                 </div>
 
-                                <div className="p-6 flex-grow flex flex-col">
-                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors uppercase tracking-tight">
-                                        {">"} {project.title}
+                                <div className="relative overflow-hidden bg-primary/5 group-hover:bg-primary/10 transition-colors">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-auto transition-all duration-500"
+                                    />
+
+                                    <div className="absolute top-2 right-2 flex gap-1">
+                                        <div className="text-[8px] bg-black/80 text-primary border border-primary/30 px-1 py-0.5 font-bold">{t("projects.locked")}</div>
+                                    </div>
+                                </div>
+
+                                <div className="p-6 flex-grow flex flex-col relative">
+                                    {/* Corners Decoration */}
+                                    <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary/20 group-hover:border-primary/50 transition-colors"></div>
+                                    <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary/20 group-hover:border-primary/50 transition-colors"></div>
+
+                                    <h3 className="text-xl font-bold text-zinc-400 mb-3 group-hover:text-primary transition-colors uppercase tracking-tight flex items-center gap-2">
+                                        <span className="text-primary/50">#</span> {project.title}
                                     </h3>
-                                    <p className="text-muted-foreground text-sm mb-6 line-clamp-3 leading-relaxed font-sans">
-                                        // {project.description}
+                                    <p className="text-zinc-500 text-sm mb-6 leading-relaxed font-sans line-clamp-3 italic">
+                                        "{project.description}"
                                     </p>
 
-                                    <div className="mt-auto pt-4 flex flex-col gap-4">
-                                        {project.teamMembers && (
-                                            <div className="flex flex-col gap-2">
-                                                <div className="text-[10px] text-primary/40 uppercase tracking-widest font-bold flex items-center gap-2">
-                                                    <span className="w-1 h-1 bg-primary/40 rounded-full"></span>
-                                                    {t("projects.contributors")}
-                                                </div>
-                                                <div className="flex -space-x-2 overflow-hidden">
-                                                    {project.teamMembers.map((member) => (
-                                                        <Link
-                                                            key={member.name}
-                                                            href={member.github}
-                                                            target="_blank"
-                                                            className="inline-block h-8 w-8 rounded-full ring-2 ring-black hover:ring-primary transition-all overflow-hidden bg-secondary relative group/member"
-                                                            title={member.name}
-                                                        >
-                                                            <Image
-                                                                src={`https://github.com/${member.name}.png`}
-                                                                alt={member.name}
-                                                                fill
-                                                                unoptimized
-                                                                className="object-cover transition-all"
-                                                            />
-                                                            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover/member:opacity-100 transition-opacity"></div>
-                                                        </Link>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        <div className="border-t border-primary/10 pt-4 flex flex-wrap gap-2">
+                                    <div className="mt-auto space-y-6">
+                                        <div className="flex flex-wrap gap-2">
                                             {project.tech.map((t) => (
-                                                <span key={t} className="text-xs font-bold text-primary/70 border border-primary/20 px-2 py-1 uppercase">
+                                                <span key={t} className="text-[10px] font-bold text-primary/60 bg-primary/5 border border-primary/10 px-2 py-0.5 uppercase tracking-tighter">
                                                     {t}
                                                 </span>
                                             ))}
                                         </div>
+
+                                        <div className="flex gap-3">
+                                            <Link
+                                                href={`/projects/${project.id}`}
+                                                onClick={(e: React.MouseEvent) => handleProjectClick(project.id, e)}
+                                                className="flex-1 flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/30 py-2.5 hover:bg-primary hover:text-black transition-all group/btn"
+                                            >
+                                                <span>{t("projects.executeProject")}</span>
+                                                <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                                            </Link>
+                                            {project.github && (
+                                                <Link
+                                                    href={project.github}
+                                                    target="_blank"
+                                                    className="w-12 flex items-center justify-center border border-primary/30 text-primary/50 hover:border-primary hover:text-primary transition-all"
+                                                >
+                                                    <Github className="w-4 h-4" />
+                                                </Link>
+                                            )}
+                                        </div>
                                     </div>
 
-                                    <Link
-                                        href={`/projects/${project.id}`}
-                                        className="mt-6 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-primary hover:bg-primary hover:text-black border border-primary py-2 px-4 transition-all"
-                                    >
-                                        <span>{t("projects.executeProject")}</span>
-                                        <ArrowUpRight className="w-3 h-3" />
-                                    </Link>
+                                    {/* Loading Overlay */}
+                                    <AnimatePresence>
+                                        {loadingProjectId === project.id && (
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                                className="absolute inset-0 z-50 bg-black/95 flex flex-col items-center justify-center p-6 border border-primary shadow-[0_0_50px_rgba(0,255,0,0.2)]"
+                                            >
+                                                <div className="relative w-20 h-20 mb-6">
+                                                    <motion.div
+                                                        animate={{ rotate: 360 }}
+                                                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                                                        className="absolute inset-0 border-2 border-primary/10 border-t-primary rounded-full shadow-[0_0_15px_rgba(0,255,0,0.3)]"
+                                                    />
+                                                    <motion.div
+                                                        animate={{ rotate: -360 }}
+                                                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                                                        className="absolute inset-4 border-2 border-primary/20 border-b-primary rounded-full"
+                                                    />
+                                                    <div className="absolute inset-0 flex items-center justify-center">
+                                                        <Terminal className="w-8 h-8 text-primary animate-pulse" />
+                                                    </div>
+                                                </div>
+                                                <div className="text-center space-y-2">
+                                                    <div className="text-[10px] text-primary font-black uppercase tracking-[0.3em] animate-pulse">
+                                                        {t("projects.initializingAccess")}
+                                                    </div>
+                                                    <div className="flex gap-1 justify-center">
+                                                        {[0, 1, 2].map((i) => (
+                                                            <motion.div
+                                                                key={i}
+                                                                animate={{ opacity: [0, 1, 0] }}
+                                                                transition={{ duration: 1, delay: i * 0.2, repeat: Infinity }}
+                                                                className="w-1.5 h-1.5 bg-primary rounded-full"
+                                                            />
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Decorative background numbers */}
+                                                <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden text-[8px] leading-none text-primary break-all font-mono">
+                                                    {Array.from({ length: 10 }).map((_, i) => (
+                                                        <div key={i} className="whitespace-nowrap">
+                                                            {Math.random().toString(16).repeat(10)}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
                             </motion.div>
                         ))}

@@ -53,7 +53,10 @@ export default function RootLayout({
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
             <TooltipProvider>
-              {children}
+              <div className="crt min-h-screen relative overflow-x-hidden">
+                <div className="noise" />
+                {children}
+              </div>
               <ScrollToTop />
             </TooltipProvider>
           </ThemeProvider>

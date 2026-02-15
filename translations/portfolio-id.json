@@ -2,8 +2,17 @@
     "nav": {
         "home": "BERANDA",
         "projects": "PROYEK",
+        "github": "AKTIVITAS",
         "certificates": "SERTIFIKAT",
-        "contact": "KONTAK"
+        "contact": "KONTAK",
+        "directoryListing": "Daftar Direktori",
+        "systemCommands": "Perintah Sistem",
+        "terminalActive": "Sesi Terminal Aktif",
+        "sendMail": "[KIRIM_EMAIL]",
+        "systemNav": "NAVIGASI_SISTEM",
+        "systemOnline": "Sistem_Aktif",
+        "loc": "LOK",
+        "net": "JARINGAN: TERENKRIPSI"
     },
     "hero": {
         "secureConnection": "[KONEKSI AMAN TERHUBUNG]",
@@ -15,10 +24,13 @@
         "status": "> Status: ONLINE",
         "ready": "> Siap untuk misi...",
         "greeting": "HALO, SAYA ",
-        "initializeProtocol": "Inisialisasi Protokol",
+        "initializeProtocol": "HUBUNGI SAYA",
         "viewCv": "Lihat CV",
         "targetLocked": "TARGET_TERKUNCI",
-        "bio": "Seorang Pelajar SMK Jurusan Pengembangan Perangkat Lunak dan Gim yang memiliki minat besar dalam pengembangan web dan teknologi informasi."
+        "bio": "Seorang Pelajar SMK Jurusan Pengembangan Perangkat Lunak dan Gim yang memiliki minat besar dalam pengembangan web dan teknologi informasi.",
+        "sessionInit": "INISIALISASI_SESI_PENGGUNA.LOG",
+        "biometricScan": "Pemindaian_Biometrik: OK",
+        "uplinkNode": "Node_Uplink: AKTIF"
     },
     "projects": {
         "directory": "./proyek",
@@ -37,17 +49,46 @@
         "date": "Tanggal",
         "contributors": "Tim Kontributor",
         "notFound": "PROYEK_TIDAK_DITEMUKAN",
-        "returnRoot": "Kembali ke Beranda"
+        "returnRoot": "Kembali ke Beranda",
+        "analysisDocket": "DOKET_ANALISIS_PROYEK",
+        "missionOverview": "IKHTISAR_MISI",
+        "executionDetails": "DETAIL_EKSEKUSI",
+        "systemSnapshots": "SNAPSHOT_SISTEM",
+        "metadataProbe": "PROBE_METADATA.SH",
+        "secureFile": "FILE_AMAN: #{id}",
+        "authorizedContributor": "KONTRIBUTOR_RESMI",
+        "status": "STATUS",
+        "successful": "BERHASIL",
+        "deployDate": "TANGGAL_DEPLOYS",
+        "locked": "TERKUNCI",
+        "initializingAccess": "MENGINISIALISASI_AKSES..."
     },
     "certificates": {
         "directory": "./sertifikat",
         "title": "SERTIFIKAT",
         "titleHighlight": "_",
         "verified": "TERVERIFIKASI",
-        "issuer": "Penerbit"
+        "issuer": "Penerbit",
+        "verifiedMainframe": "TERVERIFIKASI_PADA_MAINFRAME",
+        "download": "Unduh Sertifikat",
+        "closePreview": ":: Tutup_Pratinjau",
+        "scanning": "> Memindai database untuk kredensial terverifikasi... [DITEMUKAN {count}]",
+        "issuerUnit": "UNIT_PENERBIT",
+        "viewCredential": "LIHAT_KREDENSIAL",
+        "status": "Status"
+    },
+    "github": {
+        "title": "AKTIVITAS GITHUB",
+        "titleHighlight": "_",
+        "contributions": "Kontribusi dalam setahun terakhir",
+        "viewProfile": "Lihat Profil Lengkap",
+        "activityProbe": ":: MENJALANKAN_PROBE_AKTIVITAS",
+        "analysisMode": "MODE_ANALISIS: STREAM_KONTRIBUSI",
+        "uplinkStable": "UPLINK_STABIL",
+        "secureDataNode": "NODE_DATA_AMAN"
     },
     "footer": {
-        "systemShutdown": "System Shutdown",
+        "systemShutdown": "Sistem Berhenti",
         "thankYou": "> Terima kasih telah mengunjungi terminal aman.",
         "sessionSaved": "> Data sesi berhasil disimpan.",
         "contactProtocol": "> Untuk memulai protokol kolaborasi, jalankan perintah kontak di bawah.",
@@ -57,6 +98,11 @@
         "email": "EMAIL",
         "copyright": "[SISTEM] © {year} RIFQI ARDIAN. SEMUA HAK DILINDUNGI.",
         "terminateSession": "AKHIRI_SESI",
-        "terminalActive": "Sesi Terminal Aktif"
+        "terminalActive": "Sesi Terminal Aktif",
+        "finalLogs": "LOGS_AKHIR // RINGKASAN_SESI",
+        "uplinkLive": "UPLINK_AKTIF",
+        "socialUplinks": "UPLINK_SOSIAL",
+        "statusStable": "STATUS: STABIL",
+        "activeProtocol": "PROTOKOL_AKTIF"
     }
 }

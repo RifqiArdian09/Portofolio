@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import { Navbar } from "@/components/navbar";
 import FeaturedProjects from "@/components/featured-projects";
+import GitHubActivity from "@/components/github-activity";
 import Certificates from "@/components/certificates";
 
 export default function Home() {
@@ -10,9 +11,12 @@ export default function Home() {
       <Navbar />
       <main className="overflow-hidden">
         <Hero />
-      
+
         <section id="projects">
           <FeaturedProjects />
+        </section>
+        <section id="github">
+          <GitHubActivity />
         </section>
         <section id="certificates">
           <Certificates />

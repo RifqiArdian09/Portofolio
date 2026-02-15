@@ -11,63 +11,94 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-black border-t border-primary/50 pt-16 pb-8 font-mono relative overflow-hidden">
-      {/* Scanline Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] pointer-events-none opacity-10"></div>
+    <footer id="contact" className="py-24 relative overflow-hidden font-mono border-t border-primary/20">
 
       <div className="container mx-auto max-w-7xl px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-          {/* Left: Terminal Output */}
-          <div>
-            <div className="flex items-center gap-2 text-primary font-bold mb-6">
-              <Terminal className="w-5 h-5" />
-              <span className="tracking-widest uppercase">{t("footer.systemShutdown")}</span>
+        <div className="terminal-window">
+          {/* Footer Header */}
+          <div className="terminal-header">
+            <div className="flex gap-1.5">
+              <div className="w-2 h-2 rounded-full bg-red-500/30"></div>
+              <div className="w-2 h-2 rounded-full bg-yellow-500/30"></div>
+              <div className="w-2 h-2 rounded-full bg-green-500/30"></div>
             </div>
-            <div className="font-sans text-muted-foreground max-w-md space-y-2 mb-8">
-              <p>{t("footer.thankYou")}</p>
-              <p>{t("footer.sessionSaved")}</p>
-              <p>{t("footer.contactProtocol")}</p>
+            <div className="text-[9px] font-bold text-primary/60 tracking-[0.3em] uppercase">
+              {t("footer.finalLogs")}
             </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-primary animate-pulse rounded-full"></div>
+              <span className="text-[8px] text-primary font-black uppercase tracking-tighter">{t("footer.uplinkLive")}</span>
+            </div>
+          </div>
 
-            <div className="flex items-center gap-4">
-              <Link href="/" className="text-2xl font-black italic tracking-tighter text-white block group">
+          <div className="p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Left: Branding & Message */}
+            <div className="space-y-8">
+              <Link href="/" className="text-3xl md:text-4xl font-black tracking-tighter text-white block group">
                 RIFQI<span className="text-primary group-hover:text-white transition-colors">ARDIAN</span>
-                <span className="animate-pulse ml-1 text-primary">_</span>
+                <span className="animate-blink ml-1 text-primary">_</span>
               </Link>
+
+              <div className="space-y-4 max-w-md">
+                <p className="text-zinc-500 text-sm leading-relaxed border-l border-primary/20 pl-4 italic">
+                  // {t("footer.thankYou")}
+                </p>
+                <div className="flex flex-col gap-1 text-[10px] text-primary/40 font-bold uppercase tracking-widest">
+                  <span>{t("footer.sessionSaved")}</span>
+                  <div className="flex gap-1">
+                    <div className="w-4 h-[2px] bg-primary/20"></div>
+                    <div className="w-12 h-[2px] bg-primary/10"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Social Commands */}
+            <div className="flex flex-col justify-center">
+              <div className="text-[10px] text-primary/40 font-black uppercase tracking-[0.4em] mb-6 flex items-center gap-4">
+                {t("footer.socialUplinks")}
+                <div className="h-[1px] flex-grow bg-primary/10"></div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { icon: Github, href: personalInfo.github, label: t("footer.github") },
+                  { icon: Linkedin, href: personalInfo.linkedin, label: t("footer.linkedin") },
+                  { icon: Instagram, href: personalInfo.instagram, label: t("footer.instagram") },
+                  { icon: Mail, href: `mailto:${personalInfo.email}`, label: t("footer.email") },
+                ].map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.href}
+                    target="_blank"
+                    className="flex items-center gap-3 px-4 py-4 border border-primary/20 bg-primary/5 hover:bg-primary hover:text-black hover:border-primary transition-all duration-300 group overflow-hidden relative"
+                  >
+                    <social.icon className="w-4 h-4 group-hover:scale-110 transition-transform relative z-10" />
+                    <span className="text-[10px] font-black tracking-widest relative z-10">{social.label}</span>
+                    <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Right: Commands / Links */}
-          <div className="flex flex-col md:items-end justify-center">
-            <div className="grid grid-cols-2 gap-4 w-full md:w-auto">
-              {[
-                { icon: Github, href: personalInfo.github, label: t("footer.github") },
-                { icon: Linkedin, href: personalInfo.linkedin, label: t("footer.linkedin") },
-                { icon: Instagram, href: personalInfo.instagram, label: t("footer.instagram") },
-                { icon: Mail, href: `mailto:${personalInfo.email}`, label: t("footer.email") },
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  target="_blank"
-                  className="flex items-center gap-3 px-4 py-3 border border-primary/30 hover:bg-primary hover:text-black hover:border-primary transition-all duration-300 group"
-                >
-                  <social.icon className="w-4 h-4" />
-                  <span className="text-xs font-bold tracking-widest">{social.label}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+          {/* Bottom Bar */}
+          <div className="border-t border-primary/10 p-6 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-bold uppercase tracking-[0.2em] text-primary/40">
+            <p className="flex items-center gap-2">
+              <span className="text-primary/20">[SYS]</span>
+              {t("footer.copyright").replace("{year}", currentYear.toString())}
+            </p>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-primary/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-primary/50">
-          <p>
-            {t("footer.copyright").replace("{year}", currentYear.toString())}
-          </p>
-          <div className="flex items-center gap-2 text-primary/80 hover:text-primary cursor-pointer transition-colors">
-            <Power className="w-3 h-3" />
-            <span>{t("footer.terminateSession")}</span>
+            <div className="flex items-center gap-8">
+              <div className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 bg-primary/40 rounded-full"></span>
+                <span>{t("footer.statusStable")}</span>
+              </div>
+              <div className="flex items-center gap-3 text-primary/60 hover:text-primary transition-colors cursor-help">
+                <Terminal className="w-3 h-3" />
+                <span>{t("footer.activeProtocol")}: v4.2.0</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

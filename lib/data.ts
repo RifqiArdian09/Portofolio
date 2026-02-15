@@ -7,8 +7,8 @@ export const personalInfo = {
     github: "https://github.com/RifqiArdian09",
     linkedin: "https://www.linkedin.com/in/rifqi-ardian-0547b7388/",
     instagram: "https://www.instagram.com/rifqiard._/",
-    email: "ardianrifqi77@gmail.com", // Assuming or placeholder
-    whatsapp: "6285182911840", // Placeholder
+    email: "ardianrifqi77@gmail.com",
+    whatsapp: "6285182911840",
 };
 
 export const techStack = [
@@ -64,15 +64,19 @@ Dibuat dengan Tailwind CSS 4 untuk UI yang futuristik. Penggunaan Livewire Volt 
     },
     {
         id: "upptik-um-bengkulu",
-        title: "Portal Profil UPTIK UMB",
+        title: "Profil UPTTIK UMB",
         description:
-            "Platform profil digital resmi UPTIK UM Bengkulu yang dikembangkan dengan Next.js 15 & Tailwind CSS 4 untuk mendemonstrasikan kapabilitas teknologi instansi.",
+            "Platform profil digital resmi UPTTIK UM Bengkulu yang dikembangkan dengan Next.js 15 & Tailwind CSS 4 untuk mendemonstrasikan kapabilitas teknologi instansi.",
         tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "Radix UI"],
         status: "Team Project",
         image: "/images/projek/upttik.png",
         demo: "https://upttik.umb.ac.id",
+        teamMembers: [
+            createMember("RifqiArdian09"),
+            createMember("Salmanziz21"),
+        ],
         date: "2026 Release",
-        content: `# Portal Profil & Portofolio Digital - UPTIK UMB
+        content: `Portal Profil & Portofolio Digital - UPTIK UMB
 
 Platform profil digital resmi milik Unit Pelaksana Teknis Teknologi Informasi dan Komunikasi (UPTIK) Universitas Muhammadiyah Bengkulu. Proyek ini bertujuan untuk menyediakan pusat informasi terpadu yang profesional mengenai identitas instansi, layanan teknologi, serta dokumentasi proyek.
 
@@ -219,112 +223,35 @@ Detail Implementasi:
 • Robust Authentication: Laravel Fortify dengan fitur Two-Factor Authentication (2FA) untuk perlindungan data sensitif.
 • Background Processing: Database Queues untuk menangani tugas berat laporan tanpa mengganggu performa aplikasi utama.`,
     },
-    {
-        id: "text-image-translator",
-        title: "Penerjemah Teks & Gambar",
-        description:
-            "Aplikasi Android berbasis Java untuk menerjemahkan teks dan gambar antar berbagai bahasa menggunakan teknologi AI Gemini dari Google.",
-        tech: ["Android Studio", "Java"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/Text-Image-Translator",
-        demo: "https://github.com/RifqiArdian09/Text-Image-Translator",
-        content: "Aplikasi Android berbasis Java untuk menerjemahkan teks dan gambar antar berbagai bahasa menggunakan teknologi AI Gemini dari Google.",
-    },
 
-    {
-        id: "essycoff-android",
-        title: "EssyCoff Android (POS)",
-        description: "Aplikasi Point of Sale sederhana untuk kedai kopi: kelola produk, transaksi, dan riwayat.",
-        tech: ["Android Studio", "Java", "Supabase"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/EssyCoffAndroid.git",
-        demo: "https://github.com/RifqiArdian09/EssyCoffAndroid.git",
-        content: "Aplikasi Point of Sale sederhana untuk kedai kopi: kelola produk, transaksi, dan riwayat.",
-    },
-    {
-        id: "al-quran-flutter",
-        title: "Al-Qur'an App",
-        description:
-            "Aplikasi Flutter untuk membaca Al-Qur'an, mendengarkan tilawah, jadwal sholat, doa harian, dan bookmark ayat.",
-        tech: ["Flutter", "Dart"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1507041957456-9c397ce39c97?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/Al-Quran-Flutter",
-        demo: "https://github.com/RifqiArdian09/Al-Quran-Flutter",
-        content: "Aplikasi Flutter untuk membaca Al-Qur'an, mendengarkan tilawah, jadwal sholat, doa harian, dan bookmark ayat.",
-    },
-    {
-        id: "celenganku",
-        title: "Celenganku",
-        description:
-            "Celenganku adalah aplikasi Android untuk membantu mengelola tabungan pribadi dengan pencatatan transaksi dan target.",
-        tech: ["Android Studio", "Java", "SQLite"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1554224155-169746997533?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/Celenganku",
-        demo: "https://github.com/RifqiArdian09/Celenganku",
-        content: "Celenganku adalah aplikasi Android untuk membantu mengelola tabungan pribadi dengan pencatatan transaksi dan target.",
-    },
-    {
-        id: "food-recipe-app",
-        title: "Food Recipe App",
-        description: "Aplikasi Android untuk menampilkan berbagai resep makanan menggunakan data dari TheMealDB.",
-        tech: ["Android Studio", "Java"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/FoodRecipeApp",
-        demo: "https://github.com/RifqiArdian09/FoodRecipeApp",
-        content: "Aplikasi Android untuk menampilkan berbagai resep makanan menggunakan data dari TheMealDB.",
-    },
     {
         id: "alquran-web",
         title: "Al-Quran Web",
-        description: "Aplikasi web Al-Quran dengan bookmark ayat dan pemutar audio.",
-        tech: ["React", "Vite"],
+        description:
+            "Aplikasi baca Al-Qur'an modern berbasis React dan Vite yang fokus pada kenyamanan membaca, performa cepat, dan aksesibilitas tinggi.",
+        tech: ["React 18", "Vite", "React Router", "API"],
         status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1507041957456-9c397ce39c97?auto=format&fit=crop&q=80&w=1200",
+        image: "/images/projek/alquran-web.png",
         github: "https://github.com/RifqiArdian09/alquran-web",
-        demo: "https://github.com/RifqiArdian09/alquran-web",
-        content: "Aplikasi web Al-Quran dengan bookmark ayat dan pemutar audio.",
-    },
-    {
-        id: "news-portal",
-        title: "News Portal",
-        description:
-            "Sistem manajemen konten lengkap untuk menerbitkan dan mengelola artikel berita dengan kategori dan penulis.",
-        tech: ["Laravel", "Tailwind", "MySQL"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/News-Portal",
-        demo: "https://github.com/RifqiArdian09/News-Portal",
-        content: "Sistem manajemen konten lengkap untuk menerbitkan dan mengelola artikel berita dengan kategori dan penulis.",
-    },
-    {
-        id: "file-converter",
-        title: "FileConverter",
-        description:
-            "Aplikasi berbasis Flask + LibreOffice untuk mengonversi file dengan antarmuka web modern dan drag & drop.",
-        tech: ["HTML", "CSS", "JavaScript", "Python", "Flask"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/FileConverter",
-        demo: "https://github.com/RifqiArdian09/FileConverter",
-        content: "Aplikasi berbasis Flask + LibreOffice untuk mengonversi file dengan antarmuka web modern dan drag & drop.",
-    },
-    {
-        id: "subtitle-generator",
-        title: "Subtitle Generator",
-        description: "Aplikasi untuk membuat file SRT dari upload video menggunakan Python dan Streamlit.",
-        tech: ["Python", "Streamlit"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/subtitle_genet-streamlit",
-        demo: "https://github.com/RifqiArdian09/subtitle_genet-streamlit",
-        content: "Aplikasi untuk membuat file SRT dari upload video menggunakan Python dan Streamlit.",
-    },
+        demo: "https://bacaquran-roan.vercel.app/",
+        date: "2024 Release",
+        content: `Al-Quran Web adalah aplikasi baca Al-Qur’an berbasis web yang dikembangkan menggunakan React dan Vite dengan fokus utama pada kenyamanan membaca, performa cepat, serta tampilan modern dan estetis.
 
+Detail Implementasi:
+
+1. Arsitektur & Teknologi:
+• React 18 & Vite: Memastikan proses development cepat dan hasil build yang sangat optimal.
+• Modular Design: Pemisahan jelas antara komponen UI, service API, custom hooks, dan context global.
+
+2. Fitur Unggulan & Fungsionalitas:
+• Audio Per Ayat: Sistem audio dikelola melalui AudioContext API untuk memastikan pemutaran yang mulus tanpa tumpang tindih.
+• Persistensi Data: Fitur bookmark, terakhir dibaca, dan pengaturan tema disimpan secara lokal menggunakan custom hooks berbasis localStorage.
+• Sistem Tema Dinamis: Implementasi mode gelap/terang dan sistem aksen warna menggunakan CSS custom properties (variables).
+
+3. Aksesibilitas & Performa:
+• Accessibility (A11y): Penggunaan aria-label dan kontras warna yang memadai untuk kenyamanan pengguna.
+• UX Intuitif: Animasi halus dan micro-interaction yang diterapkan tanpa mengorbankan kecepatan loading halaman.`,
+    },
 ];
 
 

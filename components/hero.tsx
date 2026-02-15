@@ -60,108 +60,139 @@ ${t("hero.ready")}`;
       onMouseMove={handleMouseMove}
       className="min-h-screen pt-24 pb-12 px-6 flex items-center justify-center font-mono overflow-hidden relative"
     >
-      {/* Background Grid & Particles */}
+      {/* Background Grid & HUD Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#00ff0010_1px,transparent_1px),linear-gradient(to_bottom,#00ff0010_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#00ff0008_1px,transparent_1px),linear-gradient(to_bottom,#00ff0008_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+
+        {/* HUD Markers */}
+        <div className="absolute top-10 left-10 w-20 h-20 border-l border-t border-primary/20"></div>
+        <div className="absolute bottom-10 right-10 w-20 h-20 border-r border-b border-primary/20"></div>
+
+        <div className="absolute top-1/2 left-4 -translate-y-1/2 flex flex-col gap-4 text-[8px] text-primary/30 font-bold uppercase vertical-text">
+          <span>LAT: 3.8231</span>
+          <span>LONG: 102.2748</span>
+        </div>
       </div>
 
-      <div className="container mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
+      <div className="container mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
 
-        {/* Left: Typing Content & Commands */}
-        <div className="order-2 lg:order-1">
+        {/* Left Content */}
+        <div className="order-2 lg:order-1 relative">
+          {/* Decorative HUD Circle */}
+          <div className="absolute -left-20 top-0 w-64 h-64 border border-primary/5 rounded-full -z-10 animate-[spin_20s_linear_infinite]"></div>
+
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center gap-2 mb-6">
-              <span className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
-              <span className="text-primary/50 text-xs tracking-widest uppercase">{t("hero.secureConnection")}</span>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="flex gap-1">
+                <div className="w-1 h-1 bg-red-500 rounded-full animate-pulse"></div>
+                <div className="w-1 h-1 bg-red-500/50 rounded-full"></div>
+              </div>
+              <span className="text-primary/40 text-[10px] font-black tracking-[0.4em] uppercase">{t("hero.secureConnection")}</span>
             </div>
 
-            {/* Typing Animation Block */}
-            <div className="bg-black/80 border-l-2 border-primary p-6 mb-8 shadow-[0_0_20px_rgba(0,255,0,0.1)] min-h-[180px]">
-              <div className="text-white text-sm md:text-base leading-relaxed whitespace-pre-line font-bold">
-                {typedText}
-                <span className="inline-block w-2.5 h-5 bg-primary ml-1 animate-pulse align-middle"></span>
+            {/* Terminal Block */}
+            <div className="terminal-window mb-10 overflow-hidden">
+              <div className="terminal-header">
+                <div className="flex gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-primary/20"></div>
+                  <div className="w-2 h-2 rounded-full bg-primary/10"></div>
+                </div>
+                <div className="text-[9px] font-bold text-primary/50 tracking-widest">{t("hero.sessionInit")}</div>
+                <div className="w-4 h-[1px] bg-primary/30"></div>
+              </div>
+              <div className="p-6 bg-black/40 min-h-[160px] font-bold">
+                <div className="text-primary/90 text-sm md:text-base leading-relaxed whitespace-pre-line">
+                  {typedText}
+                  <span className="inline-block w-2 h-4 bg-primary ml-1 animate-blink align-middle"></span>
+                </div>
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter">
-              {t("hero.greeting")}<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600 glitch-text" data-text={personalInfo.name}>
+            <h1 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-none">
+              {t("hero.greeting")}<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-green-400 to-emerald-600 glitch-text relative inline-block py-2">
                 <DecryptedText text={personalInfo.name.toUpperCase()} />
               </span>
             </h1>
 
-            <p className="text-lg text-white mb-10 max-w-xl border-l border-primary/30 pl-4">
-              {t("hero.bio")}
+            <p className="text-zinc-400 text-lg mb-12 max-w-xl border-l-2 border-primary/30 pl-6 italic leading-relaxed">
+              // {t("hero.bio")}
             </p>
 
-            {/* Interactive Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <Link href="#contact" className="group relative px-8 py-3 bg-primary text-black font-bold uppercase tracking-wider overflow-hidden">
-                <span className="relative z-10 flex items-center gap-2 group-hover:gap-3 transition-all">
-                  {t("hero.initializeProtocol")} <ArrowRight className="w-4 h-4" />
+            <div className="flex flex-wrap gap-6">
+              <Link href="#contact" className="group relative px-10 py-4 bg-primary text-black font-black uppercase tracking-widest overflow-hidden transition-transform hover:scale-105 active:scale-95">
+                <span className="relative z-10 flex items-center gap-3">
+                  {t("hero.initializeProtocol")} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
-                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay"></div>
-                {/* Scanline effect on button */}
-                <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.3)_50%,transparent_75%)] bg-[length:250%_250%] animate-[scanline_2s_linear_infinite] opacity-0 group-hover:opacity-20 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </Link>
 
-              <Link href={personalInfo.cvPath} target="_blank" className="group px-8 py-3 border border-primary text-primary font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors flex items-center gap-2">
-                <FileText className="w-4 h-4" /> {t("hero.viewCv")}
+              <Link href={personalInfo.cvPath} target="_blank" className="px-10 py-4 border border-primary/30 text-primary font-black uppercase tracking-widest hover:bg-primary/5 hover:border-primary transition-all flex items-center gap-3 group">
+                <FileText className="w-5 h-5 group-hover:scale-110 transition-transform" /> {t("hero.viewCv")}
               </Link>
             </div>
           </motion.div>
         </div>
 
-        {/* Right: Hacker Style Profile Image with Parallax */}
+        {/* Right Content */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end prospective-1000">
           <motion.div
             style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-            className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[450px] md:h-[450px]"
+            className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[500px] md:h-[500px]"
           >
-            {/* Frame Layers */}
-            <div className="absolute inset-0 border-2 border-primary/30 rotate-6 translate-z-10"></div>
-            <div className="absolute inset-0 border-2 border-dashed border-primary/30 -rotate-3 translate-z-20"></div>
+            {/* HUD Rings */}
+            <div className="absolute inset-0 border border-primary/10 rounded-full animate-[spin_30s_linear_infinite]"></div>
+            <div className="absolute inset-10 border border-dashed border-primary/5 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
 
-            {/* Main Image Container */}
-            <div className="absolute inset-4 bg-black border border-primary overflow-hidden shadow-[0_0_30px_rgba(0,255,0,0.3)] translate-z-30 group">
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,255,0,0.1)_50%)] bg-[length:100%_4px] pointer-events-none z-20"></div>
+            {/* Corner Markers */}
+            <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-primary animate-pulse"></div>
+            <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-primary animate-pulse shadow-[0_0_15px_rgba(0,255,0,0.5)]"></div>
+
+            {/* Profile Container */}
+            <div className="absolute inset-6 terminal-window overflow-hidden group">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,0,0.1)_0%,transparent_70%)] z-10"></div>
               <Image
                 src={personalInfo.profileImage}
-                alt="Hacker Profile"
+                alt="Profile"
                 fill
-                className="object-cover transition-all duration-500"
+                className="object-cover transition-all duration-700 scale-110 group-hover:scale-100"
               />
 
-              {/* HUD Overlays */}
-              <div className="absolute top-4 left-4 flex gap-1 z-30">
-                <div className="w-8 h-1 bg-primary animate-pulse"></div>
-                <div className="w-2 h-1 bg-primary/50"></div>
-                <div className="w-2 h-1 bg-primary/30"></div>
-              </div>
+              {/* Dynamic Scanline */}
+              <div className="absolute inset-0 bg-primary/10 h-[2px] w-full z-20 animate-scanline"></div>
 
-              <div className="absolute bottom-4 right-4 text-[10px] bg-primary text-black px-2 py-1 font-bold z-30">
-                {t("hero.targetLocked")}
+              <div className="absolute bottom-6 left-6 z-30 flex flex-col gap-1">
+                <div className="text-[10px] bg-primary text-black px-2 py-0.5 font-black uppercase">
+                  {t("hero.targetLocked")}
+                </div>
+                <div className="text-[8px] text-primary font-bold bg-black/60 px-2 py-0.5 border border-primary/20">
+                  SYSTEM_ID: ARDIAN_09
+                </div>
               </div>
-
-              {/* Glitch Effect Elements (CSS can be added globally if needed, simulated here with overlay) */}
-              <div className="absolute inset-0 bg-primary mix-blend-overlay opacity-0 group-hover:opacity-20 transition-opacity duration-100"></div>
             </div>
 
-            {/* Floating Tech Elements */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -right-8 top-1/2 -translate-y-1/2 bg-black border border-primary p-2 shadow-lg z-40 translate-z-40"
-            >
-              <Terminal className="w-6 h-6 text-primary" />
-            </motion.div>
+            {/* Floating HUD Labels */}
+            <div className="absolute -right-12 top-1/4 bg-black/80 border border-primary/30 p-2 text-[10px] text-primary/60 font-bold vertical-text uppercase tracking-widest h-32 flex items-center">
+              {t("hero.biometricScan")}
+            </div>
+
+            <div className="absolute -left-12 bottom-1/4 bg-black/80 border border-primary/30 p-2 text-[10px] text-primary/60 font-bold vertical-text uppercase tracking-widest h-32 flex items-center rotate-180">
+              {t("hero.uplinkNode")}
+            </div>
           </motion.div>
         </div>
 
       </div>
+
+      <style jsx>{`
+        .vertical-text {
+          writing-mode: vertical-rl;
+        }
+      `}</style>
     </section>
   );
 };
