@@ -123,15 +123,15 @@ ${t("hero.ready")}`;
               // {t("hero.bio")}
             </p>
 
-            <div className="flex flex-wrap gap-6">
-              <Link href="#contact" className="group relative px-10 py-4 bg-primary text-black font-black uppercase tracking-widest overflow-hidden transition-transform hover:scale-105 active:scale-95">
-                <span className="relative z-10 flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <Link href="#contact" className="group relative w-full sm:w-auto px-10 py-4 bg-primary text-black font-black uppercase tracking-widest overflow-hidden transition-transform hover:scale-105 active:scale-95 text-center">
+                <span className="relative z-10 flex items-center justify-center gap-3">
                   {t("hero.initializeProtocol")} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               </Link>
 
-              <Link href={personalInfo.cvPath} target="_blank" className="px-10 py-4 border border-primary/30 text-primary font-black uppercase tracking-widest hover:bg-primary/5 hover:border-primary transition-all flex items-center gap-3 group">
+              <Link href={personalInfo.cvPath} target="_blank" className="w-full sm:w-auto px-10 py-4 border border-primary/30 text-primary font-black uppercase tracking-widest hover:bg-primary/5 hover:border-primary transition-all flex items-center justify-center gap-3 group text-center">
                 <FileText className="w-5 h-5 group-hover:scale-110 transition-transform" /> {t("hero.viewCv")}
               </Link>
             </div>
@@ -149,8 +149,8 @@ ${t("hero.ready")}`;
             <div className="absolute inset-10 border border-dashed border-primary/5 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
 
             {/* Corner Markers */}
-            <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-primary animate-pulse"></div>
-            <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-primary animate-pulse shadow-[0_0_15px_rgba(0,255,0,0.5)]"></div>
+            <div className="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-primary"></div>
+            <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-primary shadow-[0_0_15px_rgba(0,255,0,0.5)]"></div>
 
             {/* Profile Container */}
             <div className="absolute inset-6 terminal-window overflow-hidden group">

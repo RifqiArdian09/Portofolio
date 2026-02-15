@@ -177,7 +177,7 @@ const Certificates = () => {
                             </div>
 
                             {/* Decorative scanline on modal */}
-                            <div className="absolute inset-x-0 bottom-0 h-1 bg-primary animate-pulse opacity-30"></div>
+                            <div className="absolute inset-x-0 bottom-0 h-1 bg-primary opacity-30"></div>
                         </motion.div>
                     </motion.div>
                 )}

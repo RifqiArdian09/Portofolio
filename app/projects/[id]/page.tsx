@@ -175,7 +175,7 @@ const ProjectDetail = () => {
                                             </div>
                                             <div className="p-3 border border-primary/10 bg-primary/5">
                                                 <div className="text-[8px] text-primary/40 font-black mb-1 uppercase tracking-widest">{t("projects.status")}</div>
-                                                <div className="text-xs font-bold text-green-500 animate-pulse uppercase tracking-tighter">{t("projects.successful")}</div>
+                                                <div className="text-xs font-bold text-green-500 uppercase tracking-tighter">{t("projects.successful")}</div>
                                             </div>
                                         </div>
 

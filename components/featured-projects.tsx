@@ -160,11 +160,11 @@ const FeaturedProjects = () => {
                                                         className="absolute inset-4 border-2 border-primary/20 border-b-primary rounded-full"
                                                     />
                                                     <div className="absolute inset-0 flex items-center justify-center">
-                                                        <Terminal className="w-8 h-8 text-primary animate-pulse" />
+                                                        <Terminal className="w-8 h-8 text-primary" />
                                                     </div>
                                                 </div>
                                                 <div className="text-center space-y-2">
-                                                    <div className="text-[10px] text-primary font-black uppercase tracking-[0.3em] animate-pulse">
+                                                    <div className="text-[10px] text-primary font-black uppercase tracking-[0.3em]">
                                                         {t("projects.initializingAccess")}
                                                     </div>
                                                     <div className="flex gap-1 justify-center">
@@ -205,11 +205,11 @@ const FeaturedProjects = () => {
                         <span className="relative z-10 flex items-center gap-2">
                             {showAll ? (
                                 <>
-                                    {t("projects.viewLess")} <ChevronUp className="w-5 h-5 animate-bounce" />
+                                    {t("projects.viewLess")} <ChevronUp className="w-5 h-5" />
                                 </>
                             ) : (
                                 <>
-                                    {t("projects.viewMore")} <ChevronDown className="w-5 h-5 animate-bounce" />
+                                    {t("projects.viewMore")} <ChevronDown className="w-5 h-5" />
                                 </>
                             )}
                         </span>
