@@ -223,11 +223,11 @@ const ProjectDetail = () => {
                                         </div>
                                         <div className="text-[8px] bg-primary/10 px-1.5 py-0.5 border border-primary/20 text-primary/60 font-black">100%_SYNC</div>
                                     </div>
-                                    <div className="relative w-full aspect-[16/9] bg-black">
+                                    <div className="relative w-full bg-black/40">
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="w-full h-full object-cover transition-all duration-500"
+                                            className="w-full h-auto block transition-all duration-500"
                                         />
                                     </div>
                                 </div>
