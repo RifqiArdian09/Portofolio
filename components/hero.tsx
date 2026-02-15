@@ -155,12 +155,10 @@ ${t("hero.ready")}`;
             {/* Profile Container */}
             <div className="absolute inset-6 terminal-window overflow-hidden group">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,0,0.1)_0%,transparent_70%)] z-10"></div>
-              <Image
+              <img
                 src={personalInfo.profileImage}
                 alt="Profile"
-                fill
-                unoptimized
-                className="object-cover transition-all duration-700 scale-110 group-hover:scale-100"
+                className="w-full h-full object-cover transition-all duration-700 scale-110 group-hover:scale-100"
               />
 
               {/* Dynamic Scanline */}
