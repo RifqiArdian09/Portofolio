@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none">
+  <!-- Background -->
+  <rect width="180" height="180" fill="#000000"/>
+  
+  <!-- Terminal border -->
+  <rect x="10" y="10" width="160" height="160" stroke="#00ff00" stroke-width="4" fill="none"/>
+  
+  <!-- Inner glow -->
+  <rect x="10" y="10" width="160" height="160" stroke="#00ff00" stroke-width="2" fill="none" opacity="0.3"/>
+  
+  <!-- Terminal prompt symbol > -->
+  <path d="M40 60 L80 90 L40 120" stroke="#00ff00" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Terminal cursor _ -->
+  <rect x="90" y="110" width="50" height="8" fill="#00ff00">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Scanline effect -->
+  <rect x="10" y="10" width="160" height="160" fill="url(#scanline)" opacity="0.08"/>
+  
+  <!-- Grid overlay -->
+  <defs>
+    <pattern id="scanline" patternUnits="userSpaceOnUse" width="160" height="4">
+      <rect width="160" height="2" fill="#00ff00"/>
+    </pattern>
+    
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="20" height="20">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00ff00" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <rect x="10" y="10" width="160" height="160" fill="url(#grid)"/>
+</svg>

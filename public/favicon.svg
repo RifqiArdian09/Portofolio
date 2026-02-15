@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#000000" rx="4"/>
+  
+  <!-- Terminal border -->
+  <rect x="2" y="2" width="28" height="28" stroke="#00ff00" stroke-width="1.5" fill="none"/>
+  
+  <!-- Terminal prompt symbol > -->
+  <path d="M8 10 L12 14 L8 18" stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Terminal cursor _ -->
+  <rect x="14" y="17" width="8" height="2" fill="#00ff00">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Scanline effect -->
+  <rect x="2" y="2" width="28" height="28" fill="url(#scanline)" opacity="0.1"/>
+  
+  <defs>
+    <pattern id="scanline" patternUnits="userSpaceOnUse" width="28" height="2">
+      <rect width="28" height="1" fill="#00ff00"/>
+    </pattern>
+  </defs>
+</svg>

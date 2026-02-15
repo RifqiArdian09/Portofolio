@@ -1,0 +1,266 @@
+export const personalInfo = {
+    name: "Rifqi Ardian",
+    role: "Fullstack Developer",
+    bio: "I'm a passionate Fullstack Developer with expertise in modern web technologies. I love building scalable applications and creating beautiful user experiences.",
+    profileImage: "/images/profile.png",
+    cvPath: "/images/CV RIFQI ARDIAN.pdf",
+    github: "https://github.com/RifqiArdian09",
+    linkedin: "https://www.linkedin.com/in/rifqi-ardian-0547b7388/",
+    instagram: "https://www.instagram.com/rifqiard._/",
+    email: "ardianrifqi77@gmail.com", // Assuming or placeholder
+    whatsapp: "6285182911840", // Placeholder
+};
+
+export const techStack = [
+    { name: "HTML", icon: "/icons/html.svg" },
+    { name: "CSS", icon: "/icons/css.svg" },
+    { name: "JavaScript", icon: "/icons/js.svg" },
+    { name: "PHP", icon: "/icons/php.svg" },
+    { name: "Laravel", icon: "/icons/lara.svg" },
+    { name: "MySQL", icon: "/icons/mysql.svg" },
+    { name: "Supabase", icon: "/icons/supabase.svg" },
+    { name: "Tailwind CSS", icon: "/icons/tailwind.svg" },
+    { name: "Next.js", icon: "/icons/next.svg" },
+    { name: "React", icon: "/icons/react.svg" },
+    { name: "Livewire", icon: "/icons/Livewire.svg" },
+    { name: "Filament", icon: "/icons/filament.png" },
+];
+
+const createMember = (username: string) => ({
+    name: username,
+    github: `https://github.com/${username}`
+});
+
+export const projects = [
+    {
+        id: "w-vote",
+        title: "W-Vote",
+        description:
+            "Aplikasi pemilihan OSIS dengan antarmuka modern menggunakan Laravel, Flux UI, dan Livewire untuk pengalaman voting yang interaktif.",
+        tech: ["Laravel", "Livewire", "Tailwind", "MySQL"],
+        status: "Team Project",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RayanKhairullah/w-vote",
+        demo: "https://github.com/RayanKhairullah/w-vote",
+        content: "Aplikasi pemilihan OSIS dengan antarmuka modern menggunakan Laravel, Flux UI, dan Livewire untuk pengalaman voting yang interaktif.",
+        teamMembers: [createMember("RayanKhairullah"), createMember("RifqiArdian09"), createMember("icanpatra")],
+    },
+    {
+        id: "text-image-translator",
+        title: "Penerjemah Teks & Gambar",
+        description:
+            "Aplikasi Android berbasis Java untuk menerjemahkan teks dan gambar antar berbagai bahasa menggunakan teknologi AI Gemini dari Google.",
+        tech: ["Android Studio", "Java"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/Text-Image-Translator",
+        demo: "https://github.com/RifqiArdian09/Text-Image-Translator",
+        content: "Aplikasi Android berbasis Java untuk menerjemahkan teks dan gambar antar berbagai bahasa menggunakan teknologi AI Gemini dari Google.",
+    },
+    {
+        id: "rental-electronics",
+        title: "Rental Elektronik",
+        description:
+            "Aplikasi web modern yang dirancang untuk memudahkan penyewaan berbagai alat elektronik secara praktis, cepat, dan aman.",
+        tech: ["Laravel", "Tailwind", "MySQL"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/rental-electronics",
+        demo: "https://github.com/RifqiArdian09/rental-electronics",
+        content: "Aplikasi web modern yang dirancang untuk memudahkan penyewaan berbagai alat elektronik secara praktis, cepat, dan aman.",
+    },
+    {
+        id: "essycoff-android",
+        title: "EssyCoff Android (POS)",
+        description: "Aplikasi Point of Sale sederhana untuk kedai kopi: kelola produk, transaksi, dan riwayat.",
+        tech: ["Android Studio", "Java", "Supabase"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/EssyCoffAndroid.git",
+        demo: "https://github.com/RifqiArdian09/EssyCoffAndroid.git",
+        content: "Aplikasi Point of Sale sederhana untuk kedai kopi: kelola produk, transaksi, dan riwayat.",
+    },
+    {
+        id: "project-bkk",
+        title: "Bursa Kerja Khusus",
+        description:
+            "Sistem informasi Bursa Kerja Khusus untuk membantu siswa mencari lowongan pekerjaan dan perusahaan mencari kandidat.",
+        tech: ["Laravel", "Tailwind", "MySQL"],
+        status: "Team Project",
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/Project-BKK",
+        demo: "https://github.com/RifqiArdian09/Project-BKK",
+        content: "Sistem informasi Bursa Kerja Khusus untuk membantu siswa mencari lowongan pekerjaan dan perusahaan mencari kandidat.",
+        teamMembers: [
+            createMember("RifqiArdian09"),
+            createMember("Salmanziz21"),
+            createMember("freal56"),
+            createMember("Miyabi18"),
+            createMember("Wira630"),
+        ],
+    },
+    {
+        id: "al-quran-flutter",
+        title: "Al-Qur'an App",
+        description:
+            "Aplikasi Flutter untuk membaca Al-Qur'an, mendengarkan tilawah, jadwal sholat, doa harian, dan bookmark ayat.",
+        tech: ["Flutter", "Dart"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1507041957456-9c397ce39c97?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/Al-Quran-Flutter",
+        demo: "https://github.com/RifqiArdian09/Al-Quran-Flutter",
+        content: "Aplikasi Flutter untuk membaca Al-Qur'an, mendengarkan tilawah, jadwal sholat, doa harian, dan bookmark ayat.",
+    },
+    {
+        id: "celenganku",
+        title: "Celenganku",
+        description:
+            "Celenganku adalah aplikasi Android untuk membantu mengelola tabungan pribadi dengan pencatatan transaksi dan target.",
+        tech: ["Android Studio", "Java", "SQLite"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1554224155-169746997533?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/Celenganku",
+        demo: "https://github.com/RifqiArdian09/Celenganku",
+        content: "Celenganku adalah aplikasi Android untuk membantu mengelola tabungan pribadi dengan pencatatan transaksi dan target.",
+    },
+    {
+        id: "food-recipe-app",
+        title: "Food Recipe App",
+        description: "Aplikasi Android untuk menampilkan berbagai resep makanan menggunakan data dari TheMealDB.",
+        tech: ["Android Studio", "Java"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/FoodRecipeApp",
+        demo: "https://github.com/RifqiArdian09/FoodRecipeApp",
+        content: "Aplikasi Android untuk menampilkan berbagai resep makanan menggunakan data dari TheMealDB.",
+    },
+    {
+        id: "nimestream",
+        title: "Nimestream",
+        description: "Platform streaming anime modern yang dibangun dengan Next.js.",
+        tech: ["Next.js", "Tailwind"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09",
+        demo: "https://nimestream-six.vercel.app/",
+        content: "Platform streaming anime modern yang dibangun dengan Next.js.",
+    },
+    {
+        id: "alquran-web",
+        title: "Al-Quran Web",
+        description: "Aplikasi web Al-Quran dengan bookmark ayat dan pemutar audio.",
+        tech: ["React", "Vite"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1507041957456-9c397ce39c97?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/alquran-web",
+        demo: "https://github.com/RifqiArdian09/alquran-web",
+        content: "Aplikasi web Al-Quran dengan bookmark ayat dan pemutar audio.",
+    },
+    {
+        id: "news-portal",
+        title: "News Portal",
+        description:
+            "Sistem manajemen konten lengkap untuk menerbitkan dan mengelola artikel berita dengan kategori dan penulis.",
+        tech: ["Laravel", "Tailwind", "MySQL"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/News-Portal",
+        demo: "https://github.com/RifqiArdian09/News-Portal",
+        content: "Sistem manajemen konten lengkap untuk menerbitkan dan mengelola artikel berita dengan kategori dan penulis.",
+    },
+    {
+        id: "e-voting",
+        title: "E-Voting",
+        description:
+            "Aplikasi pemilihan Ketua OSIS berbasis web dengan sistem voting yang aman, mudah digunakan, dan real-time.",
+        tech: ["Laravel", "Tailwind", "MySQL"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/E-voting",
+        demo: "https://github.com/RifqiArdian09/E-voting",
+        content: "Aplikasi pemilihan Ketua OSIS berbasis web dengan sistem voting yang aman, mudah digunakan, dan real-time.",
+    },
+    {
+        id: "file-converter",
+        title: "FileConverter",
+        description:
+            "Aplikasi berbasis Flask + LibreOffice untuk mengonversi file dengan antarmuka web modern dan drag & drop.",
+        tech: ["HTML", "CSS", "JavaScript", "Python", "Flask"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/FileConverter",
+        demo: "https://github.com/RifqiArdian09/FileConverter",
+        content: "Aplikasi berbasis Flask + LibreOffice untuk mengonversi file dengan antarmuka web modern dan drag & drop.",
+    },
+    {
+        id: "subtitle-generator",
+        title: "Subtitle Generator",
+        description: "Aplikasi untuk membuat file SRT dari upload video menggunakan Python dan Streamlit.",
+        tech: ["Python", "Streamlit"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/subtitle_genet-streamlit",
+        demo: "https://github.com/RifqiArdian09/subtitle_genet-streamlit",
+        content: "Aplikasi untuk membuat file SRT dari upload video menggunakan Python dan Streamlit.",
+    },
+    {
+        id: "essycoff-laravel",
+        title: "EssyCoff (POS)",
+        description:
+            "Sistem Point of Sale modern untuk kedai kopi dengan manajemen inventori, transaksi, pelaporan, dan pengguna.",
+        tech: ["Laravel", "Livewire", "Tailwind", "MySQL"],
+        status: "Team Project",
+        image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/EssyCoff-Laravel",
+        demo: "https://github.com/RifqiArdian09/EssyCoff-Laravel",
+        content: "Sistem Point of Sale modern untuk kedai kopi dengan manajemen inventori, transaksi, pelaporan, dan pengguna.",
+        teamMembers: [
+            createMember("RifqiArdian09"),
+            createMember("Salmanziz21"),
+            createMember("Chicktickhack"),
+            createMember("RenatanJanuarta"),
+            createMember("rfdd024"),
+        ],
+    },
+    {
+        id: "submaker",
+        title: "SubMaker",
+        description:
+            "Aplikasi web untuk menghasilkan subtitle otomatis dari file video/audio menggunakan OpenAI Whisper dengan editor.",
+        tech: ["HTML", "CSS", "JavaScript", "Python", "Flask"],
+        status: "Solo Project",
+        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
+        github: "https://github.com/RifqiArdian09/SubMaker",
+        demo: "https://github.com/RifqiArdian09/SubMaker",
+        content: "Aplikasi web untuk menghasilkan subtitle otomatis dari file video/audio menggunakan OpenAI Whisper dengan editor.",
+    },
+];
+
+
+export const certificates = [
+    {
+        title: "Belajar Dasar AI",
+        issuer: "Dicoding",
+        image: "/images/sertif/Belajar_Dasar_AI_page1.png",
+    },
+    {
+        title: "Belajar Dasar Pemrograman",
+        issuer: "Dicoding",
+        image: "/images/sertif/Belajar_Dasar_Pemrograman_Web_page1.png",
+    },
+    {
+        title: "Belajar Dasar Pemrograman Javascript",
+        issuer: "Dicoding",
+        image: "/images/sertif/belajar dasar pemrograman javascript.png",
+    },
+    {
+        title: "Belajar Membuat Front-End Web Untuk Pemula",
+        issuer: "Dicoding",
+        image: "/images/sertif/belajar membuat front-end web untuk pemula.png",
+    },
+    {
+        title: "Penghargaan Atas Pembuatan Web W-Vote ",
+        issuer: "SMKN 1 KOTA BENGKULU",
+        image: "/images/sertif/w-vote.png",
+    },
+];

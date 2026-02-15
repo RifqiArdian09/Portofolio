@@ -1,0 +1,62 @@
+{
+    "nav": {
+        "home": "HOME",
+        "projects": "PROJECTS",
+        "certificates": "CERTIFICATES",
+        "contact": "CONTACT"
+    },
+    "hero": {
+        "secureConnection": "[SECURE CONNECTION ESTABLISHED]",
+        "initializing": "> Initializing User Profile...",
+        "loadingAssets": "> Loading Assets... [OK]",
+        "decryptingBio": "> Decrypting Bio... [OK]",
+        "user": "> User: ",
+        "role": "> Role: ",
+        "status": "> Status: ONLINE",
+        "ready": "> Ready for mission...",
+        "greeting": "HELLO, I'M ",
+        "initializeProtocol": "Initialize Protocol",
+        "downloadData": "Download Data",
+        "targetLocked": "TARGET_LOCKED",
+        "bio": "A Computer and Information Technology student with a strong passion for web development and information technology."
+    },
+    "projects": {
+        "directory": "./projects",
+        "title": "FEATURED WORK",
+        "titleHighlight": "_",
+        "viewAllRepos": ":: View_All_Repositories",
+        "executeProject": "Project Details",
+        "viewMore": "View All Projects",
+        "viewLess": "View Less",
+        "initializeDemo": "Initialize Demo",
+        "viewSource": "View Source Code",
+        "readme": "README.md",
+        "overview": "Project Overview",
+        "implementation": "Implementation Details",
+        "techStack": "Tech Stack",
+        "date": "Date",
+        "contributors": "Team Contributors",
+        "notFound": "PROJECT_NOT_FOUND",
+        "returnRoot": "Return to Root"
+    },
+    "certificates": {
+        "directory": "./certificates",
+        "title": "CERTIFICATES",
+        "titleHighlight": "_",
+        "verified": "VERIFIED",
+        "issuer": "Issuer"
+    },
+    "footer": {
+        "systemShutdown": "System Shutdown",
+        "thankYou": "> Thank you for visiting the secure terminal.",
+        "sessionSaved": "> Session data saved successfully.",
+        "contactProtocol": "> To initiate collaboration protocol, execute the contact command below.",
+        "github": "GITHUB",
+        "instagram": "INSTAGRAM",
+        "linkedin": "LINKEDIN",
+        "email": "EMAIL",
+        "copyright": "[SYSTEM] © {year} RIFQI ARDIAN. ALL RIGHTS RESERVED.",
+        "terminateSession": "TERMINATE_SESSION",
+        "terminalActive": "Terminal Session Active"
+    }
+}
