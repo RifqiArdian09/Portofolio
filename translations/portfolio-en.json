@@ -16,9 +16,9 @@
         "ready": "> Ready for mission...",
         "greeting": "HELLO, I'M ",
         "initializeProtocol": "Initialize Protocol",
-        "downloadData": "Download Data",
+        "viewCv": "View CV",
         "targetLocked": "TARGET_LOCKED",
-        "bio": "A Computer and Information Technology student with a strong passion for web development and information technology."
+        "bio": "A Software and Game Development student with a strong passion for web development and information technology."
     },
     "projects": {
         "directory": "./projects",

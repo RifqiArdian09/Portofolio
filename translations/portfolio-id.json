@@ -16,9 +16,9 @@
         "ready": "> Siap untuk misi...",
         "greeting": "HALO, SAYA ",
         "initializeProtocol": "Inisialisasi Protokol",
-        "downloadData": "Unduh Data",
+        "viewCv": "Lihat CV",
         "targetLocked": "TARGET_TERKUNCI",
-        "bio": "Seorang Pelajar SMK Jurusan Teknik Komputer dan Informatika yang memiliki minat besar dalam pengembangan web dan teknologi informasi."
+        "bio": "Seorang Pelajar SMK Jurusan Pengembangan Perangkat Lunak dan Gim yang memiliki minat besar dalam pengembangan web dan teknologi informasi."
     },
     "projects": {
         "directory": "./proyek",
@@ -30,7 +30,7 @@
         "viewLess": "Tampilkan Sedikit",
         "initializeDemo": "Jalankan Demo",
         "viewSource": "Lihat Kode Sumber",
-        "readme": "BACA_SAYA.md",
+        "readme": "README.md",
         "overview": "Ringkasan Proyek",
         "implementation": "Detail Implementasi",
         "techStack": "Teknologi",

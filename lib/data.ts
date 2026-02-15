@@ -34,16 +34,190 @@ const createMember = (username: string) => ({
 export const projects = [
     {
         id: "w-vote",
-        title: "W-Vote",
+        title: "W-Vote: Sistem E-Voting",
         description:
-            "Aplikasi pemilihan OSIS dengan antarmuka modern menggunakan Laravel, Flux UI, dan Livewire untuk pengalaman voting yang interaktif.",
-        tech: ["Laravel", "Livewire", "Tailwind", "MySQL"],
+            "Platform E-Voting transparan yang dikembangkan dengan Laravel 12 dan Livewire Volt. Telah sukses diimplementasikan secara resmi di SMKN 1 & SMAN 8 Kota Bengkulu.",
+        tech: ["Laravel 12", "Livewire Volt", "Tailwind 4", "MySQL", "Flux UI"],
         status: "Team Project",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RayanKhairullah/w-vote",
-        demo: "https://github.com/RayanKhairullah/w-vote",
-        content: "Aplikasi pemilihan OSIS dengan antarmuka modern menggunakan Laravel, Flux UI, dan Livewire untuk pengalaman voting yang interaktif.",
+        image: "/images/projek/w-wote/thumb.w-vote.png",
+        date: "2025 Release",
+        content: `W-Vote adalah platform pemungutan suara elektronik (E-Voting) yang dirancang untuk mentransformasi proses pemilihan konvensional menjadi digital yang lebih aman, efisien, dan transparan. Proyek ini dikembangkan menggunakan ekosistem terbaru Laravel 12 dan Livewire Volt, menawarkan performa tinggi dengan interaksi real-time tanpa reload halaman.
+
+Platform ini tidak hanya sekadar prototipe, namun telah teruji dan sukses diimplementasikan secara resmi untuk mendukung demokrasi digital di institusi pendidikan, di antaranya:
+• SMKN 1 KOTA BENGKULU
+• SMAN 8 KOTA BENGKULU
+
+Solusi & Fitur Utama:
+• Sistem Verifikasi Token Terenkripsi: Menjamin privasi dan integritas suara dengan token unik terenkripsi.
+• Manajemen Pemilih Skala Besar: Fitur impor massal berbasis CSV/Excel untuk mengelola ribuan data pemilih dalam hitungan detik.
+• Dashboard Admin Komprehensif: Monitoring statistik real-time, manajemen kandidat dinamis, dan ekspor hasil ke Excel.
+• Alur Pemilihan Intuitif: Antarmuka ringkas (Verifikasi -> Surat Suara -> Konfirmasi) untuk kemudahan penggunaan.
+
+Dibuat dengan Tailwind CSS 4 untuk UI yang futuristik. Penggunaan Livewire Volt memberikan nuansa Single Page Application (SPA) yang cepat, sementara Flux UI memastikan komponen interface tampil premium dan konsisten.`,
         teamMembers: [createMember("RayanKhairullah"), createMember("RifqiArdian09"), createMember("icanpatra")],
+        implementationImages: [
+            "/images/projek/w-wote/implementasi1.png",
+            "/images/projek/w-wote/implementasi2.png",
+            "/images/projek/w-wote/implemetasi3.png",
+            "/images/projek/w-wote/implemetasi4.png"
+        ]
+    },
+    {
+        id: "upptik-um-bengkulu",
+        title: "Portal Profil UPTIK UMB",
+        description:
+            "Platform profil digital resmi UPTIK UM Bengkulu yang dikembangkan dengan Next.js 15 & Tailwind CSS 4 untuk mendemonstrasikan kapabilitas teknologi instansi.",
+        tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "Radix UI"],
+        status: "Team Project",
+        image: "/images/projek/upttik.png",
+        demo: "https://upttik.umb.ac.id",
+        date: "2026 Release",
+        content: `# Portal Profil & Portofolio Digital - UPTIK UMB
+
+Platform profil digital resmi milik Unit Pelaksana Teknis Teknologi Informasi dan Komunikasi (UPTIK) Universitas Muhammadiyah Bengkulu. Proyek ini bertujuan untuk menyediakan pusat informasi terpadu yang profesional mengenai identitas instansi, layanan teknologi, serta dokumentasi proyek.
+
+Detail Implementasi:
+
+1. Tujuan Utama:
+• Representasi Institusi: Wajah digital resmi untuk meningkatkan kredibilitas instansi.
+• Diseminasi Informasi: Akses visi, misi, dan struktur organisasi bagi civitas akademika.
+• Showcase Inovasi: Dokumentasi hasil karya dan solusi teknologi informasi.
+
+2. Arsitektur & Teknologi:
+• Frontend: Next.js 15 (App Router) untuk performa cepat dan ramah SEO.
+• Bahasa: TypeScript untuk menjamin keamanan tipe data dan integritas kode.
+• Style: Tailwind CSS v4 untuk antarmuka modern dan responsif.
+• UI & Animasi: Radix UI dan Framer Motion untuk interaksi yang elegan.
+
+3. Fitur Strategis:
+• Internasionalisasi : Dukungan Bahasa Indonesia dan Inggris.
+• Galeri Proyek: Modul portofolio yang menampilkan detail teknis dan dokumentasi.
+• Responsivitas: Optimasi mendalam untuk desktop, tablet, dan seluler.`,
+    },
+    {
+        id: "cms-fakultas",
+        title: "CMS Fakultas UMB",
+        description:
+            "Platform Content Management System modern untuk digitalisasi informasi fakultas di UM Bengkulu menggunakan Laravel 12 dan Livewire Volt.",
+        tech: ["Laravel 12", "Livewire Volt", "Tailwind", "MySQL", "Flux UI"],
+        status: "Solo Project",
+        image: "/images/projek/fakultas.png",
+        date: "2025 Release",
+        content: `CMS Fakultas UMB adalah platform Content Management System (CMS) modern yang dirancang khusus untuk digitalisasi informasi pada lingkup fakultas di Universitas Muhammadiyah Bengkulu. Proyek ini bertujuan untuk mengotomatisasi pengelolaan data akademik dan profil fakultas secara terpusat.
+
+Detail Implementasi:
+
+1. Core Tech Stack:
+• Laravel 12 (Backend): Menggunakan iterasi terbaru untuk keamanan robust dan arsitektur solid.
+• Livewire & Volt: Menciptakan antarmuka yang reaktif tanpa reload halaman (SPA feel).
+• Flux UI & Tailwind CSS: Estetika modern premium dengan responsivitas tinggi di berbagai perangkat.
+
+2. Fitur Unggulan:
+• Manajemen Konten Dinamis: Modul publikasi berita (Post), kategori, dan sistem komentar terintegrasi.
+• Profil & Visi Misi: Pengaturan isi profil, visi, dan misi fakultas secara real-time.
+• Sistem Pimpinan & Struktur: Modul khusus hierarki pimpinan dan visualisasi struktur organisasi.
+• Monitoring Akreditasi: Dashboard pantauan status akreditasi program studi untuk transparansi kualitas.
+
+3. Arsitektur Data & Keamanan:
+• Relasi Basis Data: Implementasi relasi (Fakultas → Prodi → Akreditasi) dengan query tinggi.
+• Laravel Fortify: Sistem autentikasi dan otorisasi terenkripsi untuk panel kontrol admin.
+• SEO Optimized: Struktur HTML semantik untuk memastikan konten mudah terindeks mesin pencari.`,
+    },
+    {
+        id: "essycoff-laravel",
+        title: "EssyCoff (POS)",
+        description:
+            "Sistem Point of Sale (POS) berbasis web yang dirancang untuk membantu operasional kedai kopi secara efisien dan terstruktur.",
+        tech: ["Laravel 12", "Livewire 3", "Tailwind 4", "MySQL", "Flux UI"],
+        status: "Team Project",
+        image: "/images/projek/essycoff-web.png",
+        github: "https://github.com/RifqiArdian09/EssyCoff-Laravel",
+        date: "2025 Release",
+        content: `EssyCoff adalah sistem Point of Sale (POS) modern berbasis web yang dikembangkan untuk membantu operasional kedai kopi dan bisnis F&B secara efisien, cepat, dan terstruktur. Sistem ini mengintegrasikan transaksi penjualan, manajemen inventori, dan pelaporan keuangan.
+
+Detail Implementasi:
+
+1. Arsitektur & Teknologi:
+• Laravel 12 & Livewire 3: Menciptakan pengalaman reaktif layaknya Single Page Application (SPA).
+• Tailwind CSS 4 & Flux UI: Antarmuka modern, profesional, dan sepenuhnya responsif dengan mode terang/gelap.
+
+2. Fitur Backend Utama:
+• Manajemen transaksi real-time dengan validasi stok otomatis.
+• Relasi database terstruktur menggunakan Eloquent ORM.
+• Sistem kontrol akses (RBAC) untuk admin dan kasir.
+• Ekspor Laporan: Generate PDF (DomPDF) dan Excel (Maatwebsite) untuk data keuangan.
+
+3. Dashboard Analitik:
+Menampilkan ringkasan pendapatan, statistik penjualan, serta performa produk dalam bentuk data terstruktur yang membantu pemilik usaha memonitor bisnis secara akurat.`,
+        teamMembers: [
+            createMember("RifqiArdian09"),
+            createMember("Salmanziz21"),
+            createMember("Chicktickhack"),
+            createMember("RenatanJanuarta"),
+            createMember("rfdd024"),
+        ],
+    },
+    {
+        id: "simaru",
+        title: "SIMARU: Landing Page PMB",
+        description:
+            "Platform landing page interaktif dan modern untuk mempermudah calon mahasiswa dalam mengakses informasi pendaftaran di Universitas Muhammadiyah Bengkulu.",
+        tech: ["HTML5", "JavaScript", "Tailwind CSS"],
+        status: "Team Project",
+        image: "/images/projek/simaru.png",
+        demo: "https://simaru.umb.ac.id",
+        date: "2026 Release",
+        content: `SIMARU (Sistem Penerimaan Mahasiswa Baru) adalah platform landing page interaktif dan modern yang dirancang khusus untuk mempermudah calon mahasiswa dalam mengakses informasi pendaftaran di Universitas Muhammadiyah Bengkulu. Proyek ini bertujuan untuk menciptakan jembatan digital yang estetik, informatif, dan responsif.
+
+Detail Implementasi:
+
+1. Teknologi yang Digunakan:
+• Core: HTML5 & Vanilla JavaScript (ES6+).
+• Styling: Tailwind CSS dengan pendekatan utility-first untuk performa ringan.
+• Typography & Icons: Google Fonts (Lexend), Material Symbols, dan Font Awesome.
+
+2. Fitur Utama & Fungsionalitas:
+• Sistem Multibahasa (i18n): Beralih antara bahasa Indonesia dan Inggris secara real-time.
+• Glassmorphism UI: Efek kaca transparan pada navigasi sticky untuk desain modern.
+• Registration Timeline: Visualisasi alur pendaftaran linier yang estetik.
+• Interactive FAQ Section: Komponen akordion untuk akses informasi yang ringkas.
+• Mode Gelap/Terang: Dukungan penuh untuk preferensi kenyamanan visual mata pengguna.
+
+3. Proses Pengembangan:
+Optimasi performa dengan meminimalkan dependensi berat guna memastikan skor Core Web Vitals yang optimal. Menekankan UI Excellence melalui micro-animations pada tombol hover dan transisi menu yang dinamis namun elegan.`,
+        teamMembers: [
+            createMember("RifqiArdian09"),
+            createMember("Salmanziz21"),
+        ],
+    },
+    {
+        id: "sistem-monitoring",
+        title: "Sistem Monitoring Relawan",
+        description:
+            "Platform manajemen operasional berbasis web untuk pemantauan, pencatatan, dan dokumentasi aktivitas lapangan secara real-time.",
+        tech: ["Laravel 12", "Livewire 4", "Tailwind", "MySQL", "Flux UI"],
+        status: "Solo Project",
+        image: "/images/projek/sistem-monitoring.png",
+        date: "2026 Release",
+        content: `Sistem Monitoring Kegiatan Relawan & Petugas adalah platform manajemen operasional berbasis web yang dirancang untuk mengoptimalkan proses pemantauan dan dokumentasi aktivitas lapangan secara real-time.
+
+Detail Implementasi:
+
+1. Core Systems & Architecture:
+• Framework: Laravel 12 (PHP 8.2+) untuk keamanan, skalabilitas, dan performa backend solid.
+• Arsitektur: Berbasis Model-View-Controller (MVC) yang dioptimalkan untuk data relasional kompleks.
+
+2. User Interface & Experience:
+• Reactivity: Livewire v4 dan Flux UI untuk antarmuka reaktif dan dinamis (SPA feel).
+• Styling: Tailwind CSS dengan desain konsisten, profesional, dan sepenuhnya responsif.
+
+3. Manajemen Data & Pelaporan:
+• Automated Reporting: Integrasi maatwebsite/excel untuk ekspor laporan kegiatan ke format Excel secara instan.
+• Document Generation: Spatie Browsershot untuk menghasilkan arsip digital PDF berkualitas tinggi secara otomatis.
+
+4. Keamanan & Infrastruktur:
+• Robust Authentication: Laravel Fortify dengan fitur Two-Factor Authentication (2FA) untuk perlindungan data sensitif.
+• Background Processing: Database Queues untuk menangani tugas berat laporan tanpa mengganggu performa aplikasi utama.`,
     },
     {
         id: "text-image-translator",
@@ -57,18 +231,7 @@ export const projects = [
         demo: "https://github.com/RifqiArdian09/Text-Image-Translator",
         content: "Aplikasi Android berbasis Java untuk menerjemahkan teks dan gambar antar berbagai bahasa menggunakan teknologi AI Gemini dari Google.",
     },
-    {
-        id: "rental-electronics",
-        title: "Rental Elektronik",
-        description:
-            "Aplikasi web modern yang dirancang untuk memudahkan penyewaan berbagai alat elektronik secara praktis, cepat, dan aman.",
-        tech: ["Laravel", "Tailwind", "MySQL"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/rental-electronics",
-        demo: "https://github.com/RifqiArdian09/rental-electronics",
-        content: "Aplikasi web modern yang dirancang untuk memudahkan penyewaan berbagai alat elektronik secara praktis, cepat, dan aman.",
-    },
+
     {
         id: "essycoff-android",
         title: "EssyCoff Android (POS)",
@@ -79,25 +242,6 @@ export const projects = [
         github: "https://github.com/RifqiArdian09/EssyCoffAndroid.git",
         demo: "https://github.com/RifqiArdian09/EssyCoffAndroid.git",
         content: "Aplikasi Point of Sale sederhana untuk kedai kopi: kelola produk, transaksi, dan riwayat.",
-    },
-    {
-        id: "project-bkk",
-        title: "Bursa Kerja Khusus",
-        description:
-            "Sistem informasi Bursa Kerja Khusus untuk membantu siswa mencari lowongan pekerjaan dan perusahaan mencari kandidat.",
-        tech: ["Laravel", "Tailwind", "MySQL"],
-        status: "Team Project",
-        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/Project-BKK",
-        demo: "https://github.com/RifqiArdian09/Project-BKK",
-        content: "Sistem informasi Bursa Kerja Khusus untuk membantu siswa mencari lowongan pekerjaan dan perusahaan mencari kandidat.",
-        teamMembers: [
-            createMember("RifqiArdian09"),
-            createMember("Salmanziz21"),
-            createMember("freal56"),
-            createMember("Miyabi18"),
-            createMember("Wira630"),
-        ],
     },
     {
         id: "al-quran-flutter",
@@ -135,17 +279,6 @@ export const projects = [
         content: "Aplikasi Android untuk menampilkan berbagai resep makanan menggunakan data dari TheMealDB.",
     },
     {
-        id: "nimestream",
-        title: "Nimestream",
-        description: "Platform streaming anime modern yang dibangun dengan Next.js.",
-        tech: ["Next.js", "Tailwind"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09",
-        demo: "https://nimestream-six.vercel.app/",
-        content: "Platform streaming anime modern yang dibangun dengan Next.js.",
-    },
-    {
         id: "alquran-web",
         title: "Al-Quran Web",
         description: "Aplikasi web Al-Quran dengan bookmark ayat dan pemutar audio.",
@@ -167,18 +300,6 @@ export const projects = [
         github: "https://github.com/RifqiArdian09/News-Portal",
         demo: "https://github.com/RifqiArdian09/News-Portal",
         content: "Sistem manajemen konten lengkap untuk menerbitkan dan mengelola artikel berita dengan kategori dan penulis.",
-    },
-    {
-        id: "e-voting",
-        title: "E-Voting",
-        description:
-            "Aplikasi pemilihan Ketua OSIS berbasis web dengan sistem voting yang aman, mudah digunakan, dan real-time.",
-        tech: ["Laravel", "Tailwind", "MySQL"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/E-voting",
-        demo: "https://github.com/RifqiArdian09/E-voting",
-        content: "Aplikasi pemilihan Ketua OSIS berbasis web dengan sistem voting yang aman, mudah digunakan, dan real-time.",
     },
     {
         id: "file-converter",
@@ -203,37 +324,7 @@ export const projects = [
         demo: "https://github.com/RifqiArdian09/subtitle_genet-streamlit",
         content: "Aplikasi untuk membuat file SRT dari upload video menggunakan Python dan Streamlit.",
     },
-    {
-        id: "essycoff-laravel",
-        title: "EssyCoff (POS)",
-        description:
-            "Sistem Point of Sale modern untuk kedai kopi dengan manajemen inventori, transaksi, pelaporan, dan pengguna.",
-        tech: ["Laravel", "Livewire", "Tailwind", "MySQL"],
-        status: "Team Project",
-        image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/EssyCoff-Laravel",
-        demo: "https://github.com/RifqiArdian09/EssyCoff-Laravel",
-        content: "Sistem Point of Sale modern untuk kedai kopi dengan manajemen inventori, transaksi, pelaporan, dan pengguna.",
-        teamMembers: [
-            createMember("RifqiArdian09"),
-            createMember("Salmanziz21"),
-            createMember("Chicktickhack"),
-            createMember("RenatanJanuarta"),
-            createMember("rfdd024"),
-        ],
-    },
-    {
-        id: "submaker",
-        title: "SubMaker",
-        description:
-            "Aplikasi web untuk menghasilkan subtitle otomatis dari file video/audio menggunakan OpenAI Whisper dengan editor.",
-        tech: ["HTML", "CSS", "JavaScript", "Python", "Flask"],
-        status: "Solo Project",
-        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
-        github: "https://github.com/RifqiArdian09/SubMaker",
-        demo: "https://github.com/RifqiArdian09/SubMaker",
-        content: "Aplikasi web untuk menghasilkan subtitle otomatis dari file video/audio menggunakan OpenAI Whisper dengan editor.",
-    },
+
 ];
 
 

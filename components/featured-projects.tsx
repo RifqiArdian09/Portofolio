@@ -38,7 +38,7 @@ const FeaturedProjects = () => {
                         </motion.h2>
                     </div>
                     <Link
-                        href="https://github.com/RifqiArdian09"
+                        href="https://github.com/RifqiArdian09?tab=repositories"
                         target="_blank"
                         className="group flex items-center gap-2 text-primary hover:text-black transition-colors uppercase font-bold text-sm tracking-widest border border-primary px-4 py-2 hover:bg-primary hover:text-black"
                     >
@@ -84,9 +84,11 @@ const FeaturedProjects = () => {
                                         <Link href={`/projects/${project.id}`} className="bg-black border border-primary text-primary hover:bg-primary hover:text-black p-2 transition-colors">
                                             <ArrowUpRight className="w-4 h-4" />
                                         </Link>
-                                        <Link href={project.github} target="_blank" className="bg-black border border-primary text-primary hover:bg-primary hover:text-black p-2 transition-colors">
-                                            <Github className="w-4 h-4" />
-                                        </Link>
+                                        {project.github && (
+                                            <Link href={project.github} target="_blank" className="bg-black border border-primary text-primary hover:bg-primary hover:text-black p-2 transition-colors">
+                                                <Github className="w-4 h-4" />
+                                            </Link>
+                                        )}
                                     </div>
                                 </div>
 
@@ -98,7 +100,7 @@ const FeaturedProjects = () => {
                                         // {project.description}
                                     </p>
 
-                                    <div className="t-auto pt-4 flex flex-col gap-4">
+                                    <div className="mt-auto pt-4 flex flex-col gap-4">
                                         {project.teamMembers && (
                                             <div className="flex flex-col gap-2">
                                                 <div className="text-[10px] text-primary/40 uppercase tracking-widest font-bold flex items-center gap-2">

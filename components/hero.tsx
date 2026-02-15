@@ -5,7 +5,7 @@ import { personalInfo } from "@/lib/data";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Download, Terminal } from "lucide-react";
+import { ArrowRight, FileText, Terminal } from "lucide-react";
 import DecryptedText from "@/components/decrypted-text";
 import { useLanguage } from "@/context/language-context";
 
@@ -109,7 +109,7 @@ ${t("hero.ready")}`;
               </Link>
 
               <Link href={personalInfo.cvPath} target="_blank" className="group px-8 py-3 border border-primary text-primary font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors flex items-center gap-2">
-                <Download className="w-4 h-4" /> {t("hero.downloadData")}
+                <FileText className="w-4 h-4" /> {t("hero.viewCv")}
               </Link>
             </div>
           </motion.div>

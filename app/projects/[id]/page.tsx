@@ -120,25 +120,31 @@ const ProjectDetail = () => {
                                         <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest mb-3 pb-1 border-b border-primary/20">
                                             <Calendar className="w-4 h-4" /> {t("projects.date")}
                                         </div>
-                                        <p className="text-sm text-muted-foreground font-sans">2024 Release</p>
+                                        <p className="text-sm text-muted-foreground font-sans">{(project as any).date || "2024 Release"}</p>
                                     </div>
 
-                                    <div className="pt-6 flex flex-col gap-3">
-                                        <Link
-                                            href={project.demo}
-                                            target="_blank"
-                                            className="flex items-center justify-center gap-2 bg-primary text-black font-bold uppercase tracking-widest py-3 hover:bg-white transition-colors text-xs"
-                                        >
-                                            <Globe className="w-4 h-4" /> {t("projects.initializeDemo")}
-                                        </Link>
-                                        <Link
-                                            href={project.github}
-                                            target="_blank"
-                                            className="flex items-center justify-center gap-2 border border-primary text-primary font-bold uppercase tracking-widest py-3 hover:bg-primary/10 transition-colors text-xs"
-                                        >
-                                            <Github className="w-4 h-4" /> {t("projects.viewSource")}
-                                        </Link>
-                                    </div>
+                                    {(project.demo || project.github) && (
+                                        <div className="pt-6 flex flex-col gap-3">
+                                            {project.demo && (
+                                                <Link
+                                                    href={project.demo}
+                                                    target="_blank"
+                                                    className="flex items-center justify-center gap-2 bg-primary text-black font-bold uppercase tracking-widest py-3 hover:bg-white transition-colors text-xs"
+                                                >
+                                                    <Globe className="w-4 h-4" /> {t("projects.initializeDemo")}
+                                                </Link>
+                                            )}
+                                            {project.github && (
+                                                <Link
+                                                    href={project.github}
+                                                    target="_blank"
+                                                    className="flex items-center justify-center gap-2 border border-primary text-primary font-bold uppercase tracking-widest py-3 hover:bg-primary/10 transition-colors text-xs"
+                                                >
+                                                    <Github className="w-4 h-4" /> {t("projects.viewSource")}
+                                                </Link>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                             </motion.div>
                         </div>
@@ -171,14 +177,42 @@ const ProjectDetail = () => {
                                         <Terminal className="w-4 h-4" /> {t("projects.readme")}
                                     </div>
                                     <h3 className="text-2xl font-bold text-white mb-4">{t("projects.overview")}</h3>
-                                    <p className="text-muted-foreground leading-relaxed font-sans border-l-2 border-primary/20 pl-4">
+                                    <p className="text-muted-foreground leading-relaxed font-sans border-l-2 border-primary/20 pl-4 text-justify">
                                         {project.description}
                                     </p>
                                     <div className="my-8 h-px bg-primary/20 w-full"></div>
                                     <h3 className="text-2xl font-bold text-white mb-4">{t("projects.implementation")}</h3>
-                                    <p className="text-white leading-relaxed font-sans">
+                                    <p className="text-white leading-relaxed font-sans whitespace-pre-line text-justify">
                                         {project.content}
                                     </p>
+
+                                    {/* Implementation Screenshots */}
+                                    {(project as any).implementationImages && (
+                                        <div className="mt-12 space-y-8">
+                                            <div className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest border-b border-primary/20 pb-2">
+                                                <Terminal className="w-4 h-4" /> IMPLEMENTATION_SCREENSHOTS
+                                            </div>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                {(project as any).implementationImages.map((img: string, idx: number) => (
+                                                    <motion.div
+                                                        key={idx}
+                                                        initial={{ opacity: 0, scale: 0.95 }}
+                                                        whileInView={{ opacity: 1, scale: 1 }}
+                                                        transition={{ duration: 0.5, delay: idx * 0.1 }}
+                                                        className="relative aspect-video border border-primary/20 group overflow-hidden bg-primary/5"
+                                                    >
+                                                        <Image
+                                                            src={img}
+                                                            alt={`Implementation ${idx + 1}`}
+                                                            fill
+                                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                        />
+                                                        <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                                                    </motion.div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </motion.div>
                         </div>
