@@ -131,21 +131,6 @@ const GitHubActivity = () => {
                     </div>
                 </div>
             </div>
-
-            <style jsx>{`
-                .custom-scrollbar::-webkit-scrollbar {
-                    height: 4px;
-                }
-                .custom-scrollbar::-webkit-scrollbar-track {
-                    background: rgba(0, 255, 0, 0.05);
-                }
-                .custom-scrollbar::-webkit-scrollbar-thumb {
-                    background: rgba(0, 255, 0, 0.2);
-                }
-                .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                    background: rgba(0, 255, 0, 0.4);
-                }
-            `}</style>
         </section>
     );
 };

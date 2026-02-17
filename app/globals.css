@@ -182,21 +182,6 @@
       linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
     background-size: 20px 20px;
   }
-
-  /* Global Scrollbar */
-  ::-webkit-scrollbar {
-    width: 10px;
-    background: var(--background);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border: 2px solid var(--background);
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--secondary);
-  }
 }
 
 @layer utilities {
