@@ -194,35 +194,7 @@ Optimasi performa dengan meminimalkan dependensi berat guna memastikan skor Core
             createMember("Salmanziz21"),
         ],
     },
-    {
-        id: "sistem-monitoring",
-        title: "Sistem Monitoring Relawan",
-        description:
-            "Platform manajemen operasional berbasis web untuk pemantauan, pencatatan, dan dokumentasi aktivitas lapangan secara real-time.",
-        tech: ["Laravel 12", "Livewire 4", "Tailwind", "MySQL", "Flux UI"],
-        status: "Solo Project",
-        image: "/images/projek/sistem-monitoring.png",
-        date: "2026 Release",
-        content: `Sistem Monitoring Kegiatan Relawan & Petugas adalah platform manajemen operasional berbasis web yang dirancang untuk mengoptimalkan proses pemantauan dan dokumentasi aktivitas lapangan secara real-time.
-
-Detail Implementasi:
-
-1. Core Systems & Architecture:
-• Framework: Laravel 12 (PHP 8.2+) untuk keamanan, skalabilitas, dan performa backend solid.
-• Arsitektur: Berbasis Model-View-Controller (MVC) yang dioptimalkan untuk data relasional kompleks.
-
-2. User Interface & Experience:
-• Reactivity: Livewire v4 dan Flux UI untuk antarmuka reaktif dan dinamis (SPA feel).
-• Styling: Tailwind CSS dengan desain konsisten, profesional, dan sepenuhnya responsif.
-
-3. Manajemen Data & Pelaporan:
-• Automated Reporting: Integrasi maatwebsite/excel untuk ekspor laporan kegiatan ke format Excel secara instan.
-• Document Generation: Spatie Browsershot untuk menghasilkan arsip digital PDF berkualitas tinggi secara otomatis.
-
-4. Keamanan & Infrastruktur:
-• Robust Authentication: Laravel Fortify dengan fitur Two-Factor Authentication (2FA) untuk perlindungan data sensitif.
-• Background Processing: Database Queues untuk menangani tugas berat laporan tanpa mengganggu performa aplikasi utama.`,
-    },
+   
 
     {
         id: "alquran-web",
