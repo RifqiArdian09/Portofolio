@@ -161,6 +161,37 @@ Menampilkan ringkasan pendapatan, statistik penjualan, serta performa produk dal
             createMember("rfdd024"),
         ],
     },
+
+    {
+        id: "aniverse",
+        title: "Aniverse",
+        description:
+            "Platform streaming anime modern yang dibangun dengan Next.js 15, menawarkan pengalaman menonton yang imersif, cepat, dan responsif dengan integrasi API anime terkini.",
+        tech: ["Next.js 15", "TypeScript", "Tailwind CSS", "API Integration"],
+        status: "Solo Project",
+        image: "/images/projek/aniverse.png",
+        github: "https://github.com/RifqiArdian09/Streming-anime",
+        date: "2026 Release",
+        content: `Aniverse adalah platform streaming anime modern yang dirancang untuk memberikan pengalaman menonton yang lancar dan imersif bagi para penggemar anime. Proyek ini dibangun menggunakan teknologi web terbaru untuk memastikan performa yang cepat dan antarmuka yang elegan dengan nuansa sinematik.
+
+Detail Implementasi:
+
+1. Stack Teknologi:
+• Next.js 15 (App Router): Memanfaatkan Server Components dan Streaming untuk performa yang optimal dan loading yang instansi.
+• TypeScript: Menjamin integritas data dari API anime dan meminimalkan runtime error.
+• Tailwind CSS: Implementasi desain UI "Dark Mode" yang premium dengan nuansa visual yang konsisten.
+
+2. Fitur Utama:
+• Streaming Player Premium: Pemutar video yang mendukung pemilihan server dan navigasi antar episode yang seamless.
+• Advanced Search & Filter: Memungkinkan pengguna mencari anime berdasarkan judul, genre, atau skor secara instan.
+• Informasi Detail Anime: Menampilkan sinopsis, rating, genre, dan daftar episode secara komprehensif.
+• Responsive Layout: Desain yang dioptimalkan secara mendalam untuk desktop, tablet, maupun smartphone.
+
+3. Fokus Pada UX & Performa:
+• Image Optimization: Penggunaan optimasi gambar Next.js untuk pemuatan banner dan poster anime yang efisien.
+• SEO & Open Graph: Optimasi metadata untuk setiap halaman anime guna meningkatkan visibilitas di mesin pencari.
+• Global State Management: Pengelolaan state aplikasi untuk fitur riwayat tontonan dan navigasi yang cepat.`,
+    },
     {
         id: "simaru",
         title: "SIMARU: Landing Page PMB",
@@ -194,7 +225,7 @@ Optimasi performa dengan meminimalkan dependensi berat guna memastikan skor Core
             createMember("Salmanziz21"),
         ],
     },
-   
+
 
     {
         id: "alquran-web",
