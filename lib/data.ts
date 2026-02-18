@@ -66,7 +66,7 @@ Dibuat dengan Tailwind CSS 4 untuk UI yang futuristik. Penggunaan Livewire Volt 
         id: "upptik-um-bengkulu",
         title: "Profil UPTTIK UMB",
         description:
-            "Platform profil digital resmi UPTTIK UM Bengkulu yang dikembangkan dengan Next.js 15 & Tailwind CSS 4 untuk mendemonstrasikan kapabilitas teknologi instansi.",
+            "Platform profil digital resmi UPTTIK UM Bengkulu yang dikembangkan dengan Next.js  & Tailwind CSS 4 untuk mendemonstrasikan kapabilitas teknologi instansi.",
         tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "Radix UI"],
         status: "Team Project",
         image: "/images/projek/upttik.png",
@@ -88,7 +88,7 @@ Detail Implementasi:
 • Showcase Inovasi: Dokumentasi hasil karya dan solusi teknologi informasi.
 
 2. Arsitektur & Teknologi:
-• Frontend: Next.js 15 (App Router) untuk performa cepat dan ramah SEO.
+• Frontend: Next.js  (App Router) untuk performa cepat dan ramah SEO.
 • Bahasa: TypeScript untuk menjamin keamanan tipe data dan integritas kode.
 • Style: Tailwind CSS v4 untuk antarmuka modern dan responsif.
 • UI & Animasi: Radix UI dan Framer Motion untuk interaksi yang elegan.
@@ -166,8 +166,8 @@ Menampilkan ringkasan pendapatan, statistik penjualan, serta performa produk dal
         id: "aniverse",
         title: "Aniverse",
         description:
-            "Platform streaming anime modern yang dibangun dengan Next.js 15, menawarkan pengalaman menonton yang imersif, cepat, dan responsif dengan integrasi API anime terkini.",
-        tech: ["Next.js 15", "TypeScript", "Tailwind CSS", "API Integration"],
+            "Platform streaming anime modern yang dibangun dengan Next.js , menawarkan pengalaman menonton yang imersif, cepat, dan responsif dengan integrasi API anime terkini.",
+        tech: ["Next.js ", "TypeScript", "Tailwind CSS", "API Integration"],
         status: "Solo Project",
         image: "/images/projek/aniverse.png",
         github: "https://github.com/RifqiArdian09/Streming-anime",
@@ -178,7 +178,7 @@ Menampilkan ringkasan pendapatan, statistik penjualan, serta performa produk dal
 Detail Implementasi:
 
 1. Stack Teknologi:
-• Next.js 15 (App Router): Memanfaatkan Server Components dan Streaming untuk performa yang optimal dan loading yang instansi.
+• Next.js  (App Router): Memanfaatkan Server Components dan Streaming untuk performa yang optimal dan loading yang instansi.
 • TypeScript: Menjamin integritas data dari API anime dan meminimalkan runtime error.
 • Tailwind CSS: Implementasi desain UI "Dark Mode" yang premium dengan nuansa visual yang konsisten.
 
