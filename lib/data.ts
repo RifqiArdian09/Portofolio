@@ -172,6 +172,7 @@ Menampilkan ringkasan pendapatan, statistik penjualan, serta performa produk dal
         image: "/images/projek/aniverse.png",
         github: "https://github.com/RifqiArdian09/Streming-anime",
         date: "2026 Release",
+        demo: "https://aniverse-peach.vercel.app/",
         content: `Aniverse adalah platform streaming anime modern yang dirancang untuk memberikan pengalaman menonton yang lancar dan imersif bagi para penggemar anime. Proyek ini dibangun menggunakan teknologi web terbaru untuk memastikan performa yang cepat dan antarmuka yang elegan dengan nuansa sinematik.
 
 Detail Implementasi:
