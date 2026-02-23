@@ -33,26 +33,15 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --font-geist: var(--font-geist-sans);
-  --font-sans: var(--font-sans);
-  --font-heading: var(--font-mono);
-
   --radius-lg: 0px;
   --radius-md: 0px;
   --radius-sm: 0px;
 
-  --breakpoint-xs: 375px;
+  --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   --animate-marquee: marquee var(--duration) linear infinite;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-
-  --animate-blink: blink 1s step-end infinite;
-  --animate-scanline: scanline 8s linear infinite;
 
   @keyframes marquee {
     from {
@@ -73,282 +62,170 @@
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
-
-  @keyframes blink {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0;
-    }
-  }
-
-  @keyframes scanline {
-    0% {
-      transform: translateY(-100%);
-    }
-
-    100% {
-      transform: translateY(100%);
-    }
-  }
-}
-
-@layer base {
-
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
 }
 
 @layer base {
   :root {
-    /* Hacker Color Palette (Refined Black & White with Green Accents) */
-    --background: hsl(0 0% 2%);
-    /* Pure Black */
-    --foreground: hsl(0 0% 98%);
-    /* Off-White for better readability */
-
-    --card: hsl(0 0% 4%);
-    --card-foreground: hsl(0 0% 98%);
-
-    --popover: hsl(0 0% 4%);
-    --popover-foreground: hsl(0 0% 98%);
-
-    --primary: hsl(142 76% 45%);
-    /* Emerald Green for Accents (more professional than pure neon) */
-    --primary-foreground: hsl(0 0% 0%);
-
-    --secondary: hsl(0 0% 10%);
-    --secondary-foreground: hsl(0 0% 98%);
-
-    --muted: hsl(0 0% 12%);
-    --muted-foreground: hsl(0 0% 63%);
-
-    --accent: hsl(142 76% 20%);
-    --accent-foreground: hsl(142 76% 50%);
-
-    --destructive: hsl(0 62.8% 30.6%);
-    --destructive-foreground: hsl(0 0% 98%);
-
-    --border: hsl(0 0% 15%);
-    --input: hsl(0 0% 12%);
-    --ring: hsl(142 76% 45%);
-
-    --chart-1: hsl(142 76% 45%);
-    --chart-2: hsl(142 76% 35%);
-    --chart-3: hsl(142 76% 25%);
-    --chart-4: hsl(142 76% 15%);
-    --chart-5: hsl(142 76% 10%);
-
-    --radius: 0rem;
-
-    /* CRT Effect Variables */
-    --scan-line-color: rgba(18, 16, 16, 0.3);
-    --screen-overlay: rgba(0, 0, 0, 0.05);
+    --background: #fafafa;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --popover: #ffffff;
+    --popover-foreground: #000000;
+    --primary: #000000;
+    --primary-foreground: #ffffff;
+    --secondary: #eeeeee;
+    --secondary-foreground: #000000;
+    --muted: #eeeeee;
+    --muted-foreground: #777777;
+    --accent: #ff003c;
+    /* Neon Sharp Red */
+    --accent-foreground: #ffffff;
+    --destructive: #000000;
+    --destructive-foreground: #ffffff;
+    --border: #000000;
+    --input: #000000;
+    --ring: #ff003c;
+    --radius: 0px;
   }
 
   .dark {
-    --background: hsl(0 0% 2%);
-    --foreground: hsl(0 0% 98%);
-    --primary: hsl(142 76% 45%);
-    --primary-foreground: hsl(0 0% 0%);
-    --border: hsl(0 0% 15%);
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #0c0c0c;
+    --card-foreground: #ffffff;
+    --popover: #0c0c0c;
+    --popover-foreground: #ffffff;
+    --primary: #ffffff;
+    --primary-foreground: #000000;
+    --secondary: #141414;
+    --secondary-foreground: #ffffff;
+    --muted: #141414;
+    --muted-foreground: #888888;
+    --accent: #ff003c;
+    /* Neon Sharp Red */
+    --accent-foreground: #ffffff;
+    --border: #222222;
+    --input: #222222;
+    --ring: #ff003c;
   }
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+    border-radius: 0 !important;
   }
 
   html {
-    @apply scroll-pt-16;
     scroll-behavior: smooth;
-    font-family: 'JetBrains Mono', monospace;
   }
 
   body {
-    @apply bg-background text-foreground font-mono antialiased overflow-x-hidden;
+    @apply bg-background text-foreground antialiased font-sans transition-colors duration-300;
     background-image:
-      linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
+      radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-black uppercase tracking-[0.15em] leading-[0.9] italic;
+  }
+
+  .futuristic-label {
+    @apply text-[9px] font-black uppercase tracking-[0.5em] text-accent;
+    text-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
   }
 }
 
 @layer utilities {
-  .text-glow {
-    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+  .tech-card {
+    @apply border-2 border-foreground/20 bg-card p-4 transition-all duration-300 relative overflow-hidden;
+    box-shadow: 0 0 0px var(--accent);
   }
 
-  .border-glow {
-    box-shadow: 0 0 10px var(--primary), inset 0 0 10px var(--primary);
+  .tech-card:hover {
+    @apply border-accent;
+    box-shadow: 0 0 20px rgba(255, 0, 60, 0.1);
   }
 
-  .crt::before {
-    content: " ";
-    display: block;
-    position: fixed;
+  .tech-card::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-    z-index: 9999;
-    background-size: 100% 3px, 3px 100%;
-    pointer-events: none;
-    opacity: 0.4;
-  }
-
-  .crt::after {
-    content: " ";
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(18, 16, 16, 0.1);
-    opacity: 0;
-    z-index: 9999;
-    pointer-events: none;
-    animation: flicker 0.15s infinite;
-  }
-
-  .noise {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 2px;
     height: 100%;
-    z-index: 9998;
-    background-image: url("https://media.giphy.com/media/oEI9uWUicGu_2/giphy.gif");
-    opacity: 0.02;
-    pointer-events: none;
-    mix-blend-mode: soft-light;
+    background: var(--accent);
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
   }
 
-  @keyframes flicker {
+  .tech-card:hover::before {
+    transform: translateY(0);
+  }
+
+  /* Keep legacy class name but update style */
+  .brutalist-card {
+    @apply border-2 border-foreground bg-background p-4 md:p-6 transition-all duration-500;
+  }
+
+  .brutalist-card:hover {
+    @apply border-accent;
+  }
+
+  .brutalist-button {
+    @apply border-2 border-foreground bg-foreground px-8 py-3 font-black uppercase tracking-[0.2em] transition-all duration-300 text-background flex items-center justify-center gap-2;
+  }
+
+  .brutalist-button:hover {
+    @apply bg-accent border-accent text-white;
+    box-shadow: 0 0 30px rgba(255, 0, 60, 0.3);
+  }
+
+  .brutalist-button:active {
+    transform: scale(0.98);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 15px var(--accent);
+  }
+
+  .text-glow-subtle {
+    text-shadow: 0 0 8px rgba(255, 0, 60, 0.3);
+  }
+
+  .high-contrast-text {
+    @apply text-foreground font-black uppercase tracking-[0.1em];
+  }
+
+  .minimal-border {
+    @apply border border-foreground/10;
+  }
+
+  .scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 0, 60, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 6s linear infinite;
+  }
+
+  @keyframes scanline {
     0% {
-      opacity: 0.27861;
-    }
-
-    5% {
-      opacity: 0.34769;
-    }
-
-    10% {
-      opacity: 0.23604;
-    }
-
-    15% {
-      opacity: 0.90626;
-    }
-
-    20% {
-      opacity: 0.18128;
-    }
-
-    25% {
-      opacity: 0.83891;
-    }
-
-    30% {
-      opacity: 0.65583;
-    }
-
-    35% {
-      opacity: 0.57807;
-    }
-
-    40% {
-      opacity: 0.26559;
-    }
-
-    45% {
-      opacity: 0.84693;
-    }
-
-    50% {
-      opacity: 0.96019;
-    }
-
-    55% {
-      opacity: 0.08594;
-    }
-
-    60% {
-      opacity: 0.20313;
-    }
-
-    65% {
-      opacity: 0.41988;
-    }
-
-    70% {
-      opacity: 0.53455;
-    }
-
-    75% {
-      opacity: 0.37288;
-    }
-
-    80% {
-      opacity: 0.71428;
-    }
-
-    85% {
-      opacity: 0.70419;
-    }
-
-    90% {
-      opacity: 0.7003;
-    }
-
-    95% {
-      opacity: 0.36108;
+      bottom: 100%;
     }
 
     100% {
-      opacity: 0.24387;
-    }
-  }
-
-  .terminal-window {
-    @apply border border-primary/30 bg-black/60 backdrop-blur-md relative;
-    box-shadow: 0 10px 30px -10px rgba(0, 255, 0, 0.15);
-  }
-
-  .terminal-header {
-    @apply h-8 bg-primary/10 border-b border-primary/30 flex items-center px-4 justify-between;
-  }
-
-  .glitch-text:hover {
-    animation: glitch 1s linear infinite;
-  }
-
-  @keyframes glitch {
-
-    2%,
-    64% {
-      transform: translate(2px, 0) skew(0deg);
-    }
-
-    4%,
-    60% {
-      transform: translate(-2px, 0) skew(0deg);
-    }
-
-    62% {
-      transform: translate(0, 0) skew(5deg);
+      bottom: -100px;
     }
   }
 }

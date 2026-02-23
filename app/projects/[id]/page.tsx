@@ -5,12 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "motion/react";
-import { ArrowLeft, Github, Globe, Terminal, Calendar, Code, Cpu, ChevronRight } from "lucide-react";
+import { ArrowLeft, Github, Globe, Calendar, Code, Cpu, ChevronRight } from "lucide-react";
 import { projects } from "@/lib/data";
-import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
-
 import { useLanguage } from "@/context/language-context";
 
 const ProjectDetail = () => {
@@ -21,283 +19,244 @@ const ProjectDetail = () => {
 
     if (!project) {
         return (
-            <div className="min-h-screen bg-black text-primary font-mono flex flex-col items-center justify-center p-6 relative">
-                <div className="terminal-window max-w-lg w-full border-red-500/50 shadow-[0_0_50px_rgba(239,68,68,0.1)]">
-                    <div className="terminal-header !bg-red-500/10 !border-red-500/30">
-                        <div className="flex gap-1.5">
-                            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                            <div className="w-2 h-2 rounded-full bg-red-500/30"></div>
-                        </div>
-                        <span className="text-[9px] font-black text-red-500/70 tracking-[0.2em]">CRITICAL_SYSTEM_ERROR</span>
-                        <div className="w-4 h-px bg-red-500/20"></div>
-                    </div>
+            <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-6 relative overflow-hidden">
+                <div className="brutalist-card max-w-2xl w-full border-4 border-foreground bg-background relative z-10 shadow-[12px_12px_0px_var(--foreground)]">
 
-                    <div className="p-10 text-center">
-                        <div className="inline-block p-4 border border-red-500/20 bg-red-500/5 mb-8">
-                            <Terminal className="w-12 h-12 text-red-500 animate-pulse" />
+                    <div className="p-12 text-center border-b-4 border-foreground">
+                        <div className="inline-block p-6 border-4 border-foreground bg-accent mb-10 translate-x-2 -translate-y-2 shadow-[8px_8px_0px_var(--foreground)]">
+                            <Code className="w-16 h-16 text-black" />
                         </div>
 
-                        <h1 className="text-4xl font-black text-white mb-4 uppercase tracking-tighter leading-none">
-                            {t("projects.notFound")}
+                        <h1 className="text-6xl md:text-8xl font-black text-foreground mb-6 uppercase tracking-tighter leading-[0.8]">
+                            {t("projects.notFound")}<br />
                         </h1>
 
-                        <div className="space-y-4 mb-10">
-                            <p className="text-red-500/60 text-xs font-bold uppercase tracking-widest">
-                                ERROR_CODE: 0x404_PROJECT_UNREACHABLE
-                            </p>
-                            <p className="text-zinc-500 text-sm italic border-l-2 border-red-500/20 pl-4 py-1">
-                                [LOG] The requested system file could not be located in the primary storage nodes. Node might have been de-indexed or moved to a legacy cluster.
+                        <div className="space-y-6 mb-12 text-left">
+                            <p className="text-foreground/60 text-lg font-medium border-l-4 border-accent pl-6 leading-tight">
+                                {t("projects.notFoundDescription") || "The requested project could not be found."}
                             </p>
                         </div>
 
-                        <Button
+                        <button
                             onClick={() => router.push("/")}
-                            className="w-full bg-red-500 text-black font-black uppercase tracking-[0.2em] py-6 rounded-none hover:bg-white transition-all transform active:scale-[0.98]"
+                            className="brutalist-button w-full text-xl"
                         >
                             {t("projects.returnRoot")}
-                        </Button>
+                        </button>
                     </div>
 
-                    <div className="border-t border-red-500/10 p-4 bg-red-500/5">
-                        <div className="flex justify-between text-[8px] font-black text-red-500/40 uppercase tracking-widest">
-                            <span>DIAGNOSTIC_UPLINK: FAIL</span>
-                            <span>NODE_SYNC: TERMINATED</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         );
     }
 
     return (
-        <>
+        <div className="bg-background min-h-screen selection:bg-accent selection:text-white">
             <Navbar />
-            <main className="min-h-screen pt-24 pb-24 font-mono relative">
 
-                <div className="container mx-auto max-w-7xl px-6 md:px-12 relative z-10">
-                    {/* Breadcrumbs HUD */}
-                    <div className="mb-10 flex items-center gap-4 text-[10px] uppercase font-black tracking-[0.3em]">
-                        <Link href="/" className="text-primary/40 hover:text-primary transition-colors flex items-center gap-2">
+            <main className="pt-40 pb-40 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden relative">
+                {/* Header Breadcrumbs Section */}
+                <div className="mb-32">
+                    <div className="flex items-center gap-6 text-[10px] uppercase font-black tracking-[0.4em] text-foreground/30">
+                        <Link href="/" className="hover:text-accent transition-colors">
                             {t("nav.home")}
                         </Link>
-                        <div className="w-1 h-1 bg-primary/20 rounded-full"></div>
-                        <Link href="/#projects" className="text-primary/40 hover:text-primary transition-colors">
+                        <div className="w-8 h-px bg-foreground/10"></div>
+                        <Link href="/#projects" className="hover:text-accent transition-colors">
                             {t("nav.projects")}
                         </Link>
-                        <div className="w-1 h-1 bg-primary/20 rounded-full"></div>
-                        <span className="text-primary glow-sm">{project.title}</span>
-                        <div className="h-[1px] flex-grow bg-primary/10"></div>
+                        <div className="w-8 h-px bg-foreground/10"></div>
+                        <span className="text-accent italic">{project.title}</span>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                        {/* Left Column: System Info Sidebar */}
-                        <div className="lg:col-span-4 flex flex-col gap-8 order-2 lg:order-1">
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="terminal-window sticky top-32"
-                            >
-                                <div className="terminal-header">
-                                    <div className="flex gap-1.5">
-                                        <div className="w-2 h-2 rounded-full bg-red-500/50"></div>
-                                        <div className="w-2 h-2 rounded-full bg-green-500/50"></div>
+                    <div className="mt-12">
+                        <h1 className="text-6xl md:text-[8rem] font-black uppercase leading-[0.8] tracking-[0.02em] italic">
+                            {project.title}<span className="text-accent">/</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
+                    {/* Left Column: Industrial Sidebar */}
+                    <aside className="lg:col-span-4 space-y-16">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="space-y-16"
+                        >
+                            <div className="space-y-12">
+                                {/* Tech Core Section */}
+                                <section>
+                                    <h4 className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-foreground/40 italic">
+                                        <div className="w-6 h-px bg-accent"></div>
+                                        <span>Technology_Stack</span>
+                                    </h4>
+                                    <div className="flex flex-wrap gap-x-6 gap-y-3">
+                                        {project.tech.map(t => (
+                                            <span key={t} className="text-sm font-black uppercase tracking-widest text-foreground hover:text-accent transition-colors">
+                                                {t}
+                                            </span>
+                                        ))}
                                     </div>
-                                    <span className="text-[9px] font-bold text-primary/60 tracking-widest">{t("projects.metadataProbe")}</span>
-                                    <Cpu className="w-3 h-3 text-primary/40" />
-                                </div>
+                                </section>
 
-                                <div className="p-8">
-                                    <div className="mb-10 text-center lg:text-left">
-                                        <h1 className="text-4xl font-black text-white mb-2 uppercase leading-none tracking-tighter">
-                                            {project.title}
-                                        </h1>
-                                        <div className="inline-block px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-black border border-primary/20">
-                                            {t("projects.secureFile").replace("{id}", project.id)}
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-10">
-                                        {/* Tech Stack HUD */}
-                                        <div>
-                                            <div className="text-[10px] text-primary/40 font-black uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
-                                                TECH_CORE
-                                                <div className="h-[1px] flex-grow bg-primary/10"></div>
-                                            </div>
-                                            <div className="flex flex-wrap gap-2">
-                                                {project.tech.map(t => (
-                                                    <span key={t} className="text-[10px] border border-primary/20 bg-primary/5 px-2 py-1 text-primary/70 font-bold uppercase tracking-tighter">
-                                                        {t}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        {/* Contributors HUD */}
-                                        {project.teamMembers && (
-                                            <div>
-                                                <div className="text-[10px] text-primary/40 font-black uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
-                                                    {t("projects.contributors")}
-                                                    <div className="h-[1px] flex-grow bg-primary/10"></div>
-                                                </div>
-                                                <div className="space-y-3">
-                                                    {project.teamMembers.map((member) => (
-                                                        <Link
-                                                            key={member.name}
-                                                            href={member.github}
-                                                            target="_blank"
-                                                            className="flex items-center gap-3 p-2 border border-primary/10 bg-black/40 hover:border-primary/40 hover:bg-primary/5 transition-all group/agent"
-                                                        >
-                                                            <div className="relative h-9 w-9 border border-primary/20 group-hover/agent:border-primary/50 transition-colors overflow-hidden">
-                                                                <Image
-                                                                    src={`https://github.com/${member.name}.png`}
-                                                                    alt={member.name}
-                                                                    fill
-                                                                    unoptimized
-                                                                    className="object-cover"
-                                                                />
-                                                            </div>
-                                                            <div className="flex flex-col">
-                                                                <span className="text-[11px] font-bold text-zinc-400 group-hover/agent:text-primary transition-colors">@{member.name}</span>
-                                                                <span className="text-[8px] text-primary/30 font-black uppercase tracking-widest">{t("projects.authorizedContributor")}</span>
-                                                            </div>
-                                                        </Link>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Project Stats */}
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <div className="p-3 border border-primary/10 bg-primary/5">
-                                                <div className="text-[8px] text-primary/40 font-black mb-1 uppercase tracking-widest">{t("projects.deployDate")}</div>
-                                                <div className="text-xs font-bold text-zinc-400 uppercase">{(project as any).date || "2024.Q4"}</div>
-                                            </div>
-                                            <div className="p-3 border border-primary/10 bg-primary/5">
-                                                <div className="text-[8px] text-primary/40 font-black mb-1 uppercase tracking-widest">{t("projects.status")}</div>
-                                                <div className="text-xs font-bold text-green-500 uppercase tracking-tighter">{t("projects.successful")}</div>
-                                            </div>
-                                        </div>
-
-                                        {/* Actions */}
-                                        <div className="pt-4 flex flex-col gap-4">
-                                            {project.demo && (
+                                {/* Team Section */}
+                                {project.teamMembers && (
+                                    <section>
+                                        <h4 className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-foreground/40 italic">
+                                            <div className="w-6 h-px bg-accent"></div>
+                                            <span>The_Engineers</span>
+                                        </h4>
+                                        <div className="space-y-6">
+                                            {project.teamMembers.map((member) => (
                                                 <Link
-                                                    href={project.demo}
+                                                    key={member.name}
+                                                    href={member.github}
                                                     target="_blank"
-                                                    className="relative flex items-center justify-center gap-3 bg-primary text-black font-black uppercase tracking-[0.2em] py-4 text-[10px] hover:scale-[1.02] transition-transform overflow-hidden group/btn"
+                                                    className="group flex items-center gap-6"
                                                 >
-                                                    <Globe className="w-4 h-4" /> {t("projects.initializeDemo")}
-                                                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform"></div>
+                                                    <div className="relative h-12 w-12 border border-foreground/10 overflow-hidden grayscale group-hover:grayscale-0 transition-all">
+                                                        <Image
+                                                            src={`https://github.com/${member.name}.png`}
+                                                            alt={member.name}
+                                                            fill
+                                                            unoptimized
+                                                            className="object-cover"
+                                                        />
+                                                    </div>
+                                                    <div className="flex flex-col">
+                                                        <span className="text-xs font-black uppercase tracking-widest group-hover:text-accent transition-colors">@{member.name}</span>
+                                                        <span className="text-[8px] opacity-30 font-black uppercase tracking-[0.3em] italic">L_01_DEV</span>
+                                                    </div>
                                                 </Link>
-                                            )}
-                                            {project.github && (
-                                                <Link
-                                                    href={project.github}
-                                                    target="_blank"
-                                                    className="flex items-center justify-center gap-3 border border-primary/30 text-primary font-black uppercase tracking-[0.2em] py-4 text-[10px] hover:bg-primary/10 hover:border-primary transition-all"
+                                            ))}
+                                        </div>
+                                    </section>
+                                )}
+
+                                {/* System Stats */}
+                                <section className="grid grid-cols-1 gap-6">
+                                    <div className="p-8 border border-foreground/5 bg-foreground/[0.02]">
+                                        <div className="text-[9px] font-black uppercase tracking-[0.4em] text-foreground/20 mb-3 italic">Launch_Date</div>
+                                        <div className="text-xl font-black italic">{(project as any).date || "2024.Q1"}</div>
+                                    </div>
+                                    <div className="p-8 border border-accent/20 bg-accent/[0.03]">
+                                        <div className="text-[9px] font-black uppercase tracking-[0.4em] text-accent/50 mb-3 italic">System_Status</div>
+                                        <div className="text-xl font-black uppercase tracking-widest text-accent">STABLE_V4</div>
+                                    </div>
+                                </section>
+
+                                {/* Action Matrix */}
+                                <section className="space-y-4 pt-10">
+                                    {project.demo && (
+                                        <Link
+                                            href={project.demo}
+                                            target="_blank"
+                                            className="brutalist-button w-full"
+                                        >
+                                            <span>Launch_Deployment</span>
+                                            <Globe className="w-4 h-4 ml-2" />
+                                        </Link>
+                                    )}
+                                    {project.github && (
+                                        <Link
+                                            href={project.github}
+                                            target="_blank"
+                                            className="group flex items-center justify-center gap-4 py-5 border border-foreground/10 text-[10px] font-black uppercase tracking-[0.4em] hover:bg-foreground hover:text-background transition-all"
+                                        >
+                                            <Github className="w-4 h-4" /> Sync_Source
+                                        </Link>
+                                    )}
+                                </section>
+                            </div>
+                        </motion.div>
+                    </aside>
+
+                    {/* Right Column: Content Dossier */}
+                    <div className="lg:col-span-8 flex flex-col gap-32">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="space-y-32"
+                        >
+                            {/* Visual Asset Container */}
+                            <div className="relative aspect-video overflow-hidden border border-foreground/5 group">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    unoptimized
+                                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 p-4"
+                                />
+                                <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity mix-blend-overlay"></div>
+                            </div>
+
+                            {/* Informational Dossier */}
+                            <div className="space-y-32">
+                                {/* Mission Statement */}
+                                <section className="space-y-12">
+                                    <div className="flex items-center gap-6">
+                                        <span className="text-xs font-black opacity-10 tracking-[0.5em]">01_MISSION</span>
+                                        <div className="h-px flex-grow bg-foreground/5"></div>
+                                    </div>
+                                    <p className="text-3xl md:text-5xl font-black leading-[1.1] tracking-tight italic">
+                                        "{project.description}"
+                                    </p>
+                                </section>
+
+                                {/* Execution Details */}
+                                <section className="space-y-12">
+                                    <div className="flex items-center gap-6">
+                                        <span className="text-xs font-black opacity-10 tracking-[0.5em]">02_EXECUTION</span>
+                                        <div className="h-px flex-grow bg-foreground/5"></div>
+                                    </div>
+                                    <div className="text-foreground/60 leading-relaxed font-medium text-lg md:text-xl space-y-8 columns-1 md:columns-2 gap-16 italic">
+                                        {project.content}
+                                    </div>
+                                </section>
+
+                                {/* Visual Evidence Matrix */}
+                                {(project as any).implementationImages && (
+                                    <section className="space-y-12">
+                                        <div className="flex items-center gap-6">
+                                            <span className="text-xs font-black opacity-10 tracking-[0.5em]">03_EVIDENCE</span>
+                                            <div className="h-px flex-grow bg-foreground/5"></div>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                                            {(project as any).implementationImages.map((img: string, idx: number) => (
+                                                <motion.div
+                                                    key={idx}
+                                                    initial={{ opacity: 0 }}
+                                                    whileInView={{ opacity: 1 }}
+                                                    transition={{ duration: 0.8, delay: idx * 0.1 }}
+                                                    className="space-y-4 group/snap"
                                                 >
-                                                    <Github className="w-4 h-4" /> {t("projects.viewSource")}
-                                                </Link>
-                                            )}
+                                                    <div className="aspect-video relative overflow-hidden border border-foreground/5 bg-foreground/5 grayscale group-hover/snap:grayscale-0 transition-all duration-700">
+                                                        <Image
+                                                            src={img}
+                                                            alt={`Snapshot ${idx + 1}`}
+                                                            fill
+                                                            unoptimized
+                                                            className="object-cover scale-105 group-hover/snap:scale-100 transition-transform duration-1000"
+                                                        />
+                                                    </div>
+                                                    <div className="flex justify-between text-[8px] font-black uppercase tracking-[0.4em] opacity-20 italic">
+                                                        <span>EVIDENCE_00{idx + 1}</span>
+                                                        <span>PRJ_IMG_0{idx + 1}</span>
+                                                    </div>
+                                                </motion.div>
+                                            ))}
                                         </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-
-                        {/* Right Column: Project Data Blocks */}
-                        <div className="lg:col-span-8 flex flex-col gap-12 order-1 lg:order-2">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
-                                className="space-y-12"
-                            >
-                                {/* Main Image Terminal */}
-                                <div className="terminal-window overflow-hidden group">
-                                    <div className="terminal-header">
-                                        <div className="flex gap-2 items-center">
-                                            <div className="w-2 h-2 bg-primary/20 rounded-full"></div>
-                                            <span className="text-[9px] font-bold text-primary/60 tracking-widest">SOURCE_STREAM_01 // {project.title.toLowerCase().replace(/\s+/g, '_')}.IMG</span>
-                                        </div>
-                                        <div className="text-[8px] bg-primary/10 px-1.5 py-0.5 border border-primary/20 text-primary/60 font-black">100%_SYNC</div>
-                                    </div>
-                                    <div className="relative w-full bg-black/40">
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="w-full h-auto block transition-all duration-500"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Content DOSSIER */}
-                                <div className="terminal-window">
-                                    <div className="terminal-header">
-                                        <span className="text-[9px] font-bold text-primary/60 uppercase tracking-widest">{t("projects.analysisDocket")}</span>
-                                        <Terminal className="w-3 h-3 text-primary/40" />
-                                    </div>
-                                    <div className="p-10 space-y-12">
-                                        <section>
-                                            <div className="text-[10px] text-primary font-black uppercase tracking-[0.4em] mb-6 flex items-center gap-4">
-                                                [01] {t("projects.missionOverview")}
-                                                <div className="h-[1px] flex-grow bg-primary/10"></div>
-                                            </div>
-                                            <p className="text-zinc-400 text-lg leading-relaxed font-sans italic border-l-4 border-primary/20 pl-8">
-                                                "{project.description}"
-                                            </p>
-                                        </section>
-
-                                        <section>
-                                            <div className="text-[10px] text-primary font-black uppercase tracking-[0.4em] mb-6 flex items-center gap-4">
-                                                [02] {t("projects.executionDetails")}
-                                                <div className="h-[1px] flex-grow bg-primary/10"></div>
-                                            </div>
-                                            <div className="text-zinc-300 leading-relaxed font-sans whitespace-pre-line text-justify text-base md:text-lg">
-                                                {project.content}
-                                            </div>
-                                        </section>
-
-                                        {/* Implementation Imagery */}
-                                        {(project as any).implementationImages && (
-                                            <section>
-                                                <div className="text-[10px] text-primary font-black uppercase tracking-[0.4em] mb-8 flex items-center gap-4">
-                                                    [03] {t("projects.systemSnapshots")}
-                                                    <div className="h-[1px] flex-grow bg-primary/10"></div>
-                                                </div>
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                    {(project as any).implementationImages.map((img: string, idx: number) => (
-                                                        <motion.div
-                                                            key={idx}
-                                                            initial={{ opacity: 0, scale: 0.98 }}
-                                                            whileInView={{ opacity: 1, scale: 1 }}
-                                                            transition={{ duration: 0.5, delay: idx * 0.1 }}
-                                                            className="terminal-window overflow-hidden group/snap"
-                                                        >
-                                                            <div className="aspect-video relative">
-                                                                <Image
-                                                                    src={img}
-                                                                    alt={`Shot ${idx + 1}`}
-                                                                    fill
-                                                                    className="object-cover transition-all duration-700"
-                                                                />
-                                                                <div className="absolute bottom-2 right-2 text-[8px] bg-black/60 text-primary/40 px-1 border border-primary/10 uppercase">SNAP_{idx + 1}</div>
-                                                            </div>
-                                                        </motion.div>
-                                                    ))}
-                                                </div>
-                                            </section>
-                                        )}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
+                                    </section>
+                                )}
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </main>
+
             <Footer />
-        </>
+        </div>
     );
 };
 

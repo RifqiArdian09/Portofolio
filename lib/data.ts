@@ -285,4 +285,9 @@ export const certificates = [
         issuer: "SMKN 1 KOTA BENGKULU",
         image: "/images/sertif/w-vote.png",
     },
+    {
+        title:"Belajar Fundamentasl Front-End Web Development",
+        issuer: "Dicoding",
+        image: "/images/sertif/Belajar Fundamentasl Front-End Web Development.png",
+    }
 ];

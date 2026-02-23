@@ -8,6 +8,7 @@ interface Column {
     chars: string[];
     speed: number;
     opacity: number;
+    isAccent: boolean;
 }
 
 export const BinaryBackground = () => {
@@ -26,14 +27,16 @@ export const BinaryBackground = () => {
         window.addEventListener("resize", updateDimensions);
         updateDimensions();
 
-        // Create initial columns
-        const columnCount = Math.floor(window.innerWidth / 25);
+        const columnCount = Math.floor(window.innerWidth / 30);
+        const characters = "010101ABCDEF#<>/_";
+
         const initialColumns: Column[] = Array.from({ length: columnCount }).map((_, i) => ({
             id: i,
-            x: i * 25,
-            chars: Array.from({ length: 15 }).map(() => (Math.random() > 0.5 ? "0" : "1")),
-            speed: 1 + Math.random() * 2,
-            opacity: 0.03 + Math.random() * 0.07
+            x: i * 30,
+            chars: Array.from({ length: 20 }).map(() => characters[Math.floor(Math.random() * characters.length)]),
+            speed: 2 + Math.random() * 4,
+            opacity: Math.random() > 0.8 ? 0.08 : 0.03,
+            isAccent: Math.random() > 0.95
         }));
 
         setColumns(initialColumns);
@@ -45,7 +48,7 @@ export const BinaryBackground = () => {
 
     useEffect(() => {
         if (columns.length > 0) {
-            setYOffsets(new Array(columns.length).fill(-100));
+            setYOffsets(new Array(columns.length).fill(0).map(() => -Math.random() * 1000));
         }
     }, [columns]);
 
@@ -53,9 +56,9 @@ export const BinaryBackground = () => {
         const animate = () => {
             setYOffsets((prev) =>
                 prev.map((y, i) => {
-                    const speed = columns[i]?.speed || 1;
+                    const speed = columns[i]?.speed || 2;
                     const newY = y + speed;
-                    return newY > dimensions.height ? -Math.random() * 500 : newY;
+                    return newY > dimensions.height ? -200 : newY;
                 })
             );
             requestRef.current = requestAnimationFrame(animate);
@@ -73,25 +76,27 @@ export const BinaryBackground = () => {
     if (dimensions.width === 0) return null;
 
     return (
-        <div className="fixed inset-0 pointer-events-none overflow-hidden z-[-1] opacity-40 select-none" aria-hidden="true">
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-[-1] select-none" aria-hidden="true">
             {columns.map((col, i) => (
                 <div
                     key={col.id}
-                    className="absolute text-[10px] font-mono whitespace-nowrap leading-none flex flex-col items-center"
+                    className="absolute text-[12px] font-mono leading-none flex flex-col items-center transition-opacity duration-1000"
                     style={{
                         left: col.x,
                         top: yOffsets[i],
                         opacity: col.opacity,
-                        color: "var(--primary)",
+                        color: col.isAccent ? "#e1ff01" : "white",
+                        textShadow: col.isAccent ? "0 0 8px #e1ff01" : "none"
                     }}
                 >
                     {col.chars.map((char, index) => (
-                        <span key={index} className="block mb-1">
+                        <span key={index} className="block mb-2 font-black">
                             {char}
                         </span>
                     ))}
                 </div>
             ))}
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
         </div>
     );
 };

@@ -42,7 +42,6 @@ export const metadata: Metadata = {
   },
 };
 
-import { BinaryBackground } from "@/components/binary-background";
 
 export default function RootLayout({
   children,
@@ -51,13 +50,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={`${geist.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-mono antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground`} suppressHydrationWarning={true}>
+      <body className={`${geist.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground`} suppressHydrationWarning={true}>
         <LanguageProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
             <TooltipProvider>
-              <div className="crt min-h-screen relative overflow-x-hidden">
-                <div className="noise" />
-                <BinaryBackground />
+              <div className="min-h-screen relative overflow-x-hidden">
                 {children}
               </div>
               <ScrollToTop />

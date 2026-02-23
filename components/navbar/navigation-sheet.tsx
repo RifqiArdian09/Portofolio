@@ -1,14 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
-import { Menu, X, Home, Folder, Award, Terminal, Cpu } from "lucide-react";
+import { Menu, Home, Folder, Award, Mail, Cpu, X } from "lucide-react";
 import Link from "next/link";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { personalInfo } from "@/lib/data";
 import { useLanguage } from "@/context/language-context";
 
 export const NavigationSheet = () => {
@@ -21,7 +19,7 @@ export const NavigationSheet = () => {
     { id: "projects", name: t("nav.projects"), icon: Folder, href: "/#projects" },
     { id: "github", name: t("nav.github"), icon: Cpu, href: "/#github" },
     { id: "certificates", name: t("nav.certificates"), icon: Award, href: "/#certificates" },
-    { id: "contact", name: t("nav.contact"), icon: Terminal, href: "/#contact" },
+    { id: "contact", name: t("nav.contact"), icon: Mail, href: "/#contact" },
   ];
 
   const activeSection = useActiveSection(navItems.map((item) => item.id));
@@ -41,67 +39,51 @@ export const NavigationSheet = () => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="bg-black border-primary/50 text-primary hover:bg-primary hover:text-black transition-colors rounded-none">
-          <Menu className="h-5 w-5" />
-        </Button>
+        <button className="p-3 border-2 border-foreground bg-background hover:bg-accent hover:text-black transition-all">
+          <Menu className="h-6 w-6" />
+        </button>
       </SheetTrigger>
-      <SheetContent side="right" className="p-0 w-[300px] border-l border-primary/50 bg-black text-primary font-mono">
-        <SheetHeader className="p-6 text-left border-b border-primary/20 bg-primary/5">
-          <SheetTitle className="flex items-center gap-2 text-primary font-bold">
-            <Terminal className="w-5 h-5" />
-            <span>{t("nav.systemNav")}</span>
+      <SheetContent side="right" className="p-0 w-full md:w-[400px] border-l-4 border-foreground bg-background text-foreground shadow-none">
+        <SheetHeader className="p-10 text-left border-b-4 border-foreground bg-accent/10 relative">
+          <SheetTitle className="text-4xl font-black uppercase tracking-tighter leading-none flex items-center justify-between">
+            <div>
+              RIFQI<br />
+              <span className="text-foreground/30 italic">ARDIAN</span>
+            </div>
           </SheetTitle>
         </SheetHeader>
 
-        <div className="flex flex-col h-full bg-black">
-          <div className="flex-1 px-6 py-8">
-            <div className="mb-8">
-              <div className="text-xs text-primary/50 uppercase tracking-widest mb-4 border-b border-primary/20 pb-2">
-                {t("nav.directoryListing")}
-              </div>
-              <nav className="flex flex-col gap-2">
-                {navItems.map((item, idx) => {
-                  const isActive = activeSection === item.id;
-                  return (
-                    <div key={item.id}>
-                      <SheetClose asChild>
-                        <Link
-                          href={item.href}
-                          onClick={(e) => handleScroll(e, item.href)}
-                          className={cn(
-                            "group flex items-center justify-between p-3 border hover:bg-primary hover:text-black transition-all",
-                            isActive
-                              ? "bg-primary text-black border-primary"
-                              : "bg-transparent border-primary/30 text-primary"
-                          )}
-                        >
-                          <span className="font-bold text-sm">
-                            {idx === 0 ? "~" : "./"}{item.name.toLowerCase()}
-                          </span>
-                          {isActive && <span className="animate-pulse">_</span>}
-                        </Link>
-                      </SheetClose>
-                    </div>
-                  );
-                })}
-              </nav>
-            </div>
-
-            <div>
-              <div className="text-xs text-primary/50 uppercase tracking-widest mb-4 border-b border-primary/20 pb-2">
-                {t("nav.systemCommands")}
-              </div>
-              <Link
-                href={`mailto:${personalInfo.email}`}
-                className="block text-center p-3 border border-primary text-primary hover:bg-primary hover:text-black transition-all text-sm font-bold uppercase mb-2"
-              >
-                {t("nav.sendMail")}
-              </Link>
-            </div>
+        <div className="flex flex-col h-full bg-background">
+          <div className="flex-1 p-10">
+            <nav className="flex flex-col gap-0 border-2 border-foreground">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id;
+                const Icon = item.icon;
+                return (
+                  <SheetClose asChild key={item.id}>
+                    <Link
+                      href={item.href}
+                      onClick={(e) => handleScroll(e, item.href)}
+                      className={cn(
+                        "group flex items-center gap-4 p-6 transition-all duration-200 border-b-2 border-foreground last:border-b-0",
+                        isActive
+                          ? "bg-accent text-black"
+                          : "hover:bg-foreground hover:text-background"
+                      )}
+                    >
+                      <Icon className={cn("w-6 h-6", isActive ? "rotate-12" : "group-hover:-rotate-12 transition-transform")} />
+                      <span className="font-black text-2xl uppercase tracking-tighter">
+                        {item.name}
+                      </span>
+                    </Link>
+                  </SheetClose>
+                );
+              })}
+            </nav>
           </div>
 
-          <div className="p-4 bg-primary/5 border-t border-primary/20 text-[10px] text-primary/50 uppercase text-center mt-auto">
-            {t("nav.terminalActive")}
+          <div className="p-10 border-t-4 border-foreground font-mono text-[10px] uppercase font-black tracking-[0.4em] flex justify-between items-center mt-auto">
+            <span>© {new Date().getFullYear()}</span>
           </div>
         </div>
       </SheetContent>

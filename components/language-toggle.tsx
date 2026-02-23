@@ -1,10 +1,9 @@
 "use client";
 
-import { Languages, Globe } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
-import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 
 const LanguageToggle = () => {
     const [mounted, setMounted] = useState(false);
@@ -16,7 +15,7 @@ const LanguageToggle = () => {
 
     if (!mounted) {
         return (
-            <div className="w-20 h-10 bg-black/50 border border-primary/20 rounded-none animate-pulse"></div>
+            <div className="w-24 h-10 border-2 border-foreground bg-background/50 animate-pulse"></div>
         );
     }
 
@@ -25,42 +24,41 @@ const LanguageToggle = () => {
     };
 
     return (
-        <Button
-            variant="outline"
-            size="sm"
+        <button
             onClick={toggleLanguage}
-            className={cn(
-                "relative flex items-center gap-2 px-4 py-2 font-mono font-bold transition-all duration-300 overflow-hidden group",
-                "bg-black/80 border border-primary/30 text-primary hover:bg-primary hover:text-black hover:border-primary",
-                "rounded-none shadow-[0_0_10px_rgba(0,255,0,0.1)]"
-            )}
+            className="group relative flex items-center justify-between px-3 py-2 border-2 border-foreground bg-background hover:bg-foreground hover:text-background transition-all duration-200 overflow-hidden min-w-24"
         >
-            {/* Animated background on hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-
-            {/* Icon with animation */}
-            <Globe className="w-4 h-4 transition-transform group-hover:rotate-180 duration-500 relative z-10" />
-
-            {/* Language text */}
-            <span className="text-xs uppercase tracking-widest relative z-10">
-                {language === "id" ? "ID" : "EN"}
-            </span>
-
-            {/* Indicator dots */}
-            <div className="flex gap-1 relative z-10">
+            <div className="flex items-center gap-1 w-full relative z-10">
                 <span className={cn(
-                    "w-1.5 h-1.5 rounded-full transition-all duration-300",
-                    language === "id" ? "bg-primary shadow-[0_0_4px_rgba(0,255,0,0.8)]" : "bg-primary/30"
-                )}></span>
+                    "flex-1 text-[10px] font-black uppercase tracking-widest text-center transition-colors",
+                    language === "id" ? "text-accent bg-foreground px-1" : "text-foreground group-hover:text-background"
+                )}>
+                    ID
+                </span>
+                <span className="text-[8px] opacity-30 font-mono">/</span>
                 <span className={cn(
-                    "w-1.5 h-1.5 rounded-full transition-all duration-300",
-                    language === "en" ? "bg-primary shadow-[0_0_4px_rgba(0,255,0,0.8)]" : "bg-primary/30"
-                )}></span>
+                    "flex-1 text-[10px] font-black uppercase tracking-widest text-center transition-colors",
+                    language === "en" ? "text-accent bg-foreground px-1" : "text-foreground group-hover:text-background"
+                )}>
+                    EN
+                </span>
             </div>
 
-            {/* Scanline effect */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,0,0.03)_50%,transparent_50%)] bg-[length:100%_4px] pointer-events-none"></div>
-        </Button>
+            {/* Selection Bar */}
+            <motion.div
+                className="absolute inset-x-0 bottom-0 h-1 bg-accent"
+                initial={false}
+                animate={{
+                    left: language === "id" ? "0%" : "50%",
+                    width: "50%"
+                }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            />
+
+            <div className="absolute top-0 right-0 p-[2px] opacity-20 pointer-events-none">
+                <div className="w-1 h-1 bg-foreground"></div>
+            </div>
+        </button>
     );
 };
 
