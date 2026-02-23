@@ -16,16 +16,6 @@ export default function Home() {
           <Hero />
         </section>
 
-        {/* Dedicated GitHub Activity Section */}
-        <section id="github" className="mb-24">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="bg-accent h-2 w-2"></div>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">
-              Aktivitas <span className="text-foreground/20 italic">GitHub</span>
-            </h2>
-          </div>
-        </section>
-
         {/* Separator / Visual Break */}
         <div className="w-full h-px bg-foreground/10 my-20"></div>
 
