@@ -1,7 +1,7 @@
 export const personalInfo = {
     name: "Rifqi Ardian",
-    role: "Fullstack Developer",
-    bio: "I'm a passionate Fullstack Developer with expertise in modern web technologies. I love building scalable applications and creating beautiful user experiences.",
+    role: "Web Developer",
+    bio: "I'm a passionate Web Developer with expertise in modern web technologies. I love building scalable applications and creating beautiful user experiences.",
     profileImage: "/images/profile2.png",
     cvPath: "/images/CV RIFQI ARDIAN.pdf",
     github: "https://github.com/RifqiArdian09",
