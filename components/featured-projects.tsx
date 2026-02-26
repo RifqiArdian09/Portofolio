@@ -101,7 +101,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
     return (
         <motion.div
-            className="group portavia-card overflow-hidden cursor-pointer flex flex-col h-full bg-card/40 backdrop-blur-sm border border-border/50 hover:border-accent/30 transition-colors duration-500"
+            className="group portavia-card overflow-hidden cursor-pointer flex flex-col h-full bg-card/60 dark:bg-card/40 backdrop-blur-sm border border-border/50 hover:border-accent/30 transition-colors duration-500"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => {
                 setHovered(false);

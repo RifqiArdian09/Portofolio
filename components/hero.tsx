@@ -135,7 +135,7 @@ const Hero = () => {
                 <Link
                   href={personalInfo.github}
                   target="_blank"
-                  className="p-3 rounded-xl border border-border bg-card/50 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 group shadow-sm"
+                  className="p-3 rounded-xl border border-border bg-card/50 hover:border-accent hover:text-accent hover:bg-accent/5 dark:hover:bg-accent/10 transition-all duration-300 group shadow-sm"
                   aria-label="GitHub"
                 >
                   <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -143,7 +143,7 @@ const Hero = () => {
                 <Link
                   href={personalInfo.linkedin}
                   target="_blank"
-                  className="p-3 rounded-xl border border-border bg-card/50 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 group shadow-sm"
+                  className="p-3 rounded-xl border border-border bg-card/50 hover:border-accent hover:text-accent hover:bg-accent/5 dark:hover:bg-accent/10 transition-all duration-300 group shadow-sm"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -151,7 +151,7 @@ const Hero = () => {
                 <Link
                   href={personalInfo.instagram}
                   target="_blank"
-                  className="p-3 rounded-xl border border-border bg-card/50 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300 group shadow-sm"
+                  className="p-3 rounded-xl border border-border bg-card/50 hover:border-accent hover:text-accent hover:bg-accent/5 dark:hover:bg-accent/10 transition-all duration-300 group shadow-sm"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -188,7 +188,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
-                className="absolute -bottom-5 -left-5 px-5 py-3 rounded-2xl bg-accent text-accent-foreground font-bold text-sm shadow-[0_8px_30px_rgba(197,255,74,0.3)]"
+                className="absolute -bottom-5 -left-5 px-5 py-3 rounded-2xl bg-accent text-accent-foreground font-bold text-sm shadow-xl shadow-accent/20"
               >
                 {personalInfo.role}
               </motion.div>

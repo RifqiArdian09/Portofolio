@@ -1,7 +1,7 @@
 "use client";
 
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
-import { Menu, Home, FolderDot, Award, Mail, X } from "lucide-react";
+import { Menu, Home, FolderDot, Award, Mail, X, Github } from "lucide-react";
 import Link from "next/link";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { usePathname } from "next/navigation";
@@ -17,6 +17,7 @@ export const NavigationSheet = () => {
   const navItems = [
     { id: "beranda", name: t("nav.home"), icon: Home, href: "/#beranda" },
     { id: "projects", name: t("nav.projects"), icon: FolderDot, href: "/#projects" },
+    { id: "github", name: t("nav.github"), icon: Github, href: "/#github" },
     { id: "certificates", name: t("nav.certificates"), icon: Award, href: "/#certificates" },
     { id: "contact", name: t("nav.contact"), icon: Mail, href: "/#contact" },
   ];

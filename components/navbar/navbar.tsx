@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavigationSheet } from "./navigation-sheet";
-import { Home, FolderDot, Award, Mail } from "lucide-react";
+import { Home, FolderDot, Award, Mail, Github } from "lucide-react";
 import LanguageToggle from "../language-toggle";
 import ThemeToggle from "../theme-toggle";
 import { useLanguage } from "@/context/language-context";
@@ -33,7 +33,7 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="fixed z-50 top-5 inset-x-0 flex justify-center pointer-events-none"
     >
-      <div className="pointer-events-auto flex items-center gap-3 px-5 py-3 rounded-full bg-card/80 backdrop-blur-xl border border-border shadow-[0_4px_32px_rgba(0,0,0,0.3)]">
+      <div className="pointer-events-auto flex items-center gap-3 px-5 py-3 rounded-full bg-card/90 dark:bg-card/80 backdrop-blur-xl border border-border shadow-xl shadow-black/5 dark:shadow-black/40">
         {/* Avatar + Status */}
         <Link
           href="/#beranda"
@@ -75,6 +75,7 @@ const NavPillLinks = () => {
   const navItems = [
     { id: "beranda", name: t("nav.home"), href: "/#beranda", icon: Home },
     { id: "projects", name: t("nav.projects"), href: "/#projects", icon: FolderDot },
+    { id: "github", name: t("nav.github"), href: "/#github", icon: Github },
     { id: "certificates", name: t("nav.certificates"), href: "/#certificates", icon: Award },
     { id: "contact", name: t("nav.contact"), href: "/#contact", icon: Mail },
   ];

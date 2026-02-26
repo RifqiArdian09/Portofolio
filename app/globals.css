@@ -79,13 +79,13 @@
     --secondary-foreground: #111111;
     --muted: #f0f0ec;
     --muted-foreground: #888888;
-    --accent: #ff3b30;
+    --accent: #7fb900;
     --accent-foreground: #ffffff;
     --destructive: #ff3b30;
     --destructive-foreground: #ffffff;
     --border: #e5e5e0;
     --input: #e5e5e0;
-    --ring: #ff3b30;
+    --ring: #7fb900;
     --radius: 0.75rem;
   }
 
@@ -163,8 +163,12 @@
   }
 
   .portavia-card:hover {
-    @apply border-accent/30;
-    box-shadow: 0 8px 40px rgba(197, 255, 74, 0.06);
+    @apply border-accent/20;
+    box-shadow: 0 8px 40px rgba(197, 255, 74, 0.08);
+  }
+
+  .dark .portavia-card:hover {
+    box-shadow: 0 8px 40px rgba(197, 255, 74, 0.04);
   }
 
   /* Pill button primary */
@@ -176,7 +180,7 @@
 
   .pill-button:hover {
     @apply scale-105;
-    box-shadow: 0 0 30px rgba(197, 255, 74, 0.35);
+    box-shadow: 0 0 30px rgba(197, 255, 74, 0.4);
   }
 
   .pill-button:active {
@@ -229,10 +233,7 @@
 
   /* Category badge */
   .category-badge {
-    @apply inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider;
-    background: rgba(197, 255, 74, 0.15);
-    color: #c5ff4a;
-    border: 1px solid rgba(197, 255, 74, 0.2);
+    @apply inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-accent/15 text-accent border border-accent/20;
   }
 
   /* Antonio display font */

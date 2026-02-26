@@ -31,6 +31,11 @@ export default function Home() {
         {/* Divider */}
         <div className="h-px bg-border mx-6" />
 
+        {/* GitHub Activity Section */}
+        <section id="github" className="px-6 md:px-12">
+          <GitHubActivity />
+        </section>
+
         {/* Certificates */}
         <section id="certificates" className="px-6 md:px-12">
           <Certificates />
