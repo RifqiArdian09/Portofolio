@@ -122,13 +122,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             <div className="relative overflow-hidden bg-card/50 aspect-video">
                 <motion.img
                     src={project.image}
-                    alt={project.title[language]}
+                    alt={project.title}
                     className="w-full h-full object-cover"
                     animate={{ scale: hovered ? 1.08 : 1 }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 />
 
-                {/* Overlays */}    
+                {/* Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
 
                 <div className="absolute top-5 right-5">
@@ -142,7 +142,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                         className="font-antonio text-xl md:text-2xl font-bold uppercase text-white leading-tight mb-2"
                         animate={{ x: hovered ? 5 : 0 }}
                     >
-                        {project.title[language]}
+                        {project.title}
                     </motion.h3>
                     <div className="flex items-center gap-2">
                         <span className="status-dot w-1.5 h-1.5" />
@@ -153,12 +153,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
             {/* Info Area */}
             <div className="p-5 md:p-6 flex flex-col gap-4 flex-1">
-                <p className="text-foreground/50 text-sm leading-relaxed line-clamp-2 italic">
-                    {project.description[language]}
+                <p className="text-foreground/50 text-sm leading-relaxed italic">
+                    {project.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                    {project.tech.slice(0, 4).map((tech) => (
+                    {project.tech.map((tech) => (
                         <span
                             key={tech}
                             className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg bg-foreground/[0.03] text-foreground/40 border border-border/50 group-hover:border-accent/20 transition-colors"

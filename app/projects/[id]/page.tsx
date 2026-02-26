@@ -57,7 +57,7 @@ const ProjectDetail = () => {
                         {t("nav.projects")}
                     </Link>
                     <span>/</span>
-                    <span className="text-foreground/70">{project.title[language]}</span>
+                    <span className="text-foreground/70">{project.title}</span>
                 </div>
 
                 {/* Header */}
@@ -75,7 +75,7 @@ const ProjectDetail = () => {
                         {t("projects.backToProjects")}
                     </Link>
                     <h1 className="font-antonio text-5xl md:text-7xl lg:text-8xl font-bold uppercase text-foreground leading-tight">
-                        {project.title[language]}
+                        {project.title}
                         <span className="text-accent">.</span>
                     </h1>
                 </motion.div>
@@ -146,7 +146,7 @@ const ProjectDetail = () => {
                                     <p className="section-label mb-1">{t("projects.statusLabel")}</p>
                                     <div className="flex items-center gap-2">
                                         <div className="status-dot" />
-                                        <span className="text-sm font-semibold text-accent">{project.status[language]}</span>
+                                        <span className="text-sm font-semibold text-accent">{project.status}</span>
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +189,7 @@ const ProjectDetail = () => {
                             <div className="portavia-card overflow-hidden">
                                 <Image
                                     src={project.image}
-                                    alt={project.title[language]}
+                                    alt={project.title}
                                     width={1200}
                                     height={800}
                                     unoptimized
@@ -201,7 +201,7 @@ const ProjectDetail = () => {
                             <div className="portavia-card p-8">
                                 <h3 className="font-antonio text-2xl font-bold uppercase text-foreground mb-4">{t("projects.overviewHeader")}</h3>
                                 <p className="text-foreground/60 text-lg leading-relaxed italic">
-                                    "{project.description[language]}"
+                                    "{project.description}"
                                 </p>
                             </div>
 
@@ -209,7 +209,7 @@ const ProjectDetail = () => {
                             <div className="portavia-card p-8">
                                 <h3 className="font-antonio text-2xl font-bold uppercase text-foreground mb-6">{t("projects.detailsHeader")}</h3>
                                 <div className="text-foreground/60 leading-relaxed text-base space-y-4 whitespace-pre-wrap">
-                                    {project.content[language]}
+                                    {project.content}
                                 </div>
                             </div>
 

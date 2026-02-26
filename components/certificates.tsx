@@ -49,7 +49,7 @@ const Certificates = () => {
                         <div className="relative overflow-hidden bg-card">
                             <Image
                                 src={cert.image}
-                                alt={cert.title[language]}
+                                alt={cert.title}
                                 width={800}
                                 height={600}
                                 unoptimized
@@ -69,7 +69,7 @@ const Certificates = () => {
                                 {t("certificates.verified")}
                             </div>
                             <h3 className="font-antonio text-lg font-bold uppercase text-foreground group-hover:text-accent transition-colors leading-tight mb-3">
-                                {cert.title[language]}
+                                {cert.title}
                             </h3>
                             <div className="flex items-center justify-between">
                                 <span className="text-foreground/40 text-xs font-medium">{cert.issuer}</span>
@@ -112,7 +112,7 @@ const Certificates = () => {
                                 <div className="flex-1 bg-card/50">
                                     <Image
                                         src={selectedCert.image}
-                                        alt={selectedCert.title[language]}
+                                        alt={selectedCert.title}
                                         width={1200}
                                         height={900}
                                         unoptimized
@@ -130,7 +130,7 @@ const Certificates = () => {
                                         <div>
                                             <p className="text-foreground/40 text-xs font-semibold uppercase tracking-wider mb-2">{t("certificates.certName")}</p>
                                             <h3 className="font-antonio text-2xl font-bold uppercase text-foreground leading-tight">
-                                                {selectedCert.title[language]}
+                                                {selectedCert.title}
                                             </h3>
                                         </div>
                                         <div>

@@ -79,7 +79,7 @@ const Hero = () => {
               <div className="flex items-center gap-4">
                 <div className="h-px w-8 bg-accent" />
                 <span className="text-sm font-semibold uppercase tracking-[0.3em] text-foreground/50">
-                  {personalInfo.role[language]}
+                  {personalInfo.role}
                 </span>
               </div>
             </motion.div>
@@ -190,7 +190,7 @@ const Hero = () => {
                 transition={{ delay: 0.8, duration: 0.5 }}
                 className="absolute -bottom-5 -left-5 px-5 py-3 rounded-2xl bg-accent text-accent-foreground font-bold text-sm shadow-[0_8px_30px_rgba(197,255,74,0.3)]"
               >
-                {personalInfo.role[language]}
+                {personalInfo.role}
               </motion.div>
 
               {/* Small decorative circle */}
