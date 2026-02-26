@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
+import { Home, FolderDot, Award, Mail } from "lucide-react";
 import LanguageToggle from "../language-toggle";
+import ThemeToggle from "../theme-toggle";
 import { useLanguage } from "@/context/language-context";
 import { motion } from "motion/react";
+import { personalInfo } from "@/lib/data";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -25,33 +27,83 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed z-50 top-0 inset-x-0 h-24 bg-background/80 backdrop-blur-xl border-b border-foreground/5">
-      <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6 lg:px-12">
+    <motion.nav
+      initial={{ y: -30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed z-50 top-5 inset-x-0 flex justify-center pointer-events-none"
+    >
+      <div className="pointer-events-auto flex items-center gap-3 px-5 py-3 rounded-full bg-card/80 backdrop-blur-xl border border-border shadow-[0_4px_32px_rgba(0,0,0,0.3)]">
+        {/* Avatar + Status */}
         <Link
           href="/#beranda"
           onClick={handleScrollToTop}
-          className="flex items-center gap-3 group"
+          className="flex items-center px-2 group"
         >
-          <span className="font-black text-2xl lowercase tracking-[0.1em] italic text-foreground group-hover:text-accent transition-all duration-300">
-            rifqi<span className="text-accent">ardian</span>.
+          <span className="font-antonio text-xl md:text-2xl font-bold uppercase tracking-tighter text-foreground group-hover:text-accent transition-colors duration-300">
+            Rifqi<span className="text-accent">.</span>
           </span>
         </Link>
 
-        <div className="flex items-center gap-12 h-full">
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center h-full">
-            <NavMenu />
-          </div>
+        {/* Divider */}
+        <div className="w-px h-6 bg-border mx-1" />
 
-          <div className="flex items-center gap-8 pl-8 border-l border-foreground/10">
-            <LanguageToggle />
-            <div className="md:hidden">
-              <NavigationSheet />
-            </div>
-          </div>
+        {/* Desktop Nav Links */}
+        <div className="hidden md:flex items-center gap-1">
+          <NavPillLinks />
+          <div className="w-px h-6 bg-border mx-1" />
+        </div>
+
+        <ThemeToggle />
+        <div className="w-px h-6 bg-border mx-1" />
+        <LanguageToggle />
+
+        {/* Mobile Menu - Far Right */}
+        <div className="md:hidden flex items-center">
+          <div className="w-px h-6 bg-border mx-1" />
+          <NavigationSheet />
         </div>
       </div>
-    </nav>
+    </motion.nav>
+  );
+};
+
+const NavPillLinks = () => {
+  const pathname = usePathname();
+  const { t } = useLanguage();
+
+  const navItems = [
+    { id: "beranda", name: t("nav.home"), href: "/#beranda", icon: Home },
+    { id: "projects", name: t("nav.projects"), href: "/#projects", icon: FolderDot },
+    { id: "certificates", name: t("nav.certificates"), href: "/#certificates", icon: Award },
+    { id: "contact", name: t("nav.contact"), href: "/#contact", icon: Mail },
+  ];
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      const id = href.replace("/#", "");
+      const element = document.getElementById(id);
+      if (element && pathname === "/") {
+        e.preventDefault();
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  return (
+    <>
+      {navItems.map((item) => (
+        <Link
+          key={item.id}
+          href={item.href}
+          onClick={(e) => handleScroll(e, item.href)}
+          className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-foreground/60 hover:text-foreground hover:bg-foreground/[0.06] transition-all duration-200"
+        >
+          <item.icon className="w-3.5 h-3.5" />
+          {item.name}
+        </Link>
+      ))}
+    </>
   );
 };
 

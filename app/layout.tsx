@@ -2,34 +2,39 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
-import { GeistSans } from "geist/font/sans";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Antonio } from "next/font/google";
 import { LanguageProvider } from "@/context/language-context";
 import "./globals.css";
 
-const geist = GeistSans;
-
-const plusJakartaSans = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const antonio = Antonio({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Rifqi Ardian | Fullstack Developer",
-  description: "Fullstack Developer specializing in modern web technologies. Building scalable applications with Next.js, React, Laravel, and more.",
-  keywords: ["Rifqi Ardian", "Fullstack Developer", "Web Developer", "Next.js", "React", "Laravel", "Portfolio"],
+  title: "Rifqi Ardian | Web Developer",
+  description: "Web Developer specializing in modern web technologies. Building scalable applications with Next.js, React, Laravel, and more.",
+  keywords: ["Rifqi Ardian", "Web Developer", "Web Developer", "Next.js", "React", "Laravel", "Portfolio"],
   authors: [{ name: "Rifqi Ardian" }],
   creator: "Rifqi Ardian",
   openGraph: {
     type: "website",
     siteName: "Rifqi Ardian Portfolio",
-    title: "Rifqi Ardian | Fullstack Developer",
-    description: "Fullstack Developer specializing in modern web technologies",
+    title: "Rifqi Ardian | Web Developer",
+    description: "Web Developer specializing in modern web technologies",
     locale: "id_ID",
   },
   icons: {
@@ -50,9 +55,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={`${geist.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground`} suppressHydrationWarning={true}>
+      <body className={`${inter.variable} ${antonio.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground selection:bg-accent selection:text-accent-foreground`} suppressHydrationWarning={true}>
         <LanguageProvider>
-          <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
             <TooltipProvider>
               <div className="min-h-screen relative overflow-x-hidden">
                 {children}

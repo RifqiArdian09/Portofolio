@@ -44,7 +44,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         let result: any = translations[language];
 
         for (const key of keys) {
-            if (result && result[key]) {
+            if (result && result[key] !== undefined) {
                 result = result[key];
             } else {
                 return path; // Fallback to key path if not found

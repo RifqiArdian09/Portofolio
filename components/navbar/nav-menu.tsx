@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { NavigationMenuProps } from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
-import { Home, Folder, Award, Mail, Cpu } from "lucide-react";
+import { Home, Folder, Award, Mail } from "lucide-react";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,6 @@ export const NavMenu = (props: NavigationMenuProps) => {
   const navItems = [
     { id: "beranda", name: t("nav.home"), icon: Home, href: "/#beranda" },
     { id: "projects", name: t("nav.projects"), icon: Folder, href: "/#projects" },
-    { id: "github", name: t("nav.github"), icon: Cpu, href: "/#github" },
     { id: "certificates", name: t("nav.certificates"), icon: Award, href: "/#certificates" },
     { id: "contact", name: t("nav.contact"), icon: Mail, href: "/#contact" },
   ];

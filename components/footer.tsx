@@ -1,74 +1,95 @@
 "use client";
 
 import React from "react";
-import { Github, Linkedin, Mail, Instagram, Send, Globe } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram, Globe, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { personalInfo } from "@/lib/data";
 import { useLanguage } from "@/context/language-context";
+import { motion } from "motion/react";
 
 const Footer = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
+  const socials = [
+    { icon: Github, href: personalInfo.github, label: "GitHub" },
+    { icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn" },
+    { icon: Instagram, href: personalInfo.instagram, label: "Instagram" },
+    { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email" },
+  ];
+
   return (
-    <footer id="contact" className="py-24 border-t border-foreground/5">
+    <footer className="py-24 border-t border-border">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
-          {/* Left Side - Identity */}
-          <div className="space-y-12">
-            <Link href="/" className="text-5xl md:text-7xl font-black tracking-[0.1em] text-foreground lowercase italic">
-              rifqi<span className="text-accent">ardian</span>.
+        {/* Bottom Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
+
+          {/* Logo + Description */}
+          <div className="md:col-span-1">
+            <Link href="/" className="inline-block mb-5">
+              <span className="font-antonio text-3xl font-bold uppercase text-foreground">
+                Rifqi<span className="text-accent">Ardian</span>
+              </span>
             </Link>
-
-            <p className="text-foreground/50 text-xl font-medium max-w-xl leading-relaxed tracking-wide italic lowercase">
-              {t("footer.thankYou")}
+            <p className="text-foreground/50 text-sm leading-relaxed mb-6 max-w-xs">
+              {t("hero.bio")}
             </p>
+            <div className="flex items-center gap-1.5 text-foreground/30 text-xs font-medium">
+              <Globe className="w-3.5 h-3.5" />
+              Bengkulu, Indonesia
+            </div>
+          </div>
 
-            <div className="flex flex-wrap gap-8">
+          {/* Quick Links */}
+          <div className="md:col-span-1">
+            <h4 className="font-antonio text-sm font-bold uppercase tracking-wider text-foreground/40 mb-5">{t("footer.navigation")}</h4>
+            <nav className="flex flex-col gap-3">
               {[
-                { icon: Github, href: personalInfo.github, label: "/github" },
-                { icon: Linkedin, href: personalInfo.linkedin, label: "/linkedin" },
-                { icon: Instagram, href: personalInfo.instagram, label: "/instagram" },
-                { icon: Mail, href: `mailto:${personalInfo.email}`, label: "/email" },
-              ].map((social, i) => (
+                { label: t("nav.home"), href: "/#beranda" },
+                { label: t("nav.projects"), href: "/#projects" },
+                { label: t("nav.certificates"), href: "/#certificates" },
+                { label: t("nav.contact"), href: "/#contact" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-foreground/50 text-sm font-medium hover:text-accent transition-colors w-fit"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Social Links */}
+          <div className="md:col-span-1">
+            <h4 className="font-antonio text-sm font-bold uppercase tracking-wider text-foreground/40 mb-5">{t("footer.connect")}</h4>
+            <div className="flex flex-col gap-3">
+              {socials.map((social) => (
                 <a
-                  key={i}
+                  key={social.label}
                   href={social.href}
                   target="_blank"
-                  className="group flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] hover:text-accent transition-colors"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 text-foreground/50 text-sm font-medium hover:text-accent transition-colors w-fit"
                 >
-                  <social.icon className="w-4 h-4 opacity-40 group-hover:opacity-100 transition-opacity" />
+                  <social.icon className="w-4 h-4" />
                   <span className="border-b border-transparent group-hover:border-accent">{social.label}</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Right Side - Status & Call to Action */}
-          <div className="flex flex-col justify-between">
-            <div className="space-y-12">
-              <div className="flex items-center gap-6">
-                <div className="w-12 h-px bg-accent"></div>
-                <h3 className="text-xl font-black uppercase tracking-[0.4em] text-accent">
-                  {t("footer.socialUplinks")}
-                </h3>
-              </div>
-
-              <div className="space-y-8 pl-12">
-                <p className="text-foreground/40 font-medium leading-relaxed italic text-lg">{t("hero.bio")}</p>
-
-                <div className="flex items-center gap-4 text-[10px] font-black tracking-[0.4em] opacity-30 uppercase">
-                  <Globe className="w-4 h-4" />
-                  <span>Based in Bengkulu, ID // 3.78° S, 102.26° E</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Bar */}
-            <div className="pt-24 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black uppercase tracking-[0.5em] text-foreground/20 italic">
-              <p>© {currentYear} Rifqi Ardian // ALL_RIGHTS_RESERVED</p>
-              <div className="w-2 h-2 bg-accent animate-pulse shadow-[0_0_10px_var(--accent)]"></div>
-            </div>
+        {/* Copyright */}
+        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-foreground/30 text-xs font-medium">
+            {t("footer.copyright").replace("{year}", currentYear.toString())}
+          </p>
+          <div className="flex items-center gap-2 text-foreground/30 text-xs font-medium">
+            <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span>{t("footer.openToOpportunities")}</span>
           </div>
         </div>
       </div>

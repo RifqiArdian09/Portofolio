@@ -61,7 +61,20 @@
         "successful": "BERHASIL",
         "deployDate": "TANGGAL RILIS",
         "locked": "TERKUNCI",
-        "initializingAccess": "MENGINISIALISASI..."
+        "initializingAccess": "MENGINISIALISASI...",
+        "explore": "Lihat Proyek",
+        "stableRelease": "RILIS STABIL",
+        "backToProjects": "Kembali ke Daftar Proyek",
+        "techStackHeader": "Teknologi yang Digunakan",
+        "teamHeader": "Tim Pengembang",
+        "releaseLabel": "Rilis",
+        "statusLabel": "Status",
+        "activeStatus": "Aktif",
+        "liveDemo": "Lihat Demo Langsung",
+        "viewOnGithub": "Lihat di GitHub",
+        "overviewHeader": "Ringkasan",
+        "detailsHeader": "Detail Implementasi",
+        "galleryHeader": "Galeri Proyek"
     },
     "certificates": {
         "directory": "Daftar Sertifikat",
@@ -75,7 +88,9 @@
         "scanning": "Mencari sertifikat terverifikasi... [DITEMUKAN {count}]",
         "issuerUnit": "PENERBIT",
         "viewCredential": "LIHAT KREDENSIAL",
-        "status": "Status"
+        "status": "Status",
+        "certName": "Nama Sertifikat",
+        "issuedBy": "Diterbitkan Oleh"
     },
     "github": {
         "title": "AKTIVITAS GITHUB",
@@ -89,7 +104,8 @@
     },
     "footer": {
         "systemShutdown": "Selesai",
-        "thankYou": "Terima kasih telah berkunjung!",
+        "title": "Punya proyek",
+        "titleHighlight": "di pikiran?",
         "sessionSaved": "Data berhasil disimpan.",
         "contactProtocol": "Hubungi saya melalui media sosial di bawah.",
         "github": "GITHUB",
@@ -103,6 +119,18 @@
         "uplinkLive": "STATUS AKTIF",
         "socialUplinks": "MEDIA SOSIAL",
         "statusStable": "STATUS: STABIL",
-        "activeProtocol": "AKTIF"
+        "activeProtocol": "AKTIF",
+        "getInTouch": "Hubungi Saya",
+        "contactDescription": "Punya proyek di pikiran atau sekadar ingin menyapa? Hubungi saja. Saya selalu terbuka untuk peluang baru dan proyek menarik.",
+        "emailMe": "Kirim Email",
+        "whatsapp": "WhatsApp",
+        "fullName": "Nama Lengkap",
+        "emailAddress": "Alamat Email",
+        "message": "Pesan",
+        "redirecting": "Mengalihkan...",
+        "sendViaWa": "Kirim via WhatsApp",
+        "navigation": "Navigasi",
+        "connect": "Hubungi",
+        "openToOpportunities": "Terbuka untuk peluang"
     }
 }
