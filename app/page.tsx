@@ -3,7 +3,6 @@ import Hero from "@/components/hero";
 import { Navbar } from "@/components/navbar";
 import FeaturedProjects from "@/components/featured-projects";
 import Certificates from "@/components/certificates";
-import GitHubActivity from "@/components/github-activity";
 import ContactForm from "@/components/contact-form";
 
 export default function Home() {
@@ -30,11 +29,6 @@ export default function Home() {
 
         {/* Divider */}
         <div className="h-px bg-border mx-6" />
-
-        {/* GitHub Activity Section */}
-        <section id="github" className="px-6 md:px-12">
-          <GitHubActivity />
-        </section>
 
         {/* Certificates */}
         <section id="certificates" className="px-6 md:px-12">

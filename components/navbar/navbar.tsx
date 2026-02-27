@@ -75,7 +75,6 @@ const NavPillLinks = () => {
   const navItems = [
     { id: "beranda", name: t("nav.home"), href: "/#beranda", icon: Home },
     { id: "projects", name: t("nav.projects"), href: "/#projects", icon: FolderDot },
-    { id: "github", name: t("nav.github"), href: "/#github", icon: Github },
     { id: "certificates", name: t("nav.certificates"), href: "/#certificates", icon: Award },
     { id: "contact", name: t("nav.contact"), href: "/#contact", icon: Mail },
   ];
