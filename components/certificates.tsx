@@ -20,6 +20,7 @@ const Certificates = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
                         className="font-antonio text-5xl md:text-7xl font-bold uppercase text-foreground leading-tight"
                     >
@@ -35,25 +36,28 @@ const Certificates = () => {
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+            >
                 {certificates.map((cert, index) => (
-                    <motion.div
+                    <div
                         key={index}
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: index * 0.08 }}
                         onClick={() => setSelectedCert(cert)}
-                        className="group portavia-card cursor-pointer overflow-hidden"
+                        className="group portavia-card cursor-pointer overflow-hidden transform-gpu"
                     >
                         {/* Thumbnail */}
                         <div className="relative overflow-hidden bg-card">
                             <Image
                                 src={cert.image}
                                 alt={cert.title}
-                                width={800}
-                                height={600}
-                                unoptimized
-                                className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
+                                width={400}
+                                height={300}
+                                className="w-full h-auto block"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
                                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 rounded-full bg-accent text-accent-foreground">
@@ -78,9 +82,9 @@ const Certificates = () => {
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
-            </div>
+            </motion.div>
 
             {/* Certificate Modal */}
             <AnimatePresence>
@@ -115,8 +119,8 @@ const Certificates = () => {
                                         alt={selectedCert.title}
                                         width={1200}
                                         height={900}
-                                        unoptimized
                                         className="w-full h-auto block"
+                                        priority
                                     />
                                 </div>
 

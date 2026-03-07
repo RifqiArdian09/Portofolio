@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { projects } from "@/lib/data";
 import { ArrowUpRight, Github, ChevronDown, ChevronUp } from "lucide-react";
@@ -93,6 +94,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        // Use requestAnimationFrame or just skip frequent updates if not hovered
+        if (!hovered) return;
         const rect = e.currentTarget.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
@@ -101,7 +104,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
     return (
         <motion.div
-            className="group portavia-card overflow-hidden cursor-pointer flex flex-col h-full bg-card/60 dark:bg-card/40 backdrop-blur-sm border border-border/50 hover:border-accent/30 transition-colors duration-500"
+            className="group portavia-card overflow-hidden cursor-pointer flex flex-col h-full bg-card/60 dark:bg-card/40 border border-border/50 hover:border-accent/30 transition-colors duration-500"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => {
                 setHovered(false);
@@ -119,13 +122,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
             {/* Image Container */}
-            <div className="relative overflow-hidden bg-card/50 aspect-video">
-                <motion.img
+            <div className="relative overflow-hidden bg-card/50 aspect-video transform-gpu">
+                <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
-                    animate={{ scale: hovered ? 1.08 : 1 }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
                 {/* Overlays */}
