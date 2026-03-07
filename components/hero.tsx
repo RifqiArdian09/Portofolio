@@ -193,15 +193,7 @@ const Hero = () => {
                 {personalInfo.role}
               </motion.div>
 
-              {/* Small decorative circle */}
-              <motion.div
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center"
-              >
-                <div className="w-3 h-3 rounded-full bg-accent" />
-              </motion.div>
+            
             </div>
           </motion.div>
 
