@@ -555,7 +555,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   className="absolute z-[2] flex items-center justify-between backdrop-blur-[30px] border border-white/10 pointer-events-auto"
                   style={
                     {
-                      '--ui-inset': 'clamp(10px, 4vw, 20px)',
+                      '--ui-inset': 'clamp(15px, 5vw, 22px)',
                       '--ui-radius-bias': '6px',
                       bottom: 'var(--ui-inset)',
                       left: 'var(--ui-inset)',
@@ -566,10 +566,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                     } as React.CSSProperties
                   }
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 min-w-0 flex-1">
                     <div
                       className="rounded-full overflow-hidden border border-white/10 flex-shrink-0"
-                      style={{ width: '48px', height: '48px' }}
+                      style={{ width: '40px', height: '40px' }}
                     >
                       <img
                         className="w-full h-full object-cover rounded-full"
@@ -584,21 +584,21 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                         }}
                       />
                     </div>
-                    <div className="flex flex-col items-start gap-1.5">
-                      <div className="text-sm font-medium text-white/90 leading-none">@{handle}</div>
-                      {!socials && <div className="text-sm text-white/70 leading-none">{status}</div>}
+                    <div className="flex flex-col items-start gap-1 min-w-0">
+                      <div className="text-sm font-medium text-white/90 leading-none truncate w-full">@{handle}</div>
+                      {!socials && <div className="text-sm text-white/70 leading-none truncate w-full">{status}</div>}
                     </div>
                   </div>
                   {socials ? (
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 flex-shrink-0">
                       {socials.github && (
                         <a
                           href={socials.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all pointer-events-auto"
+                          className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all pointer-events-auto"
                         >
-                          <Github className="w-5 h-5" />
+                          <Github className="w-4 h-4" />
                         </a>
                       )}
                       {socials.linkedin && (
@@ -606,9 +606,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                           href={socials.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all pointer-events-auto"
+                          className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all pointer-events-auto"
                         >
-                          <Linkedin className="w-5 h-5" />
+                          <Linkedin className="w-4 h-4" />
                         </a>
                       )}
                       {socials.instagram && (
@@ -616,9 +616,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                           href={socials.instagram}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all pointer-events-auto"
+                          className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all pointer-events-auto"
                         >
-                          <Instagram className="w-5 h-5" />
+                          <Instagram className="w-4 h-4" />
                         </a>
                       )}
                     </div>
