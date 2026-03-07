@@ -12,7 +12,21 @@
         "systemNav": "NAVIGATION",
         "systemOnline": "Online Status",
         "loc": "LOCATION",
-        "net": "Secure Connection"
+        "net": "Secure Connection",
+        "about": "ABOUT"
+    },
+    "about": {
+        "directory": "Self Information",
+        "title": "ABOUT ME",
+        "subtitle": "Web Developer & Student",
+        "content1": "Hello! I am Rifqi Ardian, a dedicated student focusing on Software and Game Development.",
+        "content2": "I am a passionate web developer with a keen interest in creating beautiful, functional, and user-centered digital experiences. With expertise in modern web technologies, I love turning ideas into reality through clean code and innovative design solutions.",
+        "skillsTitle": "Skills",
+        "stats": {
+            "projects": "Completed",
+            "experience": "Experience",
+            "certificates": "Certificates"
+        }
     },
     "hero": {
         "secureConnection": "SECURE CONNECTION",
@@ -131,6 +145,9 @@
         "sendViaWa": "Send via WhatsApp",
         "navigation": "Navigation",
         "connect": "Connect",
-        "openToOpportunities": "Open to opportunities"
+        "openToOpportunities": "Open to opportunities",
+        "help_title": "Need urgent help?",
+        "help_description": "Contact me directly via WhatsApp for a faster response.",
+        "whatsapp_btn": "Chat on WhatsApp"
     }
 }

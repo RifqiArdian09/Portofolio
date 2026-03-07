@@ -87,29 +87,6 @@
 
 @layer base {
   :root {
-    --background: #fafaf8;
-    --foreground: #111111;
-    --card: #ffffff;
-    --card-foreground: #111111;
-    --popover: #ffffff;
-    --popover-foreground: #111111;
-    --primary: #111111;
-    --primary-foreground: #ffffff;
-    --secondary: #f0f0ec;
-    --secondary-foreground: #111111;
-    --muted: #f0f0ec;
-    --muted-foreground: #888888;
-    --accent: #7fb900;
-    --accent-foreground: #ffffff;
-    --destructive: #ff3b30;
-    --destructive-foreground: #ffffff;
-    --border: #e5e5e0;
-    --input: #e5e5e0;
-    --ring: #7fb900;
-    --radius: 0.75rem;
-  }
-
-  .dark {
     --background: #1a1a1b;
     --foreground: #f0f0ec;
     --card: #222224;
@@ -127,6 +104,7 @@
     --border: #2e2e30;
     --input: #2e2e30;
     --ring: #c5ff4a;
+    --radius: 0.75rem;
   }
 }
 
@@ -141,12 +119,6 @@
 
   body {
     @apply bg-background text-foreground antialiased font-sans transition-colors duration-300;
-    background-image:
-      radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
-    background-size: 32px 32px;
-  }
-
-  .dark body {
     background-image:
       radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
     background-size: 32px 32px;
@@ -184,10 +156,6 @@
 
   .portavia-card:hover {
     @apply border-accent/20;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  }
-
-  .dark .portavia-card:hover {
     box-shadow: 0 8px 40px rgba(197, 255, 74, 0.04);
   }
 

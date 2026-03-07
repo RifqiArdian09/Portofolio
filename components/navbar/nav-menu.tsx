@@ -24,7 +24,7 @@ export const NavMenu = (props: NavigationMenuProps) => {
     { id: "beranda", name: t("nav.home"), icon: Home, href: "/#beranda" },
     { id: "projects", name: t("nav.projects"), icon: Folder, href: "/#projects" },
     { id: "certificates", name: t("nav.certificates"), icon: Award, href: "/#certificates" },
-    { id: "contact", name: t("nav.contact"), icon: Mail, href: "/#contact" },
+    { id: "contact", name: t("nav.contact"), icon: Mail, href: "/#footer" },
   ];
 
   const activeSection = useActiveSection(navItems.map((item) => item.id));

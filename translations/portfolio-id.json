@@ -12,7 +12,21 @@
         "systemNav": "NAVIGASI",
         "systemOnline": "Status Online",
         "loc": "LOKASI",
-        "net": "Koneksi Aman"
+        "net": "Koneksi Aman",
+        "about": "TENTANG"
+    },
+    "about": {
+        "directory": "Informasi Diri",
+        "title": "TENTANG SAYA",
+        "subtitle": "Pengembang Web & Pelajar",
+        "content1": "Halo! Saya Rifqi Ardian, seorang pelajar berdedikasi yang berfokus pada Pengembangan Perangkat Lunak dan Gim.",
+        "content2": "Saya adalah seorang pengembang web yang bersemangat dengan minat besar dalam menciptakan pengalaman digital yang indah, fungsional, dan berpusat pada pengguna. Dengan keahlian dalam teknologi web modern, saya senang mengubah ide menjadi kenyataan melalui kode yang bersih dan solusi desain yang inovatif.",
+        "skillsTitle": "Keahlian",
+        "stats": {
+            "projects": "Selesai",
+            "experience": "Belajar",
+            "certificates": "Sertifikat"
+        }
     },
     "hero": {
         "secureConnection": "KONEKSI AMAN",
@@ -131,6 +145,9 @@
         "sendViaWa": "Kirim via WhatsApp",
         "navigation": "Navigasi",
         "connect": "Hubungi",
-        "openToOpportunities": "Terbuka untuk peluang"
+        "openToOpportunities": "Terbuka untuk peluang",
+        "help_title": "Butuh bantuan mendesak?",
+        "help_description": "Hubungi saya langsung melalui WhatsApp untuk respon yang lebih cepat.",
+        "whatsapp_btn": "Chat WhatsApp"
     }
 }

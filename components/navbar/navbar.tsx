@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavigationSheet } from "./navigation-sheet";
-import { Home, FolderDot, Award, Mail, Github } from "lucide-react";
+import { Home, FolderDot, Award, Mail, Github, User } from "lucide-react";
 import LanguageToggle from "../language-toggle";
-import ThemeToggle from "../theme-toggle";
 import { useLanguage } from "@/context/language-context";
 import { motion } from "motion/react";
 import { personalInfo } from "@/lib/data";
@@ -54,8 +53,6 @@ const Navbar = () => {
           <div className="w-px h-6 bg-border mx-1" />
         </div>
 
-        <ThemeToggle />
-        <div className="w-px h-6 bg-border mx-1" />
         <LanguageToggle />
 
         {/* Mobile Menu - Far Right */}
@@ -74,9 +71,10 @@ const NavPillLinks = () => {
 
   const navItems = [
     { id: "beranda", name: t("nav.home"), href: "/#beranda", icon: Home },
+    { id: "about", name: t("nav.about"), href: "/#about", icon: User },
     { id: "projects", name: t("nav.projects"), href: "/#projects", icon: FolderDot },
     { id: "certificates", name: t("nav.certificates"), href: "/#certificates", icon: Award },
-    { id: "contact", name: t("nav.contact"), href: "/#contact", icon: Mail },
+    { id: "contact", name: t("nav.contact"), href: "/#footer", icon: Mail },
   ];
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

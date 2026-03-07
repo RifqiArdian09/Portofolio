@@ -5,17 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { projects } from "@/lib/data";
-import { ArrowUpRight, Github, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { useLanguage } from "@/context/language-context";
 import { TechIcon } from "./tech-icon";
 
 const FeaturedProjects = () => {
     const { t } = useLanguage();
-    const [showAll, setShowAll] = useState(false);
-
-    const displayedProjects = showAll ? projects : projects.slice(0, 6);
-
-
+    const displayedProjects = projects;
 
     return (
         <section className="py-24">
@@ -64,20 +60,6 @@ const FeaturedProjects = () => {
                         </motion.div>
                     ))}
                 </AnimatePresence>
-            </div>
-
-            {/* Show More/Less */}
-            <div className="mt-12 flex justify-center">
-                <button
-                    onClick={() => setShowAll(!showAll)}
-                    className="pill-button-outline px-8 py-3 font-semibold text-sm"
-                >
-                    {showAll ? (
-                        <><span>{t("projects.viewLess")}</span><ChevronUp className="w-4 h-4" /></>
-                    ) : (
-                        <><span>{t("projects.viewMore")}</span><ChevronDown className="w-4 h-4" /></>
-                    )}
-                </button>
             </div>
         </section>
     );

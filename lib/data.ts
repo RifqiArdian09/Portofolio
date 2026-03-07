@@ -218,35 +218,7 @@ Optimasi performa dengan meminimalkan dependensi berat guna memastikan skor Core
             createMember("RifqiArdian09"),
             createMember("Salmanziz21"),
         ],
-    },
-    {
-        id: "alquran-web",
-        title: "Al-Quran Web",
-        description:
-            "Aplikasi baca Al-Qur'an modern berbasis React dan Vite yang fokus pada kenyamanan membaca, performa cepat, dan aksesibilitas tinggi.",
-        tech: ["React", "Vite", "React Router", "API"],
-        status: "Solo Project",
-        image: "/images/projek/alquran-web.png",
-        github: "https://github.com/RifqiArdian09/alquran-web",
-        demo: "https://bacaquran-roan.vercel.app/",
-        date: "2024",
-        content: `Al-Quran Web adalah aplikasi baca Al-Qur’an berbasis web yang dikembangkan menggunakan React dan Vite dengan fokus utama pada kenyamanan membaca, performa cepat, serta tampilan modern dan estetis.
-
-Detail Implementasi:
-
-1. Arsitektur & Teknologi:
-• React 18 & Vite: Memastikan proses development cepat dan hasil build yang sangat optimal.
-• Modular Design: Pemisahan jelas antara komponen UI, service API, custom hooks, dan context global.
-
-2. Fitur Unggulan & Fungsionalitas:
-• Audio Per Ayat: Sistem audio dikelola melalui AudioContext API untuk memastikan pemutaran yang mulus tanpa tumpang tindih.
-• Persistensi Data: Fitur bookmark, terakhir dibaca, dan pengaturan tema disimpan secara lokal menggunakan custom hooks berbasis localStorage.
-• Sistem Tema Dinamis: Implementasi mode gelap/terang dan sistem aksen warna menggunakan CSS custom properties (variables).
-
-3. Aksesibilitas & Performa:
-• Accessibility (A11y): Penggunaan aria-label dan kontras warna yang memadai untuk kenyamanan pengguna.
-• UX Intuitif: Animasi halus dan micro-interaction yang diterapkan tanpa mengorbankan kecepatan loading halaman.`,
-    },
+    }
 ];
 
 export const certificates = [
