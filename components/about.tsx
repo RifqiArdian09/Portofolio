@@ -29,7 +29,7 @@ const About = () => {
     ];
 
     return (
-        <section className="py-24">
+        <section id="about" className="py-16 md:py-24 overflow-hidden">
             <div className="mb-16">
                 <p className="section-label mb-4">{t("about.directory")}</p>
                 <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
