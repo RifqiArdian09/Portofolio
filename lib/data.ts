@@ -251,5 +251,10 @@ export const certificates = [
         title: "Belajar Fundamentasl Front-End Web Development",
         issuer: "Dicoding",
         image: "/images/sertif/Belajar Fundamentasl Front-End Web Development.png",
+    },
+    {
+        title: "Sertifikat IDCamp 2025 Level Menengah",
+        issuer: "IDCamp x Dicoding",
+        image: "/images/sertif/Sertifikat IDCamp 2025 Level Menengah.png",
     }
 ];
